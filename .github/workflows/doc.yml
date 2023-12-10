@@ -1,0 +1,109 @@
+name: Document
+
+on:
+  push:
+
+jobs:
+  check-cs:
+    name: doc-check-sample-cs
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps: 
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+      - name: build
+        run: |
+          dotnet build ./samples/cs/cs.csproj -c:Release
+
+  check-cpp:
+    name: doc-check-sample-cpp
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps: 
+      - uses: actions/checkout@v3
+      - name: build
+        run: |
+          cd ./samples/cpp
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_C_COMPILER=gcc-12 -DCMAKE_CXX_COMPILER=g++-12
+          cmake --build .
+
+  check-python:
+    name: doc-check-sample-python
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps: 
+      - uses: actions/checkout@v3
+      - name: install deps
+        run: |
+          python3 -m pip install --upgrade pyautd3
+      - name: build
+        run: |
+          cd samples/python
+          echo a | python3 main.py || true
+
+  check-jp:
+    needs: check
+    name: doc-check-jp
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup mdbook
+        if: needs.check.outputs.status
+        uses: ./.github/actions/setup-mdbook
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test book jp
+        if: needs.check.outputs.status
+        run: |
+          python3 build.py test jp
+
+  check-en:
+    needs: check
+    name: doc-check-en
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup mdbook
+        if: needs.check.outputs.status
+        uses: ./.github/actions/setup-mdbook
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test book en
+        if: needs.check.outputs.status
+        run: |
+          python3 build.py test en
+
+  build:
+    name: build-doc
+    needs: [check-cs, check-cpp, check-python, check-jp, check-en]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup mdbook
+        uses: ./.github/actions/setup-mdbook
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build book
+        run: |
+          MDBOOK_BOOK__src=src/en mdbook build --dest-dir book/en
+          MDBOOK_BOOK__src=src/jp mdbook build --dest-dir book/jp
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
+          force_orphan: true

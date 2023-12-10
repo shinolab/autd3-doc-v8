@@ -1,0 +1,15 @@
+[package]
+name = "thirdparties"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+autd3 = "19.0.0"
+autd3-gain-holo = "19.0.0"
+autd3-link-simulator = "19.0.0"
+autd3-link-soem = { version = "19.0.0", features = ["remote"] }
+autd3-link-twincat = { version = "19.0.0", features = ["remote"] }
+autd3-modulation-audio-file = "19.0.0"
+tokio = { version = "1.35.0", features = ["full"] }
