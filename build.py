@@ -89,7 +89,7 @@ def doc_test(args):
 def util_update_ver(args):
     version = args.version
 
-    with working_dir("doc"):
+    with working_dir("."):
         with open("samples/cpp/CMakeLists.txt", "r") as f:
             content = f.read()
             content = re.sub(
@@ -147,6 +147,17 @@ def util_update_ver(args):
                 flags=re.MULTILINE,
             )
         with open("book.toml", "w") as f:
+            f.write(content)
+
+        with open("thirdparties/Cargo.toml", "r") as f:
+            content = f.read()
+            content = re.sub(
+                r'^autd3(.*)version = "(.*?)"',
+                f'autd3\\1version = "{version}"',
+                content,
+                flags=re.MULTILINE,
+            )
+        with open("thirdparties/Cargo.toml", "w") as f:
             f.write(content)
 
 

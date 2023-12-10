@@ -60,3 +60,4 @@
 | 2023/11/29 | Version 17.0.3 Initial release |
 | 2023/12/02 | Version 18.0.0 Initial release |
 | 2023/12/04 | Version 18.0.1 Initial release |
+| 2023/12/10 | Version 19.0.0 Initial release |
