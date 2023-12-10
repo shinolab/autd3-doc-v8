@@ -5,7 +5,7 @@ AUTD Simulator (以下, シミュレータ) はその名の通りAUTDのシミ�
 ## AUTD Server
 
 シミュレータは`AUTD Server`に付属している.
-[GitHub Releases](https://github.com/shinolab/autd3/releases)にてインストーラを配布しているので, これをダウンロードし, 指示に従ってインストールする.
+[GitHub Releases](https://github.com/shinolab/autd3-server/releases)にてインストーラを配布しているので, これをダウンロードし, 指示に従ってインストールする.
 
 `AUTD Server`を実行すると, 以下のような画面になるので, `Simulator`タブを開き, `Run`ボタンを押すとシミュレータが起動する.
 

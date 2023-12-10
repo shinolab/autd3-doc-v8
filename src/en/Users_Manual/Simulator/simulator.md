@@ -5,7 +5,7 @@ AUTD Simulator is a simulator for AUTD3 supporting Windows, Linux, and macOS.
 ## AUTD Server
 
 The simulator is included in `AUTD Server`.
-Download the installer from [GitHub Releases](https://github.com/shinolab/autd3/releases).
+Download the installer from [GitHub Releases](https://github.com/shinolab/autd3-server/releases).
 
 When you run `AUTD Server`, the following screen will appear, so open the "Simulator" tab and click "Run" button.
 

@@ -35,7 +35,7 @@ After installation, restart the PC and run `C:/TwinCAT/3.1/System/win8settick.ba
 ## AUTD Server
 
 To use TwinCAT Link, install `AUTD Server` first.
-The AUTD server's installer is distributed on [GitHub Releases](https://github.com/shinolab/autd3/releases).
+The AUTD server's installer is distributed on [GitHub Releases](https://github.com/shinolab/autd3-server/releases).
 
 When you run `AUTD Server`, the following screen will appear, so open the "TwinCAT" tab.
 

@@ -68,7 +68,7 @@ For example, suppose the server is "172.16.99.104", and the client is "172.16.99
 ## AUTD Server
 
 To use `RemoteSOEM`, install `AUTD Server` first.
-The AUTD server's installer is distributed on [GitHub Releases](https://github.com/shinolab/autd3/releases).
+The AUTD server's installer is distributed on [GitHub Releases](https://github.com/shinolab/autd3-server/releases).
 
 When you run `AUTD Server`, the following screen will appear, so open the "SOEM" tab.
 

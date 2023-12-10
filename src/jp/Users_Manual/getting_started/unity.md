@@ -14,9 +14,6 @@ Unity Package Manager経由でインストールする.
     - Scope(s): com.shinolab
 1. 「メニューバー」→「Window」→「Package Manager」を開く
 1. 左上の「Packages」ドロップダウンメニューから, 「My Registries」を選択する 
-1. OSに応じて以下のパッケージをインストールする
-    - Windows: `autd3-unity`
-    - macOS: `autd3-unity-mac`
-    - Linux: `autd3-unity-linux`
+1. `autd3-unity`パッケージをインストールする
 
 Unity版はサンプルプログラムが付属しているので, そちらを参照されたい.
