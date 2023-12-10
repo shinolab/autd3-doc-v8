@@ -56,7 +56,6 @@ jobs:
           echo a | python3 main.py || true
 
   check-jp:
-    needs: check
     name: doc-check-jp
     runs-on: ubuntu-latest
     steps:
@@ -72,7 +71,6 @@ jobs:
           python3 build.py test jp
 
   check-en:
-    needs: check
     name: doc-check-en
     runs-on: ubuntu-latest
     steps:
