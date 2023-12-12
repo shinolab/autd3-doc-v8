@@ -10,7 +10,8 @@ autd.send(g);
 
 autd3::link::PlotConfig config;
 config.fname = "xy.png";
-autd.link<autd3::link::Visualizer>().plot_field(
-    config, autd3::link::PlotRange(center.x() - 20, center.x() + 20,
-                                   center.y() - 30, center.y() + 30, center.z(),
-                                   center.z(), 1) autd.geometry());
+autd.link().plot_field(config,
+                       autd3::link::PlotRange(center.x() - 20, center.x() + 20,
+                                              center.y() - 30, center.y() + 30,
+                                              center.z(), center.z(), 1)
+                           autd.geometry());

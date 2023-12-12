@@ -9,4 +9,4 @@ autd.send(m);
 
 autd3::link::PlotConfig config;
 config.fname = "mod.png";
-autd.link<autd3::link::Visualizer>().plot_modulation(config);
+autd.link().plot_modulation(config);

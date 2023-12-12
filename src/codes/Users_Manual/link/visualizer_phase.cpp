@@ -10,4 +10,4 @@ autd.send(g);
 
 autd3::link::PlotConfig config;
 config.fname = "phase.png";
-autd.link<autd3::link::Visualizer>().plot_phase(config, autd.geometry());
+autd.link().plot_phase(config, autd.geometry());
