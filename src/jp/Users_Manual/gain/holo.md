@@ -15,7 +15,7 @@ SDKには以下の`Backend`が用意されている
 
 * `NalgebraBackend` - [Nalgebra](hthttps://nalgebra.org/)を使用
 * `CUDABackend` - CUDAを使用, GPUで実行
-* `ArrayFireBackend` - [ArrayFire](https://arrayfire.com/)を使用
+* `ArrayFireBackend` - [ArrayFire](https://arrayfire.com/)を使用 (Rust版のみ使用可能)
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/holo_0.rs}}

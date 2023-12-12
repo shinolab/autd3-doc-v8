@@ -9,6 +9,7 @@ edition = "2021"
 autd3 = { version = "19.0.0" }
 autd3-gain-holo = { version = "19.0.0" }
 autd3-link-simulator = { version = "19.0.0" }
+autd3-link-visualizer = { version = "19.0.0", features = ["python", "gpu"] }
 autd3-link-soem = { version = "19.0.0", features = ["remote"] }
 autd3-link-twincat = { version = "19.0.0", features = ["remote"] }
 autd3-modulation-audio-file = "19.0.0"

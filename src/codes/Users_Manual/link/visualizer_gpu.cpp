@@ -1,0 +1,1 @@
+autd3::link::Visualizer::builder().with_gpu(-1)

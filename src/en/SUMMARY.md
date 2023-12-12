@@ -15,6 +15,7 @@
     - [TwinCAT](./Users_Manual/link/twincat.md)
     - [SOEM](./Users_Manual/link/soem.md)
     - [Simulator](./Users_Manual/link/simulator.md)
+    - [Visualizer](./Users_Manual/link/visualize.md)
   - [Gain](./Users_Manual/gain.md)
     - [Null](./Users_Manual/gain/null.md)
     - [Focus](./Users_Manual/gain/focus.md)
