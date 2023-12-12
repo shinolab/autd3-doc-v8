@@ -88,7 +88,7 @@
 `with_gpu`を使用すると, GPUを使用して音場の計算を行うことができるようになる.
 `with_gpu`の引数にはGPUのIDを指定する. `-1`を指定すると, 適当なGPUが自動的に選択される.
 
-```rust,edition2021
+```rust,edition2021,ignore
 {{#include ../../../codes/Users_Manual/link/visualizer_gpu.rs}}
 ```
 
@@ -114,7 +114,7 @@
 `PythonBackend`を指定することで, Pythonのmatplotlibを使用して描画することができる.
 この機能を使用する場合は, Pythonとmatplotlib, 及び, numpyをインストールしておく必要がある.
 
-```rust,edition2021
+```rust,edition2021,ignore
 {{#include ../../../codes/Users_Manual/link/visualizer_matplotlib.rs}}
 ```
 

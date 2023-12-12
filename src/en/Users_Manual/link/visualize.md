@@ -102,7 +102,7 @@ You can use GPU to calculate sound field.
 The argument of `with_gpu` is GPU id. If you specify `-1`, the most suitable GPU is selected automatically.
 
 
-```rust,edition2021
+```rust,edition2021,ignore
 {{#include ../../../codes/Users_Manual/link/visualizer_gpu.rs}}
 ```
 
@@ -128,7 +128,7 @@ The argument of `with_gpu` is GPU id. If you specify `-1`, the most suitable GPU
 
 You can plot using Python and matplotlib with `PythonBackend`.
 
-```rust,edition2021
+```rust,edition2021,ignore
 {{#include ../../../codes/Users_Manual/link/visualizer_matplotlib.rs}}
 ```
 
