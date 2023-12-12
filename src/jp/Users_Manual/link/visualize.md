@@ -35,6 +35,22 @@
   <img src="../../fig/Users_Manual/mod.png"/>
 </figure>
 
+```rust,edition2021
+{{#include ../../../codes/Users_Manual/link/visualizer_mod.rs}}
+```
+
+```cpp
+{{#include ../../../codes/Users_Manual/link/visualizer_mod.cpp}}
+```
+
+```cs
+{{#include ../../../codes/Users_Manual/link/visualizer_mod.cs}}
+```
+
+```python
+{{#include ../../../codes/Users_Manual/link/visualizer_mod.py}}
+```
+
 
 ## 音場の可視化
 
