@@ -66,7 +66,6 @@ You can get the following information about the FPGA.
 Send the data to the device.
 
 You can send a single or two data at the same time.
-However, `Stop` is an exception and can only be sent alone.
 
 ### Timeout
 
@@ -95,12 +94,6 @@ If it is confirmed that the sent data has been processed by the device, the `sen
 If the timeout time is 0, the `send` function does not check whether the sent data has been processed by the device or not.
 
 If you want to data to be sent surely, it is recommended to set this to an appropriate value.
-
-### Stop
-
-You can stop the output by sending `Stop` data.
-
-Note that the `Stop` data resets the settings of Silencer.
 
 ### Clear
 
