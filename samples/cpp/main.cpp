@@ -9,26 +9,25 @@ void on_lost(const char* msg) {
   exit(-1);
 }
 
-int main() try {
+coro::task<int> main_() {
   // create and open controller
   auto autd =
-      autd3::ControllerBuilder()
+      co_await autd3::ControllerBuilder()
           // The  argument is the position.
           // The position is the origin of the device in the global coordinate
           // system you set.
           .add_device(autd3::AUTD3(autd3::Vector3::Zero()))
-          .open_with_async(autd3::link::SOEM::builder().with_on_lost(&on_lost))
-          .get();
+          .open_with_async(autd3::link::SOEM::builder().with_on_lost(&on_lost));
 
   // check firmware version
-  const auto firm_infos = autd.firmware_infos_async().get();
+  const auto firm_infos = co_await autd.firmware_infos_async();
   std::copy(firm_infos.begin(), firm_infos.end(),
             std::ostream_iterator<autd3::FirmwareInfo>(std::cout, "\n"));
 
   // Silencer is used to quiet down the transducers' noise by passing the
   // phase/amplitude parameters through a low-pass filter.
   autd3::Silencer silencer;
-  autd.send_async(silencer).get();
+  co_await autd.send_async(silencer);
 
   // focus is 150.0 mm above array center
   const autd3::Vector3 focus =
@@ -39,15 +38,17 @@ int main() try {
   autd3::modulation::Sine m(150);
 
   // send data
-  autd.send_async(m, g).get();
+  co_await autd.send_async(m, g);
 
   std::cout << "press enter to finish..." << std::endl;
   std::cin.ignore();
 
   // close controller
-  (void)autd.close_async().get();
+  co_await autd.close_async();
 
-  return 0;
-} catch (std::exception& ex) {
+  co_return 0;
+}
+
+int main() try { return sync_wait(main_()); } catch (std::exception& ex) {
   std::cerr << ex.what() << std::endl;
 }

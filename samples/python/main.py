@@ -4,7 +4,7 @@ import os
 from typing import NoReturn
 
 import numpy as np
-from pyautd3 import AUTD3, Controller, Silencer
+from pyautd3 import AUTD3, Controller, ConfigureSilencer
 from pyautd3.gain import Focus
 from pyautd3.link.soem import SOEM, OnErrFunc
 from pyautd3.modulation import Sine
@@ -33,7 +33,7 @@ async def main() -> None:
         firm_info_list = await autd.firmware_info_list_async()
         print("\n".join([f"[{i}]: {firm}" for i, firm in enumerate(firm_info_list)]))
 
-        await autd.send_async(Silencer())
+        await autd.send_async(ConfigureSilencer.default())
 
         g = Focus(autd.geometry.center + np.array([0.0, 0.0, 150.0]))
         m = Sine(150)

@@ -45,8 +45,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // 静音化処理を有効化
     // なお, デフォルトで有効にされているので, 実際には必要ない
-    // 無効にしたい場合はSilencer::disable()を送信する
-    autd.send(Silencer::default()).await?;
+    // 無効にしたい場合はConfigureSilencer::disable()を送信する
+    autd.send(ConfigureSilencer::default()).await?;
 
     // デバイスの中心から直上150mmに焦点
     let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * MILLIMETER);

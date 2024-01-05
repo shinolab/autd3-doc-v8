@@ -18,7 +18,7 @@ var firmList = await autd.FirmwareInfoListAsync();
 foreach (var firm in firmList)
     Console.WriteLine(firm);
 
-await autd.SendAsync(new Silencer());
+await autd.SendAsync(ConfigureSilencer.Default());
 
 var g = new Focus(autd.Geometry.Center + new Vector3d(0, 0, 150));
 var m = new Sine(150);

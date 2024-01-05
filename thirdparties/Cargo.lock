@@ -100,17 +100,17 @@ dependencies = [
 
 [[package]]
 name = "autd3"
-version = "19.1.0"
+version = "20.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5722a267a3a7fecf5170e8c578ed0d6d64ff2b12073fd2ff5ed0e71d21ed44b1"
+checksum = "c56314e794224859888f612a900766cdd428668e1322cfe19ee1734d2a71384a"
 dependencies = [
- "async-trait",
- "autd3-derive",
- "autd3-driver",
+ "autd3-derive 20.0.2",
+ "autd3-driver 20.0.2",
  "autd3-firmware-emulator",
  "bitvec",
  "num",
  "thiserror",
+ "tokio",
 ]
 
 [[package]]
@@ -118,6 +118,16 @@ name = "autd3-derive"
 version = "19.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ad3998c332614e69c35dc66da0654df8585a52e939c2c4f6fa8a69fbfccd173"
+dependencies = [
+ "quote",
+ "syn 2.0.39",
+]
+
+[[package]]
+name = "autd3-derive"
+version = "20.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "69ccc611f1388ef4930fedcb47ba1cde064cc13724a910e55e20efe561683696"
 dependencies = [
  "quote",
  "syn 2.0.39",
@@ -139,24 +149,39 @@ dependencies = [
 ]
 
 [[package]]
-name = "autd3-firmware-emulator"
-version = "19.1.0"
+name = "autd3-driver"
+version = "20.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22bc34e64b9dbc8d0f8a902d8c6848b80984e3fd5a952a4b7e493a473bb48506"
+checksum = "3353dfbc885f1c1e13a4c9c3d70ef6f4602a51cd37bed6b27a6e2f07ae1821df"
 dependencies = [
- "autd3-driver",
+ "bitflags 2.4.1",
+ "bitvec",
+ "libc",
+ "nalgebra",
+ "thiserror",
+ "windows",
+]
+
+[[package]]
+name = "autd3-firmware-emulator"
+version = "20.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "23890acb6359d345aa22076711973220106c5cf78431b5bbfc03c5be23c614e4"
+dependencies = [
+ "autd3-driver 20.0.2",
+ "chrono",
  "num-integer",
  "thiserror",
 ]
 
 [[package]]
 name = "autd3-gain-holo"
-version = "19.1.0"
+version = "20.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d459dc464ec1a1dd7bc25f6e9266cffd54032e8024638e3c250bc1f4d460f732"
+checksum = "af84aa0b4889d18e75f84dfb1c41480ce049b453235fe892003b44732708fb2e"
 dependencies = [
- "autd3-derive",
- "autd3-driver",
+ "autd3-derive 20.0.2",
+ "autd3-driver 20.0.2",
  "nalgebra",
  "rand",
  "thiserror",
@@ -164,13 +189,12 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-simulator"
-version = "19.1.0"
+version = "20.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6289d933ebeb02f3c89284c126ccd434a20e2e84abc9a038512d2955ae60a834"
+checksum = "da1d3dbc194bf1e9e65bc2d0d9359b3972da74ec4645eaab44d47a1d36faebaa"
 dependencies = [
- "async-trait",
- "autd3-derive",
- "autd3-driver",
+ "autd3-derive 20.0.2",
+ "autd3-driver 20.0.2",
  "autd3-protobuf",
  "thiserror",
  "tonic",
@@ -178,13 +202,12 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-soem"
-version = "19.1.0"
+version = "20.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1fa219df3c54b0b1606152d32f68299ab8070f22afd6b1a9f791a94ad92a048a"
+checksum = "5e66f267505157e3143f04c4baf692f9a776c648a02eb0dcc892a11a882b4a8d"
 dependencies = [
- "async-trait",
- "autd3-derive",
- "autd3-driver",
+ "autd3-derive 20.0.2",
+ "autd3-driver 20.0.2",
  "autd3-protobuf",
  "cc",
  "crossbeam-channel",
@@ -197,13 +220,12 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-twincat"
-version = "19.1.0"
+version = "20.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "364da5335d0de4239e14b2d97bde1f66f54742deb68dafa326bf421874958856"
+checksum = "4e221d2421ae16e22fde27b4a6765576780717a666ad09fe1a2fd328cdac8b1c"
 dependencies = [
- "async-trait",
- "autd3-derive",
- "autd3-driver",
+ "autd3-derive 20.0.2",
+ "autd3-driver 20.0.2",
  "cc",
  "itertools 0.12.0",
  "libloading",
@@ -212,15 +234,14 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-visualizer"
-version = "19.0.0"
+version = "20.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12c605ec29e23d36438eb1dea986d69048382a9c393f6bde50ac411cfb9dbbab"
+checksum = "1dd2b0eafa994ee2f6fc0e5bc049126d3a255ea72186b8ec30df2f7c5ec4a286"
 dependencies = [
- "async-trait",
- "autd3-derive",
- "autd3-driver",
+ "autd3-derive 20.0.2",
+ "autd3-driver 20.0.2",
  "autd3-firmware-emulator",
- "itertools 0.11.0",
+ "itertools 0.12.0",
  "num-complex",
  "plotters",
  "plotters-bitmap",
@@ -234,8 +255,8 @@ version = "19.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6a11d8a6ea1a31dc9ee197db6a91002c7398b3e456c5a0ff0285b5920ce9553e"
 dependencies = [
- "autd3-derive",
- "autd3-driver",
+ "autd3-derive 19.1.0",
+ "autd3-driver 19.1.0",
  "hound",
  "thiserror",
  "wav_io",
@@ -243,11 +264,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-protobuf"
-version = "19.1.0"
+version = "20.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f2a47882fb67aca44f8d171ae1fdc6ff85be603d920e054d9cf791083140c2a"
+checksum = "d80d57678e139b01574359acd0bf904d0a3d0d7be4c553a15c2fbadfc41f5b4e"
 dependencies = [
- "autd3-driver",
+ "autd3-driver 20.0.2",
  "h2 0.4.0",
  "prost",
  "thiserror",

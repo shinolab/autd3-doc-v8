@@ -1,3 +1,3 @@
 using AUTD3Sharp.STM;
 
-var stm = new FocusSTM(1).WithStartIdx(null);
+var stm = FocusSTM.FromFreq(1).WithStartIdx(null);

@@ -1,5 +1,4 @@
-from pyautd3 import Silencer
+from pyautd3 import ConfigureSilencer
 
-config = Silencer()
-config = Silencer(step_intensity, step_phase)
-config = Silencer.disable()
+config = ConfigureSilencer.default()
+config = ConfigureSilencer.disable()
