@@ -26,8 +26,7 @@ coro::task<int> main_() {
 
   // Silencer is used to quiet down the transducers' noise by passing the
   // phase/amplitude parameters through a low-pass filter.
-  autd3::Silencer silencer;
-  co_await autd.send_async(silencer);
+  co_await autd.send_async(autd3::ConfigureSilencer::default_());
 
   // focus is 150.0 mm above array center
   const autd3::Vector3 focus =

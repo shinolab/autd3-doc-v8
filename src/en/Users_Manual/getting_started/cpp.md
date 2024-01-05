@@ -34,6 +34,8 @@ This is the source code for generating a focus with $\SI{150}{Hz}$ AM modulation
 {{#include ../../../../samples/cpp/main.cpp}}
 ```
 
+> NOTE: On macOS, functions with `_async` are not supported, so you need to use the synchronous version of the functions that do not have `_async`.
+
 Then, build with CMake.
 
 ```shell
