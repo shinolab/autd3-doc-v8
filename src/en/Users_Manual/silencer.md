@@ -17,11 +17,7 @@ As a rough outline,
 
 ## Silencer Config
 
-To configure the silencer, send `Silencer` to the controller.
-
-You can set `step` to `Silencer`.
-Refer to the followwing for details.
-Roughly, the smaller the `step`, the quieter it becomes.
+To configure the silencer, send `ConfigureSilencer` to the controller.
 
 The silencer is enabled by default.
 To disable the silencer, send `Silencer::disable`.
@@ -42,8 +38,16 @@ To disable the silencer, send `Silencer::disable`.
 {{#include ../../codes/Users_Manual/silencer_0.py}}
 ```
 
+To configure the silencer more finely, you need to choose from the following two modes.
 
-## Phase change by Silencer
+- [Fixed update rate mode](#fixed-update-rate-mode)
+- [Fixed completion steps mode](#fixed-completion-steps-mode)
+
+The default is fixed completion steps mode.
+
+### Fixed update rate mode
+
+#### Phase change by Silencer in Fixed update rate mode
 
 Silencer changes the phase $P$ linearly and stepwise to mute the output.
 In other words, it is almost equivalent to passing the phase $P$ time series data through a (simple) moving average filter.
@@ -94,15 +98,92 @@ Examples of phase changes at this time are shown below.
 <figcaption>Comparison against moving average filter</figcaption>
 </figure>
 
-## Duty change by Silencer
+## Amplitude change by Silencer in Fixed update rate mode
 
 Amplitude modulation of ultrasound produces audible sound.
-So, AM noise can be reduced by applying a filter to the duty ratio $D$.
+So, AM noise can be reduced by applying a filter to the amplitude parameter $D$.
 
-Unlike the phase, the duty ratio $D$ is not periodic with respect to the period $T$.
-Therefore, the duty ratio $D$ is updated as follows for the current $D$ and the target value $D_r$.
+Unlike the phase, the amplitude parameter $D$ is not periodic with respect to the period $T$.
+Therefore, the amplitude parameter $D$ is updated as follows for the current $D$ and the target value $D_r$.
 $$
     D \leftarrow D + \mathrm{sign}(D_r - D) \min (|D_r - D|, \Delta),
 $$
+
+#### Configure fixed update rate mode
+
+To configure the fixed update rate mode, do as follows.
+The arguments correspond to $\Delta$ described above.
+Note that internally, Silencer is applied to,
+- for phase, phase parameter multiplied by $256$
+- for amplitude, amplitude parameter multiplied by `Modulation` data
+
+```rust,edition2021
+{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.rs}}
+```
+
+```cpp
+{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.cpp}}
+```
+
+```cs
+{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.cs}}
+```
+
+```python
+{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.py}}
+```
+
+### Fixed completion steps mode
+
+In fixed completion steps mode, change of phase/amplitude is completed in a fixed duration.
+
+#### Configure fixed completion steps mode
+
+To configure the fixed completion steps mode, do as follows.
+The arguments correspond to the number of steps until the completion of the amplitude/phase change, respectively, where one step correspond to $\SI{25}{us}$.
+
+```rust,edition2021
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.rs}}
+```
+
+```cpp
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.cpp}}
+```
+
+```cs
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.cs}}
+```
+
+```python
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.py}}
+```
+
+The default values are $40$ steps for phase change and $10$ steps for amplitude change.
+Note that disabling Silencer is equivalent to phase/amplitude change in $1$ step.
+
+In this mode, an error is returned if the phase/amplitude change of `Modulation`, `FocusSTM`, or `GainSTM` cannot be completed in the time specified by Silencer.
+That is, the following conditions must be satisfied.
+- Silencer's amplitude change completion steps $\times \SI{25}{us} \le$ sampling period of `Modulation` 
+- Silencer's amplitude change completion steps $\times \SI{25}{us} \le$ sampling period of `FocusSTM`/`GainSTM`
+- Silencer's phase change completion steps $\times \SI{25}{us} \le$ sampling period of `FocusSTM`/`GainSTM`
+
+If you set `strict_mode` to `false`, you can ignore these restrictions, but it's not recommended.
+
+```rust,edition2021
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.rs}}
+```
+
+```cpp
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.cpp}}
+```
+
+```cs
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.cs}}
+```
+
+```python
+{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.py}}
+```
+
 
 [^suzuki2020]: Suzuki, Shun, et al. "Reducing amplitude fluctuation by gradual phase shift in midair ultrasound haptics." IEEE transactions on haptics 13.1 (2020): 87-93.
