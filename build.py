@@ -67,6 +67,15 @@ def doc_build(args):
             subprocess.run(command).check_returncode()
 
 
+def doc_serve(args):
+    with working_dir("."):
+        command = ["mdbook", "serve", "--dest-dir", f"book/{args.target}"]
+        if args.open:
+            command.append("--open")
+        with set_env("MDBOOK_BOOK__src", f"src/{args.target}"):
+            subprocess.run(command).check_returncode()
+
+
 def doc_test(args):
     with working_dir("thirdparties"):
         subprocess.run(["cargo", "clean"]).check_returncode()
@@ -177,6 +186,14 @@ if __name__ == "__main__":
             "--open", help="open browser after build", action="store_true"
         )
         parser_doc_build.set_defaults(handler=doc_build)
+
+        # serve
+        parser_doc_serve = subparsers.add_parser("serve", help="see `serve -h`")
+        parser_doc_serve.add_argument("target", help="build target [jp|en]")
+        parser_doc_serve.add_argument(
+            "--open", help="open browser after build", action="store_true"
+        )
+        parser_doc_serve.set_defaults(handler=doc_serve)
 
         # doc test
         parser_doc_test = subparsers.add_parser("test", help="see `test -h`")

@@ -1,7 +1,14 @@
 \SI:{#1\,\mathrm{#2}}
 \rme:{\mathrm{e}}
 \im:{\mathrm{i}}
+\bk:{\boldsymbol{k}}
 \br:{\boldsymbol{r}}
 \bp:{\boldsymbol{p}}
+\bv:{\boldsymbol{v}}
+\bS:{\boldsymbol{S}}
 \ufreq:{40\,\mathrm{kHz}}
 \clkf:{20.48\,\mathrm{MHz}}
+\sinc:{\mathrm{sinc}}
+\diff:{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\pdiff:{\frac{\mathrm{\partial}#1}{\mathrm{\partial}#2}}
+\pdiffs:{\frac{\mathrm{\partial}^2#1}{\mathrm{\partial}#2^2}}
