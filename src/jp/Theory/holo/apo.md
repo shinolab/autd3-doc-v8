@@ -26,7 +26,7 @@ $$\begin{aligned}
     R_i    & = G\hermite D_i G
 \end{aligned}$$
 
-なお, 論文 [@hasegawa2020volumetric]では初期値は, 
+なお, 論文 [^hasegawa2020volumetric]では初期値は, 
 $$\begin{aligned}
     \bq_0 = (G\hermite G + \lambda \1)^{-1}G\hermite \bp
 \end{aligned}$$ としている.
