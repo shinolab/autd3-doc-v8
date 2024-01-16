@@ -43,10 +43,8 @@ In the Slice tab, you can change the size, position, and rotation of the slice.
 The rotation is specified in terms of XYZ Euler angles.
 The "xy", "yz", and "zx" buttons are used to rotate the slice to a position parallel to each plane.
 
-You can select either "Acoustic" mode, which displays the sound pressure, or "Radiation" mode, which displays the square value of the sound pressure.
-
-In the "Color settings" section, you can change the coloring palette, color scale, and alpha value of the slice itself.
-If you use a large number of devices, colors may become saturated, in which case you should increase the value of color scale.
+In the "Color settings" section, you can change the coloring palette, Max pressure, and alpha value of the slice itself.
+If you use a large number of devices, colors may become saturated, in which case you should increase the value of "Max pressure".
 
 ### Camera tab
 
