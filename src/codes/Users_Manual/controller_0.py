@@ -1,5 +1,5 @@
-from pyautd3 import ConfigureReadsFPGAInfo
+from pyautd3 import ConfigureReadsFPGAState
 
-autd.send(ConfigureReadsFPGAInfo(lambda _: True))
+autd.send(ConfigureReadsFPGAState(lambda _: True))
 
-info = autd.fpga_info
+info = autd.fpga_state

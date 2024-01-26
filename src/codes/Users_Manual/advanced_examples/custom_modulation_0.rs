@@ -1,10 +1,8 @@
 # extern crate autd3;
 # extern crate tokio;
 # extern crate autd3_driver;
-use autd3::{
-    derive::Modulation,
-};
-use autd3_driver::derive::prelude::*;
+use autd3::prelude::*;
+use autd3_driver::derive::*;
 
 #[derive(Modulation)]
 pub struct Burst {

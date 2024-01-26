@@ -1,3 +1,3 @@
-autd.Send(new ConfigureReadsFPGAInfo(_ => true));
+autd.Send(new ConfigureReadsFPGAState(_ => true));
 
-var info = autd.FPGAInfo;
+var info = autd.FPGAState;

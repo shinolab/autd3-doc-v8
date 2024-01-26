@@ -57,6 +57,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "async-channel"
+version = "2.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1ca33f4bc4ed1babef42cad36cc1f51fa88be00420404e5b1e80ab1b18f7678c"
+dependencies = [
+ "concurrent-queue",
+ "event-listener",
+ "event-listener-strategy",
+ "futures-core",
+ "pin-project-lite",
+]
+
+[[package]]
 name = "async-stream"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -100,12 +113,11 @@ dependencies = [
 
 [[package]]
 name = "autd3"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac397552a7c1f9e35ddde2166d054968a1ef5da2da2ad5192142192831972445"
+checksum = "eaa7d160c0ff53058b4bc42032fcb6a5eaf9d80cb6b198de47a77f4599fa4afd"
 dependencies = [
- "autd3-derive 20.0.3",
- "autd3-driver 20.0.3",
+ "autd3-driver 21.0.1",
  "autd3-firmware-emulator",
  "bitvec",
  "num",
@@ -125,9 +137,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-derive"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "62b649b8c574e89d2acc94de48fea4337365a141500ddfc76435dcef813873f1"
+checksum = "b6b08faf0159dac75f58cc61971de203f0696bde6890c2607b02f897fcf2dac8"
 dependencies = [
  "quote",
  "syn 2.0.39",
@@ -150,25 +162,28 @@ dependencies = [
 
 [[package]]
 name = "autd3-driver"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8b82a1188b6f667333045499f737f8b186028ada7385586bffa623e28d76bb7c"
+checksum = "eb49991e344fe76316415d9d9b2c57f4cd420bb13b8dfe770652ae94a18bd0b9"
 dependencies = [
+ "autd3-derive 21.0.1",
  "bitflags 2.4.1",
  "bitvec",
  "libc",
  "nalgebra",
+ "num-complex",
  "thiserror",
+ "tokio",
  "windows",
 ]
 
 [[package]]
 name = "autd3-firmware-emulator"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "af1ef168727b436e6e975efb0ccedb6f8a3758ed13184525c92d94decd9c8501"
+checksum = "883e0fa6d4a2f7b8d65d2b5123aab42e4c793183c5152ead4362ca8202d40274"
 dependencies = [
- "autd3-driver 20.0.3",
+ "autd3-driver 21.0.1",
  "chrono",
  "num-integer",
  "thiserror",
@@ -176,12 +191,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-gain-holo"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34561ae036aeab6c11144897d5e190c918757cd136eca4777ca72a1856b64747"
+checksum = "9dbee10227bbce2630b71beaaa3eb63f9cf18b08276b44e8d5173a7c4399bb79"
 dependencies = [
- "autd3-derive 20.0.3",
- "autd3-driver 20.0.3",
+ "autd3-driver 21.0.1",
  "nalgebra",
  "rand",
  "thiserror",
@@ -189,12 +203,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-simulator"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "41d47b389d8ba030f0449912faa5aa254e7a39e437ac773c5292df6c055b1fd4"
+checksum = "1dae789a532cc2452a2d4aecccb9152330092ec9af850d46eef6d2d823b16dd3"
 dependencies = [
- "autd3-derive 20.0.3",
- "autd3-driver 20.0.3",
+ "autd3-driver 21.0.1",
  "autd3-protobuf",
  "thiserror",
  "tonic",
@@ -202,30 +215,29 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-soem"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5dfbd8e9f7ed841f110b5740b6e49df09fd5f571e2840d840eb6436aecd1e79f"
+checksum = "bdf9e2b8abdc51e985c85c78539c1e758a37359102a8f861e1aaaf16587c323a"
 dependencies = [
- "autd3-derive 20.0.3",
- "autd3-driver 20.0.3",
+ "async-channel",
+ "autd3-driver 21.0.1",
  "autd3-protobuf",
  "cc",
- "crossbeam-channel",
  "glob",
  "thiserror",
  "time",
+ "tokio",
  "tonic",
  "windows",
 ]
 
 [[package]]
 name = "autd3-link-twincat"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "738b229a4e97da7ef2f4109ea2f8d3a1735c26fc7c7cca05562e37c5001cebc2"
+checksum = "57ed01ddaf8106ff1fa93f7c5c27283132f3966542229fbc0392ea1ee6d70cbc"
 dependencies = [
- "autd3-derive 20.0.3",
- "autd3-driver 20.0.3",
+ "autd3-driver 21.0.1",
  "cc",
  "itertools 0.12.0",
  "libloading",
@@ -234,12 +246,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-visualizer"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8250c94c91244c4eef9eabe9c5a0547342ae13d2067a476848fa394b75f7e96"
+checksum = "9e3dbd138dd0ffea670195ef7556b00351f4be10fec63ac77c07135dce3cf95e"
 dependencies = [
- "autd3-derive 20.0.3",
- "autd3-driver 20.0.3",
+ "autd3-driver 21.0.1",
  "autd3-firmware-emulator",
  "itertools 0.12.0",
  "num-complex",
@@ -264,11 +275,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-protobuf"
-version = "20.0.3"
+version = "21.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74165cef245b3456194896242cdc7f9edfc9cea116eac0366392eefc45a28ab5"
+checksum = "f046d61d130bd7b049e40a006a83f21c459560840ec16adb367ad45e9668d58c"
 dependencies = [
- "autd3-driver 20.0.3",
+ "autd3-driver 21.0.1",
  "h2 0.4.0",
  "prost",
  "thiserror",
@@ -442,6 +453,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b"
 
 [[package]]
+name = "concurrent-queue"
+version = "2.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d16048cd947b08fa32c24458a22f5dc5e835264f689f4f5653210c69fd107363"
+dependencies = [
+ "crossbeam-utils",
+]
+
+[[package]]
 name = "const-cstr"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -513,16 +533,6 @@ name = "critical-section"
 version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7059fff8937831a9ae6f0fe4d658ffabf58f2ca96aa9dec1c889f936f705f216"
-
-[[package]]
-name = "crossbeam-channel"
-version = "0.5.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a33c2bf77f2df06183c3aa30d1e96c0695a313d4f9c453cc3762a6db39f99200"
-dependencies = [
- "cfg-if",
- "crossbeam-utils",
-]
 
 [[package]]
 name = "crossbeam-utils"
@@ -635,6 +645,27 @@ checksum = "a258e46cdc063eb8519c00b9fc845fc47bcfca4130e2f08e88665ceda8474245"
 dependencies = [
  "libc",
  "windows-sys 0.52.0",
+]
+
+[[package]]
+name = "event-listener"
+version = "4.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67b215c49b2b248c855fb73579eb1f4f26c38ffdc12973e20e07b91d78d5646e"
+dependencies = [
+ "concurrent-queue",
+ "parking",
+ "pin-project-lite",
+]
+
+[[package]]
+name = "event-listener-strategy"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "958e4d70b6d5e81971bebec42271ec641e7ff4e170a6fa605f2b8a8b65cb97d3"
+dependencies = [
+ "event-listener",
+ "pin-project-lite",
 ]
 
 [[package]]
@@ -1407,6 +1438,12 @@ name = "once_cell"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3fdb12b2476b595f9358c5161aa467c2438859caa136dec86c26fdd2efe17b92"
+
+[[package]]
+name = "parking"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb813b8af86854136c6922af0598d719255ecb2179515e6e7730d468f05c9cae"
 
 [[package]]
 name = "parking_lot"

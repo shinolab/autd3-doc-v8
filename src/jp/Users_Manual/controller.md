@@ -38,10 +38,10 @@ Autoモードの場合, `ConfigureForceFan`でファンを強制的に起動で�
 {{#include ../../codes/Users_Manual/controller_fan.py}}
 ```
 
-## fpga_info
+## fpga_state
 
 FPGAの状態を取得する.
-これを使用する前に, `ConfigureReadsFPGAInfo`を送信しておく必要がある.
+これを使用する前に, `ConfigureReadsFPGAState`を送信しておく必要がある.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/controller_0.rs}}

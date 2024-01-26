@@ -37,10 +37,10 @@ You can force the fan to start in Auto mode by `ConfigureForceFan`.
 {{#include ../../codes/Users_Manual/controller_fan.py}}
 ```
 
-## fpga_info
+## fpga_state
 
 Get the FPGA status.
-Before using this, you need to configure reads FPGA info flag by `ConfigureReadsFPGAInfo`.
+Before using this, you need to configure reads FPGA info flag by `ConfigureReadsFPGAState`.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/controller_0.rs}}

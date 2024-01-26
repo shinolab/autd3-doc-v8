@@ -64,3 +64,4 @@
 | 2023/12/14 | Version 19.1.0 Initial release |
 | 2024/01/05 | Version 20.0.0 Initial release |
 | 2024/01/11 | Version 20.0.3 Initial release |
+| 2024/01/26 | Version 21.0.1 Initial release |
