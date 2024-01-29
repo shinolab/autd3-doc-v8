@@ -1,33 +1,31 @@
 import asyncio
-import ctypes
 import os
-from typing import NoReturn
 
 import numpy as np
-from pyautd3 import AUTD3, Controller, ConfigureSilencer
+from pyautd3 import AUTD3, ConfigureSilencer, Controller
 from pyautd3.gain import Focus
-from pyautd3.link.soem import SOEM, OnErrFunc
+from pyautd3.link.soem import SOEM, Status
 from pyautd3.modulation import Sine
 
 
-def on_lost(msg: ctypes.c_char_p) -> NoReturn:
-    print(msg.decode("utf-8"), end="")
-    os._exit(-1)
-
-
-def on_err(msg: ctypes.c_char_p) -> None:
-    print(msg.decode("utf-8"), end="")
+def err_handler(slave: int, status: Status, msg: str) -> None:
+    match status:
+        case Status.Error:
+            print(f"Error [{slave}]: {msg}")
+        case Status.Lost:
+            print(f"Lost [{slave}]: {msg}")
+            # You can also wait for the link to recover, without exiting the process
+            os._exit(-1)
+        case Status.StateChanged:
+            print(f"StateChanged  [{slave}]: {msg}")
 
 
 async def main() -> None:
-    on_lost_func = OnErrFunc(on_lost)
-    on_err_func = OnErrFunc(on_err)
-
     with await (
         Controller.builder()
         .add_device(AUTD3([0.0, 0.0, 0.0]))
         .open_with_async(
-            SOEM.builder().with_on_lost(on_lost_func).with_on_err(on_err_func)
+            SOEM.builder().with_err_handler(err_handler),
         )
     ) as autd:
         firm_info_list = await autd.firmware_info_list_async()

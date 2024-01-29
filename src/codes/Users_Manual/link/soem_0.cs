@@ -1,22 +1,28 @@
 using AUTD3Sharp;
 using AUTD3Sharp.Link;
-
-var onLost = new SOEM.OnErrCallbackDelegate(msg =>
-{
-    Console.WriteLine($"Unrecoverable error occurred: {msg}");
-    Environment.Exit(-1);
-});
-var onErr = new SOEM.OnErrCallbackDelegate(msg =>
-{
-    Console.WriteLine($"Err: {msg}");
-});
+using AUTD3Sharp.NativeMethods;
 
 SOEM.Builder()
     .WithIfname("")
     .WithBufSize(32)
-    .WithOnErr(onErr)
+    .WithErrHandler((slave, status, msg) =>
+    {
+        switch (status)
+        {
+            case Status.Error:
+                Console.Error.WriteLine($"Error [{slave}]: {msg}");
+                break;
+            case Status.Lost:
+                Console.Error.WriteLine($"Lost [{slave}]: {msg}");
+                // You can also wait for the link to recover, without exiting the process
+                Environment.Exit(-1);
+                break;
+            case Status.StateChanged:
+                Console.Error.WriteLine($"StateChanged [{slave}]: {msg}");
+                break;
+        };
+    })
     .WithStateCheckInterval(TimeSpan.FromMilliseconds(100))
-    .WithOnLost(onLost)
     .WithSync0Cycle(2)
     .WithSendCycle(2)
     .WithTimerStrategy(TimerStrategy.BusyWait)

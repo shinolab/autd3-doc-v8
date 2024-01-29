@@ -4,3 +4,4 @@ doctest_cache
 *.lib
 *.png
 *.sln
+.vscode

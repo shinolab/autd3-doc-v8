@@ -1,18 +1,25 @@
 #include "autd3/link/soem.hpp"
 
-[[noreturn]] void on_lost(const char* msg) {
-  std::cerr << "Link is lost\n" << msg << std::endl;
-  exit(-1);
+void error_handler(const uint32_t slave, const uint8_t status, const char* msg) {
+  switch (status) {
+    case autd3::link::Status::Error:
+      std::cout << "Error [" << slave << "]: " << msg << std::endl;
+      break;
+    case autd3::link::Status::Lost:
+      std::cout << "Lost [" << slave << "]: " << msg << std::endl;
+      // You can also wait for the link to recover, without exiting the process
+      exit(-1);
+    case autd3::link::Status::StateChanged:
+      std::cout << "StateChanged [" << slave << "]: " << msg << std::endl;
+      break;
+  }
 }
-
-void on_err(const char* msg) { std::cerr << "Err: " << msg << std::endl; }
 
 autd3::link::SOEM::builder()
     .with_ifname("")
     .with_buf_size(32)
-    .with_on_err(&on_err)
+    .with_err_handler(&error_handler)
     .with_state_check_interval(std::chrono::milliseconds(100))
-    .with_on_lost(&on_lost)
     .with_sync0_cycle(2)
     .with_send_cycle(2)
     .with_timer_strategy(autd3::TimerStrategy::BusyWait)

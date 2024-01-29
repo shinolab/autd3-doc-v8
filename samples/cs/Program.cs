@@ -1,18 +1,29 @@
 ﻿using AUTD3Sharp;
 using AUTD3Sharp.Utils;
+using AUTD3Sharp.NativeMethods;
 using AUTD3Sharp.Link;
 using AUTD3Sharp.Gain;
 using AUTD3Sharp.Modulation;
 
-var onLost = new SOEM.OnErrCallbackDelegate((string msg) =>
-{
-    Console.WriteLine($"Unrecoverable error occurred: {msg}");
-    Environment.Exit(-1);
-});
-
 using var autd = await new ControllerBuilder()
         .AddDevice(new AUTD3(Vector3d.zero))
-        .OpenWithAsync(SOEM.Builder().WithOnLost(onLost));
+        .OpenWithAsync(SOEM.Builder().WithErrHandler((slave, status, msg) =>
+        {
+            switch (status)
+            {
+                case Status.Error:
+                    Console.Error.WriteLine($"Error [{slave}]: {msg}");
+                    break;
+                case Status.Lost:
+                    Console.Error.WriteLine($"Lost [{slave}]: {msg}");
+                    // You can also wait for the link to recover, without exiting the process
+                    Environment.Exit(-1);
+                    break;
+                case Status.StateChanged:
+                    Console.Error.WriteLine($"StateChanged [{slave}]: {msg}");
+                    break;
+            };
+        }));
 
 var firmList = await autd.FirmwareInfoListAsync();
 foreach (var firm in firmList)

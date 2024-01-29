@@ -113,11 +113,11 @@ dependencies = [
 
 [[package]]
 name = "autd3"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eaa7d160c0ff53058b4bc42032fcb6a5eaf9d80cb6b198de47a77f4599fa4afd"
+checksum = "b651589996bbca539d99ce57302fd07885cce8fc59875c08fdd3b1e036b37e46"
 dependencies = [
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "autd3-firmware-emulator",
  "bitvec",
  "num",
@@ -137,9 +137,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-derive"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6b08faf0159dac75f58cc61971de203f0696bde6890c2607b02f897fcf2dac8"
+checksum = "875d7121414be2432a2f540f378ed83704b9a1bc2bb375dc7701a26cb304de7e"
 dependencies = [
  "quote",
  "syn 2.0.39",
@@ -162,11 +162,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-driver"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eb49991e344fe76316415d9d9b2c57f4cd420bb13b8dfe770652ae94a18bd0b9"
+checksum = "71bf7909e16b00613226170b269e5bbec07eb1efa1daf13de95bd51e43127bca"
 dependencies = [
- "autd3-derive 21.0.1",
+ "autd3-derive 21.1.0",
  "bitflags 2.4.1",
  "bitvec",
  "libc",
@@ -179,11 +179,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-firmware-emulator"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "883e0fa6d4a2f7b8d65d2b5123aab42e4c793183c5152ead4362ca8202d40274"
+checksum = "fc79626a0a57508d66d251d94d251395d835a79bad7554cc41689084ad51d2b8"
 dependencies = [
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "chrono",
  "num-integer",
  "thiserror",
@@ -191,11 +191,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-gain-holo"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9dbee10227bbce2630b71beaaa3eb63f9cf18b08276b44e8d5173a7c4399bb79"
+checksum = "341daebc840b25c4102ab8ac578f141a62804c6efc6bc4c9db48a92940afe350"
 dependencies = [
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "nalgebra",
  "rand",
  "thiserror",
@@ -203,11 +203,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-simulator"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1dae789a532cc2452a2d4aecccb9152330092ec9af850d46eef6d2d823b16dd3"
+checksum = "2372f66e7c3ecfc4894c0358a67bb3b147fcd0eb0188dab7323e4a7f5fd38af3"
 dependencies = [
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "autd3-protobuf",
  "thiserror",
  "tonic",
@@ -215,12 +215,12 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-soem"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bdf9e2b8abdc51e985c85c78539c1e758a37359102a8f861e1aaaf16587c323a"
+checksum = "f460a4c4f55849697fe356e9799f1dee25485a5889570b9765dc3c422160f7e5"
 dependencies = [
  "async-channel",
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "autd3-protobuf",
  "cc",
  "glob",
@@ -233,11 +233,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-twincat"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57ed01ddaf8106ff1fa93f7c5c27283132f3966542229fbc0392ea1ee6d70cbc"
+checksum = "c4058a50951af16d09f4d38e54c0505e9deb70214312fa2286c194b9bacadf04"
 dependencies = [
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "cc",
  "itertools 0.12.0",
  "libloading",
@@ -246,11 +246,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-visualizer"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e3dbd138dd0ffea670195ef7556b00351f4be10fec63ac77c07135dce3cf95e"
+checksum = "cff1a975efcf35901e7ae49075b6b8606f108e7745f3f5722dcb942210431889"
 dependencies = [
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "autd3-firmware-emulator",
  "itertools 0.12.0",
  "num-complex",
@@ -275,11 +275,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-protobuf"
-version = "21.0.1"
+version = "21.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f046d61d130bd7b049e40a006a83f21c459560840ec16adb367ad45e9668d58c"
+checksum = "acb38162a5a0473a526d8843e20f13f4d18cf5760d7bcbe95cc0ad9bcc9fef1c"
 dependencies = [
- "autd3-driver 21.0.1",
+ "autd3-driver 21.1.0",
  "h2 0.4.0",
  "prost",
  "thiserror",

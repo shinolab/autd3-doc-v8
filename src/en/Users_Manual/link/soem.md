@@ -37,9 +37,8 @@ Following options can be specified for SOEM link.
 
 - `ifname`: Network interface name. The default is blank, and if it is blank, the network interface to which the AUTD3 device is connected is automatically selected.
 - `buf_size`: Send queue buffer size. Usually, you don't need to change it.
-- `on_err`: Callback when some error occurs. The callback function takes an error message as an argument.
+- `err_handler`: Callback when an error occurs. The callback function takes the device number where the error occurred, the type of error, and the error message as arguments.
 - `state_check_interval`: Interval to check if there is an error. The default is $\SI{100}{ms}$.
-- `on_lost`: Callback when an unrecoverable error (e.g., cable is disconnected) occurs.[^fn_soem_err] The callback function takes an error message as an argument.
 - `sync0_cycle`: Synchronization signal cycle. The default is 2 (unit is $\SI{500}{us}$).
 - `send_cycle`: Send cycle. The default is 2 (unit is $\SI{500}{us}$).
     - `SOEM` may become unstable when a large number of devices are connected[^fn_soem]. In this case, increase the values of `sync0_cycle` and `send_cycle`. These values should be as small as possible without causing errors. The default is 2, and the value depends on the number of devices connected. For example, if there are 9 devices, set the value to 3 or 4.
@@ -108,7 +107,5 @@ Please see `SOEMAUTDServer --help` for details.
 If you get a TCP-related error when using `RemoteSOEM`, it may be blocked by the firewall.
 
 [^fn_soem]: It is looser than TwinCAT, and sometimes it works normally.
-
-[^fn_soem_err]: It is unrecoverable, so there is nothing you can do but terminate it immediately.
 
 [^fn_remote_soem]: It can be used even with wireless LAN.
