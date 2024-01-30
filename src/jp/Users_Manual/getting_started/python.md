@@ -13,6 +13,8 @@ pip install pyautd3
 {{#include ../../../../samples/python/main.py}}
 ```
 
+> NOTE: Python版には, `_async`がつかない同期版の関数も用意されている.
+
 そして, これを実行する.
 
 ```shell
