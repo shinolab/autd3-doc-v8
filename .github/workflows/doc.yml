@@ -19,7 +19,7 @@ jobs:
           dotnet-version: '8.0.x'
       - name: build
         run: |
-          dotnet build ./samples/cs/cs.csproj -c:Release
+          dotnet build ./samples/cs/AUTD3Sharp-Sample.csproj -c:Release
 
   check-cpp:
     name: doc-check-sample-cpp
