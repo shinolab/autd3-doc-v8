@@ -9,7 +9,7 @@ use autd3_link_soem::{SOEM, SyncMode, Status};
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 # let autd = Controller::builder()
 #     .add_device(AUTD3::new(Vector3::zeros()))
-#            .open_with(
+#            .open(
 SOEM::builder()
     .with_ifname("")
     .with_buf_size(32)

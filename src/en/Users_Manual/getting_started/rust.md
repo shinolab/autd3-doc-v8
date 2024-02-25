@@ -18,7 +18,7 @@ This is the source code for generating a focus with $\SI{150}{Hz}$ AM modulation
 # extern crate tokio;
 # extern crate autd3_link_soem;
 use autd3::prelude::*;
-use autd3_link_soem::SOEM;
+use autd3_link_soem::{SOEM, Status};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -29,14 +29,19 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Here, the device is placed at the origin
         .add_device(AUTD3::new(Vector3::zeros()))
         // Open controller with SOEM link
-        // The callback specified by with_on_lost is called when SOEM loses the device
-        .open_with(SOEM::builder().with_on_lost(|msg| {
-            eprintln!("Unrecoverable error occurred: {msg}");
-            std::process::exit(-1);
-        })).await?;
+        // The callback specified by with_err_handler is called when error occurs
+        .open(SOEM::builder().with_err_handler(|slave, status| match status {
+                Status::Error(msg) => eprintln!("Error [{}]: {}", slave, msg),
+                Status::Lost(msg) => {
+                    eprintln!("Lost [{}]: {}", slave, msg);
+                    // You can also wait for the link to recover, without exitting the process
+                    std::process::exit(-1);
+                }
+                Status::StateChanged(msg) => eprintln!("StateChanged [{}]: {}", slave, msg),
+            })).await?;
 
     // Check firmware version
-    // This code assumes that the version is v5.1.x
+    // This code assumes that the version is v6.0.0
     autd.firmware_infos().await?.iter().for_each(|firm_info| {
         println!("{}", firm_info);
     });

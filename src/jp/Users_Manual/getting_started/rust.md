@@ -19,7 +19,7 @@ cargo add tokio --features full
 # extern crate tokio;
 # extern crate autd3_link_soem;
 use autd3::prelude::*;
-use autd3_link_soem::SOEM;
+use autd3_link_soem::{SOEM, Status};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -31,14 +31,19 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // ここでは, デバイスは原点に置かれるする
         .add_device(AUTD3::new(Vector3::zeros()))
         // SOEMリンクを使用してControllerをopenする
-        // with_on_lostで指定したコールバックはSOEMがデバイスをロストしたときに呼ばれる 
-        .open_with(SOEM::builder().with_on_lost(|msg| {
-            eprintln!("Unrecoverable error occurred: {msg}");
-            std::process::exit(-1);
-        })).await?;
+        // with_err_handlerで指定したコールバックはエラーが発生したときに呼ばれる 
+        .open(SOEM::builder().with_err_handler(|slave, status| match status {
+                Status::Error(msg) => eprintln!("Error [{}]: {}", slave, msg),
+                Status::Lost(msg) => {
+                    eprintln!("Lost [{}]: {}", slave, msg);
+                    // exitせずに, 接続が回復するまで待つこともできる
+                    std::process::exit(-1);
+                }
+                Status::StateChanged(msg) => eprintln!("StateChanged [{}]: {}", slave, msg),
+            })).await?;
 
     // ファームウェアバージョンのチェック
-    // ここで, v5.1.x以外が表示される場合の動作は保証しない
+    // ここで, v6.0.0以外が表示される場合の動作は保証しない
     autd.firmware_infos().await?.iter().for_each(|firm_info| {
         println!("{}", firm_info);
     });

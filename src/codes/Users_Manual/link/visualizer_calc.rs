@@ -11,13 +11,13 @@ use std::path::Path;
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 let mut autd = Controller::builder()
     .add_device(AUTD3::new(Vector3::zeros()))
-    .open_with(Visualizer::builder()).await?;
+    .open(Visualizer::builder()).await?;
 
 let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * MILLIMETER);
 
 autd.send(Focus::new(center)).await?;
 
-let p = autd.link.calc_field(&[center], &autd.geometry)?;
+let p = autd.link.calc_field(&[center], &autd.geometry, Segment::S0, 0)?;
 println!(
     "Acoustic pressure at ({}, {}, {}) = {}",
     center.x, center.y, center.z, p[0]

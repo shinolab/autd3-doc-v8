@@ -11,7 +11,7 @@ use std::path::Path;
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 let mut autd = Controller::builder()
     .add_device(AUTD3::new(Vector3::zeros()))
-    .open_with(Visualizer::builder()).await?;
+    .open(Visualizer::builder()).await?;
 
 let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * MILLIMETER);
 
@@ -29,6 +29,8 @@ autd.link.plot_field(
         resolution: 1.
     },
     &autd.geometry,
+    Segment::S0,
+    0
 )?;
 # autd.close().await?;
 # Ok(())

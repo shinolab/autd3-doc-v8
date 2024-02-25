@@ -11,7 +11,7 @@ coro::task<int> main_() {
           // The position is the origin of the device in the global coordinate
           // system you set.
           .add_device(autd3::AUTD3(autd3::Vector3::Zero()))
-          .open_with_async(autd3::link::SOEM::builder().with_err_handler(
+          .open_async(autd3::link::SOEM::builder().with_err_handler(
               [](const uint16_t slave, const autd3::link::Status status,
                  const std::string& msg) {
                 switch (status) {

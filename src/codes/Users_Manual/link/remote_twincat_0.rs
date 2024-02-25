@@ -9,7 +9,7 @@ use autd3_link_twincat::RemoteTwinCAT;
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 # let autd = Controller::builder()
 #     .add_device(AUTD3::new(Vector3::zeros()))
-#      .open_with(
+#      .open(
 RemoteTwinCAT::builder("172.16.99.111.1.1")
             .with_server_ip("172.16.99.104")
             .with_client_ams_net_id("172.16.99.62.1.1")

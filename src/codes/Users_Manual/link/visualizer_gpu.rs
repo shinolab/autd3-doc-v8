@@ -9,7 +9,7 @@
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 # let mut autd = Controller::builder()
 #     .add_device(AUTD3::new(Vector3::zeros()))
-#     .open_with(
+#     .open(
 Visualizer::builder().with_gpu(-1)
 # ).await?;
 # autd.close().await?;

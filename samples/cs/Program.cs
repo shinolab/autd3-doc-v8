@@ -7,7 +7,7 @@ using AUTD3Sharp.Modulation;
 
 using var autd = await new ControllerBuilder()
         .AddDevice(new AUTD3(Vector3d.zero))
-        .OpenWithAsync(SOEM.Builder().WithErrHandler((slave, status, msg) =>
+        .OpenAsync(SOEM.Builder().WithErrHandler((slave, status, msg) =>
         {
             switch (status)
             {

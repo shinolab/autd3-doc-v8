@@ -74,32 +74,3 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 ```python
 {{#include ../../codes/Users_Manual/modulation_1.py}}
 ```
-
-
-## Modulation Delay
-
-Modulationはすべての振動子に同時に作用し, 伝搬遅延を考慮しない.
-そのため, 振動子と焦点位置との間の距離に応じて, 変調がずれる可能性がある.
-
-これを補償するために, 振動子毎にサンプリングするインデックスを遅らせる機能が備わっている.
-
-例えば, 以下のようにすると, $0$番目のデバイスの$0$番目の振動子は他のすべての振動子に対して, サンプリングするインデックスが一つ遅れる.
-
-```rust,edition2021
-{{#include ../../codes/Users_Manual/modulation_2.rs}}
-```
-
-```cpp
-{{#include ../../codes/Users_Manual/modulation_2.cpp}}
-```
-
-```cs
-{{#include ../../codes/Users_Manual/modulation_2.cs}}
-```
-
-```python
-{{#include ../../codes/Users_Manual/modulation_2.py}}
-```
-
-サンプリングされるインデックスに対する遅れであるため, どの程度遅れるかは`Modulation`のサンプリング周波数に依存する.
-`mod_delay`が$1$でサンプリング周波数が$\SI{40}{kHz}$の場合は$\SI{25}{\text{μ}s}$, $\SI{4}{kHz}$の場合は$\SI{250}{\text{μ}s}$の遅れになる.

@@ -9,7 +9,7 @@ use autd3_link_simulator::Simulator;
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 # let autd = Controller::builder()
 #             .add_device(AUTD3::new(Vector3::zeros()))
-#             .open_with(
+#             .open(
 Simulator::builder(8080)
 # ).await?;
 # Ok(())

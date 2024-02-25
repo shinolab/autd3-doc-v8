@@ -24,7 +24,7 @@ async def main() -> None:
     with await (
         Controller.builder()
         .add_device(AUTD3([0.0, 0.0, 0.0]))
-        .open_with_async(
+        .open_async(
             SOEM.builder().with_err_handler(err_handler),
         )
     ) as autd:

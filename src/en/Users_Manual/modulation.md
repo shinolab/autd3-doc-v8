@@ -72,31 +72,3 @@ The modulation data size can be obtained as follows.
 ```python
 {{#include ../../codes/Users_Manual/modulation_1.py}}
 ```
-
-
-## Modulation Delay
-
-`Modulation` is applied to all transducers at the same time without considering propagation delay.
-Therefore, there is a possibility that modulation is shifted depending on the distance between the transducer and the focal position.
-
-To compensate for this, each transducer has a function to delay the sampling index to be sampled.
-
-The following example shows how to set the delay of the $0$-th transducer of $0$-th device to $1$.
-
-```rust,edition2021
-{{#include ../../codes/Users_Manual/modulation_2.rs}}
-```
-
-```cpp
-{{#include ../../codes/Users_Manual/modulation_2.cpp}}
-```
-
-```cs
-{{#include ../../codes/Users_Manual/modulation_2.cs}}
-```
-
-```python
-{{#include ../../codes/Users_Manual/modulation_2.py}}
-```
-
-The delay is the delay for the index to be sampled, so the delay time depends on the sampling frequency of `Modulation`.

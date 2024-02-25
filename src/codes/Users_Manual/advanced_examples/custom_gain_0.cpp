@@ -1,6 +1,6 @@
 #include "autd3.hpp"
 
-class FocalPoint final : public autd3::Gain {
+class FocalPoint final : public autd3::Gain<FocalPoint> {
  public:
   explicit FocalPoint(autd3::Vector3 point) : _point(std::move(point)) {}
 

@@ -1,4 +1,7 @@
-public class FocalPoint : Gain
+using AUTD3Sharp.Derive;
+
+[Gain]
+public partial class FocalPoint
 {
     private readonly Vector3d _point;
 
@@ -7,7 +10,7 @@ public class FocalPoint : Gain
         _point = point;
     }
 
-    public override Dictionary<int, Drive[]> Calc(Geometry geometry)
+    private Dictionary<int, Drive[]> Calc(Geometry geometry)
     {
         return Transform(geometry, (dev, tr) =>
         {
