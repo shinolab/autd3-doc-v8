@@ -73,5 +73,3 @@
 
 
 [^fn_gain_seq]: `FocusSTM`のおよそ75倍のレイテンシ
-
-[^phase_half]: Legacyモード限定

@@ -14,8 +14,6 @@ Modulationは音圧振幅に掛け合わされる.
 * バッファサイズは最大で65536
 * Modulationデータは内部で8-bit符号なし整数に変換され, 超音波PWM信号のDuty比と掛け合わされる
 * サンプリングレートは$\clkf/N$で, $N$は32-bit符号なし整数であり, $512$以上の値である必要がある
-* Modulationは自動でループする. 1ループだけ, 等の制御は不可能
-* Modulationの開始/終了タイミングは制御できない
 
 SDKにはデフォルトでいくつかの種類のAMを生成するための`Modulation`が用意されている.
 
@@ -74,3 +72,31 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 ```python
 {{#include ../../codes/Users_Manual/modulation_1.py}}
 ```
+
+### LoopBehavior
+
+ループの挙動を`with_loop_behavior`で制御できる.
+有限回ループするか, 無限ループするかを指定できる.
+
+デフォルトは無限ループである.
+
+```rust,edition2021
+{{#include ../../codes/Users_Manual/modulation_loop.rs}}
+```
+
+```cpp
+{{#include ../../codes/Users_Manual/modulation_loop.cpp}}
+```
+
+```cs
+{{#include ../../codes/Users_Manual/modulation_loop.cs}}
+```
+
+```python
+{{#include ../../codes/Users_Manual/modulation_loop.py}}
+```
+
+無限ループの場合, どのインデックスデータから再生されるかは制御できない.
+有限回ループの場合, 0番目のデータから再生が始まり, 指定回数のループの後, 最終インデックスデータが出力され続ける.
+
+**この設定は, Segmentを切り替えたときにしか効果がない. 詳しくは[Segment](./segment.md)を参照.**

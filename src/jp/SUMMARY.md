@@ -41,6 +41,8 @@
     - [GainSTM](./Users_Manual/stm/gain.md)
   - [Silencer](./Users_Manual/silencer.md)
   - [Controller](./Users_Manual/controller.md)
+  - [PhaseFilter](./Users_Manual/phase_filter.md)
+  - [Segment](./Users_Manual/segment.md)
   - [上級者向けサンプル](./Users_Manual/advanced_examples/advanced_examples.md)
     - [Gainの自作](./Users_Manual/advanced_examples/custom_gain.md)
     - [Modulationの自作](./Users_Manual/advanced_examples/custom_modulation.md)

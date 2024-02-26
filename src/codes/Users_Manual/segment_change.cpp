@@ -1,0 +1,1 @@
+autd.send(autd3::ChangeGainSegment(autd3::Segment::S1))

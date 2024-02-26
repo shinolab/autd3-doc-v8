@@ -13,8 +13,6 @@ Currently, `Modulation` has the following restrictions.
 
 - The buffer size is up to 65536.
 - The sampling rate is $\clkf/N$, where $N$ is a 32-bit unsigned integer and must be at least 512.
-- Modulation automatically loops. It is not possible to control only one loop, etc.
-- The start/end timing of Modulation cannot be controlled.
 
 The SDK has `Modulation` by default to generate several types of AM.
 
