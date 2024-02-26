@@ -11,7 +11,7 @@ For example, if you use `Sine` with $\SI{1}{kHz}$, the sound pressure amplitude 
 
 Currently, `Modulation` has the following restrictions.
 
-- The buffer size is up to 65536.
+- The buffer size is up to 32768.
 - The sampling rate is $\clkf/N$, where $N$ is a 32-bit unsigned integer and must be at least 512.
 
 The SDK has `Modulation` by default to generate several types of AM.
