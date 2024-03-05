@@ -8,10 +8,10 @@ Also, it uses `float` instead of `double` for floating point numbers.
 You can install the library via Unity Package Manager.
 
 1. From the menu bar, select "Edit" > "Project settings" > "Package Manager".
-1. Add the following "Scoped registory".
-    - Name    : shinolab
-    - URL     : https://registry.npmjs.com
-    - Scope(s): com.shinolab
-1. From the menu bar, select "Window" > "Package Manager".
-1. Select "My Registries" from the drop-down menu in the upper left corner.
-1. Install `autd3-unity` package.
+1. Click "+" button in upper left corner, then "Add package from git URL".
+1. Enter `https://github.com/shinolab/AUTD3Sharp.git#upm/latest` and click "Add".
+    1. If you need a specific version, specify `#upm/vX.X.X`.
+
+## Sample
+
+Please import Samples from Package Manager.
