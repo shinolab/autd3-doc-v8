@@ -23,8 +23,8 @@ preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/shinolab/autd3-doc"
 git-branch = "master"
 curly-quotes = true
-additional-js = ["./theme/codeblock_filename.js"]
-additional-css = ["./theme/codeblock_filename.css"]
+additional-js = ["./theme/codeblock_filename.js", "./theme/lightbox-plus-jquery.min.js"]
+additional-css = ["./theme/codeblock_filename.css", "./theme/lightbox.css"]
 
 [output.html.playground]
 runnable = false

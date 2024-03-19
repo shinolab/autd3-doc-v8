@@ -1,7 +1,7 @@
 # Summary
 
 - [About AUTD3](./about_AUTD3.md)
-- [SDK User's Manual](./Users_Manual/users_manual.md)
+- [User's Manual](./Users_Manual/users_manual.md)
   - [Concept](./Users_Manual/concept.md)
   - [Tutorial](./Users_Manual/getting_started.md)
     - [Rust](./Users_Manual/getting_started/rust.md)
