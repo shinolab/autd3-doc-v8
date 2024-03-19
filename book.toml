@@ -29,6 +29,10 @@ additional-css = ["./theme/codeblock_filename.css"]
 [output.html.playground]
 runnable = false
 
+[output.html.fold]
+enable = true
+level = 1
+
 [preprocessor.katex]
 after = ["links"]
 macros = "katex_macro.txt"
