@@ -61,7 +61,7 @@
     - [Modulation](./Developer_Manual/fpga/modulation.md)
     - [STM](./Developer_Manual/fpga/stm.md)
     - [Synchronizer](./Developer_Manual/fpga/sync.md)
-    - [Time Count](./Developer_Manual/fpga/time_cnt.md)
+    - [Time Count Generator](./Developer_Manual/fpga/time_cnt.md)
     - [Controller](./Developer_Manual/fpga/controller.md)
     - [BRAM](./Developer_Manual/fpga/bram.md)
   - [CPUファームウェア](./Developer_Manual/cpu.md)
