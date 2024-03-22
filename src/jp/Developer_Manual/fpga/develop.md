@@ -6,7 +6,7 @@ ML Editionは無料 (要登録) なので各自インストールされたい.
 Vitisは必要ない.
 
 Vivadoのプロジェクトを生成するには, 以下のようにする.
-```
+```ignore
 git clone https://github.com/shinolab/autd3-firmware.git
 cd autd3-firmware/src/fpga
 pwsh build.ps1
