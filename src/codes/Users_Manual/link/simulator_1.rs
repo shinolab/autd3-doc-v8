@@ -10,7 +10,7 @@ use autd3_link_simulator::Simulator;
 # let autd = Controller::builder()
 #             .add_device(AUTD3::new(Vector3::zeros()))
 #             .open(
-Simulator::builder(8080).with_server_ip("127.0.0.1".parse()?)
+Simulator::builder(8080).with_server_ip([127, 0, 0, 1])
 # ).await?;
 # Ok(())
 # }

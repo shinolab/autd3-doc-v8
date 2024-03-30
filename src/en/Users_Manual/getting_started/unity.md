@@ -1,7 +1,6 @@
 # Unity tutorial
 
 Unity library use left-handed coordinate system and meter as a basic unit of length.
-Also, it uses `float` instead of `double` for floating point numbers.
 
 ## Installation
 

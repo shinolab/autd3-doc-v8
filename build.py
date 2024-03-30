@@ -6,7 +6,7 @@ Project: autd3
 Created Date: 16/10/2023
 Author: Shun Suzuki
 -----
-Last Modified: 19/10/2023
+Last Modified: 30/03/2024
 Modified By: Shun Suzuki (suzuki@hapis.k.u-tokyo.ac.jp)
 -----
 Copyright (c) 2023 Shun Suzuki. All rights reserved.
@@ -136,7 +136,7 @@ def util_update_ver(args):
         with open("src/jp/document_history.md", "w", encoding="utf-8") as f:
             f.write(content)
 
-        with open("samples/cs/cs.csproj", "r") as f:
+        with open("samples/cs/AUTD3Sharp-Sample.csproj", "r") as f:
             content = f.read()
             content = re.sub(
                 r'"AUTD3Sharp" Version="(.*)"',
@@ -144,7 +144,7 @@ def util_update_ver(args):
                 content,
                 flags=re.MULTILINE,
             )
-        with open("samples/cs/cs.csproj", "w") as f:
+        with open("samples/cs/AUTD3Sharp-Sample.csproj", "w") as f:
             f.write(content)
 
         with open("book.toml", "r") as f:
