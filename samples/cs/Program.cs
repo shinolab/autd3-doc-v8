@@ -6,7 +6,7 @@ using AUTD3Sharp.Gain;
 using AUTD3Sharp.Modulation;
 
 using var autd = await new ControllerBuilder()
-        .AddDevice(new AUTD3(Vector3d.zero))
+        .AddDevice(new AUTD3(Vector3d.Zero))
         .OpenAsync(SOEM.Builder().WithErrHandler((slave, status, msg) =>
         {
             switch (status)
