@@ -113,11 +113,11 @@ dependencies = [
 
 [[package]]
 name = "autd3"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d6bc212d2a23503c6438ff0c374476671bc88eba8d9c6c7fddec1552a7e1977"
+checksum = "eb1dac150498ab99781f801b8bd4983d9a77fdce0a04145676cfa5b7fb45434d"
 dependencies = [
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "autd3-firmware-emulator",
  "bitvec",
  "num",
@@ -137,9 +137,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-derive"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1af485154d66ff6a96b5184369056ffbc7498ff880d7e63dc2d11583168ac046"
+checksum = "84a53d8c6e50721d9b41f6e048cbb925c020ce1c94ba0a31d55c68d05f819516"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -163,11 +163,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-driver"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f5de6592410415e7828898eea5e0f83125cad63a1fb4bb2ac8ca8c1045b87a65"
+checksum = "2dda430bc3400de220ad35a8049f0b1d4aa5362a74669b90c471ad687ad7b9c5"
 dependencies = [
- "autd3-derive 22.0.4",
+ "autd3-derive 22.1.0",
  "bitfield-struct",
  "bitflags 2.4.1",
  "bitvec",
@@ -182,11 +182,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-firmware-emulator"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1d4f3dcbbe0242ad7bedcc409b5c22c4dce3af51ff6e38fd6203f187734b2cc5"
+checksum = "b854cd2bc3f9009e9cc338d98c3a30a7c605cf00f6278a44dc3198cd787cb9c5"
 dependencies = [
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "chrono",
  "num-integer",
  "thiserror",
@@ -194,11 +194,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-gain-holo"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21faeb886c6d3605dbdbf5547a8d65da75cb7a983ad2f00fc32c2ad050a31b82"
+checksum = "5b21a95cb29f7683a431621616192daf980cc7ffa18d0209b685f347ba3e640e"
 dependencies = [
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "nalgebra",
  "rand",
  "thiserror",
@@ -206,11 +206,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-simulator"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e4415e14c6f071760b75aff3eb6a93d6516054f9e9a2a8252d62cc2d812e3417"
+checksum = "c3058d7030d0b7272b55ad1b30591598afbd6c2657b8821ab01a5eb122c36638"
 dependencies = [
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "autd3-protobuf",
  "thiserror",
  "tonic",
@@ -218,12 +218,12 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-soem"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6596e7f46499f2b0c149679f0eca366f3bcdd874822563c1cdf146198af19216"
+checksum = "8068cb0c5bbb7b67a90bbf915a2c0162a4b27d412a3cf8ace1bd563674fc2b58"
 dependencies = [
  "async-channel",
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "autd3-protobuf",
  "cc",
  "glob",
@@ -236,11 +236,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-twincat"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4c53af0cb013855eec45473739b1430e30a6e110492205c83a3afcf219c20dc"
+checksum = "a6a61ff5ef8c09bd9c59f60ff4fab81a169ee28bb2afe41f9a5d2a0b8db60ca5"
 dependencies = [
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "cc",
  "itertools 0.12.0",
  "libloading",
@@ -253,7 +253,7 @@ version = "22.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b6d486707b0a12dd3b7d5ba41f7e3893e99d45d4e5d7458512584777c4e8163c"
 dependencies = [
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "autd3-firmware-emulator",
  "itertools 0.12.0",
  "num-complex",
@@ -278,11 +278,11 @@ dependencies = [
 
 [[package]]
 name = "autd3-protobuf"
-version = "22.0.4"
+version = "22.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b6e357d86a22c7d409eac26a03917ecc0064cff01e4e7af924eb04eb8f49ce3"
+checksum = "fcca04a515e664512cef596a5f9716f782ffe306190dd55a625c36b88de1be79"
 dependencies = [
- "autd3-driver 22.0.4",
+ "autd3-driver 22.1.0",
  "h2 0.4.0",
  "prost",
  "thiserror",

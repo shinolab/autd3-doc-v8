@@ -68,3 +68,4 @@
 | 2024/01/29 | Version 21.1.0 Initial release |
 | 2024/02/25 | Version 22.0.1 Initial release |
 | 2024/03/30 | Version 22.0.4 Initial release |
+| 2024/04/08 | Version 22.1.0 Initial release |
