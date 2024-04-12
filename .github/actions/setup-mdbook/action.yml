@@ -13,9 +13,14 @@ runs:
         toolchain: 'stable'
 
     - name: Setup mdbook
-      uses: peaceiris/actions-mdbook@v1
-      with:
-        mdbook-version: '0.4.35'
+      shell: bash
+      run: |
+        mkdir -p mdbook-toc
+        cd mdbook-toc
+        curl -L https://github.com/rust-lang/mdBook/releases/download/v0.4.37/mdbook-v0.4.37-x86_64-unknown-linux-gnu.tar.gz -o mdbook.tar.gz
+        tar -xvf mdbook.tar.gz
+        chmod +x mdbook
+        sudo ln -s $PWD/mdbook /usr/local/bin/mdbook
     - name: Setup mdbook-toc
       shell: bash
       run: |
@@ -34,3 +39,12 @@ runs:
         tar -xvf mdbook-katex.tar.gz
         chmod +x mdbook-katex
         sudo ln -s $PWD/mdbook-katex /usr/local/bin/mdbook-katex
+    - name: Setup mdbook-open-on-gh
+      shell: bash
+      run: |
+        mkdir -p mdbook-open-on-gh
+        cd mdbook-open-on-gh
+        curl -L https://github.com/badboy/mdbook-open-on-gh/releases/download/2.4.2/mdbook-open-on-gh-2.4.2-x86_64-unknown-linux-gnu.tar.gz -o mdbook-open-on-gh.tar.gz
+        tar -xvf mdbook-open-on-gh.tar.gz
+        chmod +x mdbook-open-on-gh
+        sudo ln -s $PWD/mdbook-open-on-gh /usr/local/bin/mdbook-open-on-gh

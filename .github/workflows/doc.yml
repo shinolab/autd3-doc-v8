@@ -55,31 +55,52 @@ jobs:
           cd samples/python
           echo a | python3 main.py || true
 
+  check-code-change:
+    runs-on: ubuntu-latest
+    name: check if src files changed
+    outputs:
+      status: ${{ steps.changed-files.outputs.modified_files }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tj-actions/changed-files@v42
+        id: changed-files
+        with:
+          files: |
+            ./src/codes/**/*.rs
+
   check-jp:
+    needs: check-code-change
     name: doc-check-jp
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        if: needs.check-src.outputs.status
       - name: Setup mdbook
         uses: ./.github/actions/setup-mdbook
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+        if: needs.check-src.outputs.status
       - name: Test book jp
         run: |
           python3 build.py test jp
+        if: needs.check-src.outputs.status
 
   check-en:
+    needs: check-code-change
     name: doc-check-en
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        if: needs.check-src.outputs.status
       - name: Setup mdbook
         uses: ./.github/actions/setup-mdbook
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+        if: needs.check-src.outputs.status
       - name: Test book en
         run: |
           python3 build.py test en
+        if: needs.check-src.outputs.status
 
   build:
     name: build-doc
