@@ -4,32 +4,60 @@ on:
   push:
 
 jobs:
+  check-cs-sample-change:
+    runs-on: ubuntu-latest
+    name: check if cs sample files changed
+    outputs:
+      status: ${{ steps.changed-files.outputs.modified_files }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tj-actions/changed-files@v42
+        id: changed-files
+        with:
+          files: |
+            ./samples/cs/Program.cs
+            ./samples/cs/AUTD3Sharp-Sample.csproj
   check-cs:
+    needs: check-cs-sample-change
     name: doc-check-sample-cs
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
     steps: 
       - uses: actions/checkout@v4
+        if: needs.check-cs-sample-change.outputs.status
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+        if: needs.check-cs-sample-change.outputs.status
       - name: build
         run: |
           dotnet build ./samples/cs/AUTD3Sharp-Sample.csproj -c:Release
+        if: needs.check-cs-sample-change.outputs.status
 
+  check-cpp-sample-change:
+    runs-on: ubuntu-latest
+    name: check if cpp sample files changed
+    outputs:
+      status: ${{ steps.changed-files.outputs.modified_files }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tj-actions/changed-files@v42
+        id: changed-files
+        with:
+          files: |
+            ./samples/cpp/main.cpp
+            ./samples/cpp/CMakeLists.txt
   check-cpp:
+    needs: check-cpp-sample-change
     name: doc-check-sample-cpp
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
     steps: 
       - uses: actions/checkout@v4
+        if: needs.check-cpp-sample-change.outputs.status
       - name: build
         run: |
           cd ./samples/cpp
@@ -37,8 +65,22 @@ jobs:
           cd build
           cmake .. -DCMAKE_C_COMPILER=gcc-12 -DCMAKE_CXX_COMPILER=g++-12
           cmake --build .
+        if: needs.check-cpp-sample-change.outputs.status
 
+  check-python-sample-change:
+    runs-on: ubuntu-latest
+    name: check if python sample files changed
+    outputs:
+      status: ${{ steps.changed-files.outputs.modified_files }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tj-actions/changed-files@v42
+        id: changed-files
+        with:
+          files: |
+            ./samples/python/main.py
   check-python:
+    needs: check-python-sample-change
     name: doc-check-sample-python
     runs-on: ${{ matrix.os }}
     strategy:
@@ -47,13 +89,16 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps: 
       - uses: actions/checkout@v4
+        if: needs.check-python-sample-change.outputs.status
       - name: install deps
         run: |
           python3 -m pip install --upgrade pyautd3
+        if: needs.check-python-sample-change.outputs.status
       - name: build
         run: |
           cd samples/python
           echo a | python3 main.py || true
+        if: needs.check-python-sample-change.outputs.status
 
   check-code-change:
     runs-on: ubuntu-latest
@@ -74,16 +119,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        if: needs.check-src.outputs.status
+        if: needs.check-code-change.outputs.status
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: 'stable'
+        if: needs.check-code-change.outputs.status
       - name: Setup mdbook
         uses: ./.github/actions/setup-mdbook
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-        if: needs.check-src.outputs.status
+        if: needs.check-code-change.outputs.status
       - name: Test book jp
         run: |
           python3 build.py test jp
-        if: needs.check-src.outputs.status
+        if: needs.check-code-change.outputs.status
 
   check-en:
     needs: check-code-change
@@ -91,16 +141,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        if: needs.check-src.outputs.status
+        if: needs.check-code-change.outputs.status
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: 'stable'
+        if: needs.check-code-change.outputs.status
       - name: Setup mdbook
         uses: ./.github/actions/setup-mdbook
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-        if: needs.check-src.outputs.status
+        if: needs.check-code-change.outputs.status
       - name: Test book en
         run: |
           python3 build.py test en
-        if: needs.check-src.outputs.status
+        if: needs.check-code-change.outputs.status
 
   build:
     name: build-doc
