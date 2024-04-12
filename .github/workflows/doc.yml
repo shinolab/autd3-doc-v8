@@ -172,7 +172,7 @@ jobs:
           MDBOOK_BOOK__src=src/en mdbook build --dest-dir book/en
           MDBOOK_BOOK__src=src/jp mdbook build --dest-dir book/jp
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book
