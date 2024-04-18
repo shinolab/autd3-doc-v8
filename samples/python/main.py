@@ -1,4 +1,3 @@
-import asyncio
 import os
 
 import numpy as np
@@ -20,27 +19,23 @@ def err_handler(slave: int, status: Status, msg: str) -> None:
             print(f"StateChanged  [{slave}]: {msg}")
 
 
-async def main() -> None:
-    with await (
+if __name__ == "__main__":
+    with (
         Controller.builder()
         .add_device(AUTD3([0.0, 0.0, 0.0]))
-        .open_async(
+        .open(
             SOEM.builder().with_err_handler(err_handler),
         )
     ) as autd:
-        firm_info_list = await autd.firmware_info_list_async()
+        firm_info_list = autd.firmware_info_list()
         print("\n".join([f"[{i}]: {firm}" for i, firm in enumerate(firm_info_list)]))
 
-        await autd.send_async(ConfigureSilencer.default())
+        autd.send(ConfigureSilencer.default())
 
         g = Focus(autd.geometry.center + np.array([0.0, 0.0, 150.0]))
         m = Sine(150)
-        await autd.send_async(m, g)
+        autd.send(m, g)
 
         _ = input()
 
-        await autd.close_async()
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
+        autd.close()

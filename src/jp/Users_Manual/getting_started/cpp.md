@@ -36,10 +36,6 @@ cd autd3-sample
 {{#include ../../../../samples/cpp/main.cpp}}
 ```
 
-> NOTE: C++版には, `_async`がつかない同期版の関数も用意されている.
-
-> NOTE: macOSでは, バージョン16.0.0以降のClangでのみ`_async`がついた関数がサポートされている. それ以外の場合は`_async`のつかない同期版の関数を使用する必要がある.
-
 次に, CMakeでビルドする.
 
 ```shell

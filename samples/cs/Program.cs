@@ -5,9 +5,9 @@ using AUTD3Sharp.Link;
 using AUTD3Sharp.Gain;
 using AUTD3Sharp.Modulation;
 
-using var autd = await new ControllerBuilder()
+using var autd = new ControllerBuilder()
         .AddDevice(new AUTD3(Vector3d.Zero))
-        .OpenAsync(SOEM.Builder().WithErrHandler((slave, status, msg) =>
+        .Open(SOEM.Builder().WithErrHandler((slave, status, msg) =>
         {
             switch (status)
             {
@@ -25,16 +25,16 @@ using var autd = await new ControllerBuilder()
             };
         }));
 
-var firmList = await autd.FirmwareInfoListAsync();
+var firmList = autd.FirmwareInfoList();
 foreach (var firm in firmList)
     Console.WriteLine(firm);
 
-await autd.SendAsync(ConfigureSilencer.Default());
+autd.Send(ConfigureSilencer.Default());
 
 var g = new Focus(autd.Geometry.Center + new Vector3d(0, 0, 150));
 var m = new Sine(150);
-await autd.SendAsync(m, g);
+autd.Send(m, g);
 
 Console.ReadKey(true);
 
-await autd.CloseAsync();
+autd.Close();

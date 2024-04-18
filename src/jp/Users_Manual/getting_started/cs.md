@@ -15,8 +15,6 @@ dotnet add package AUTD3Sharp
 {{#include ../../../../samples/cs/Program.cs}}
 ```
 
-> NOTE: C#版には, `Async`がつかない同期版の関数も用意されている.
-
 そして, これを実行する.
 
 ```shell
