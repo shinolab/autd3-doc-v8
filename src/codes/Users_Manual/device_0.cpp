@@ -12,3 +12,5 @@ const auto r = autd3::Quaternion(1., 0., 0., 0.);
 dev.translate(t);
 dev.rotate(r);
 dev.affine(t, r);
+const auto wavelength = dev.wavelength();
+const auto wavenumber = dev.wavenumber();

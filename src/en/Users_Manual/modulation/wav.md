@@ -2,7 +2,7 @@
 
 `Wav` is a `Modulation` constructed from a wav file.
 
-```rust,should_panic,edition2021
+```rust,edition2021
 {{#include ../../../codes/Users_Manual/modulation/wav_0.rs}}
 ```
 

@@ -1,9 +1,11 @@
 # extern crate autd3_modulation_audio_file;
+# extern crate autd3;
+# use autd3::prelude::*;
 use autd3_modulation_audio_file::RawPCM;
 
 # #[allow(unused_variables)]
 # fn main() -> Result<(), Box<dyn std::error::Error>> {
 let path = "path/to/foo.dat";
-let m = RawPCM::new(&path, 4000)?;
+let m = RawPCM::new(&path, 4000 * Hz);
 # Ok(())
 # }

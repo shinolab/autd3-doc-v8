@@ -1,8 +1,7 @@
 # extern crate autd3;
 # use autd3::prelude::*;
-use autd3::modulation::Fourier;
 
 # #[allow(unused_variables)]
 # fn main()  {
-let m: Fourier = Sine::new(100.) + Sine::new(150.) + Sine::new(200.);
+let m = Sine::new(100. * Hz) + Sine::new(150. * Hz) + Sine::new(200. * Hz);
 # }

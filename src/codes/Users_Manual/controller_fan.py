@@ -1,3 +1,3 @@
-from pyautd3 import ConfigureForceFan
+from pyautd3 import ForceFan
 
-autd.send(ConfigureForceFan(lambda _: True))
+autd.send(ForceFan(lambda _: True))

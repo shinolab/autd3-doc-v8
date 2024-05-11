@@ -18,5 +18,7 @@ let r = UnitQuaternion::from_quaternion(Quaternion::new(1., 0., 0., 0.));
 dev.translate(t);
 dev.rotate(r);
 dev.affine(t, r);
+let wavelength = dev.wavelength();
+let wavenumber = dev.wavenumber();
 # Ok(())
 # }

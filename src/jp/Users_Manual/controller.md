@@ -20,7 +20,7 @@ Offモードではファンは常時オフであり, Onモードでは常時オ�
 
 Autoモードの場合は温度が高くなると自動的にファンが起動する.
 
-Autoモードの場合, `ConfigureForceFan`でファンを強制的に起動できる.
+Autoモードの場合, `ForceFan`でファンを強制的に起動できる.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/controller_fan.rs}}
@@ -41,7 +41,7 @@ Autoモードの場合, `ConfigureForceFan`でファンを強制的に起動で�
 ## fpga_state
 
 FPGAの状態を取得する.
-これを使用する前に, `ConfigureReadsFPGAState`を送信しておく必要がある.
+これを使用する前に, `ReadsFPGAState`を送信しておく必要がある.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/controller_0.rs}}

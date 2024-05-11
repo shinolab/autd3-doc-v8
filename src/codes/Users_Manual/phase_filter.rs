@@ -5,6 +5,6 @@
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 # let mut autd = Controller::builder().add_device(AUTD3::new(Vector3::zeros())).open(autd3::link::Nop::builder()).await?;
-autd.send(ConfigurePhaseFilter::additive(|dev, tr| Phase::new(0))).await?;
+autd.send(PhaseFilter::additive(|_dev| |_tr| 0. * rad)).await?;
 # Ok(())
 # }

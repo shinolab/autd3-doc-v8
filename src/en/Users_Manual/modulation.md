@@ -50,23 +50,3 @@ However, due to the constraints of `Modulation`, the sampling frequency may not 
 ```python
 {{#include ../../codes/Users_Manual/modulation_0.py}}
 ```
-
-### Modulation data size
-
-The modulation data size can be obtained as follows.
-
-```rust,edition2021
-{{#include ../../codes/Users_Manual/modulation_1.rs}}
-```
-
-```cpp
-{{#include ../../codes/Users_Manual/modulation_1.cpp}}
-```
-
-```cs
-{{#include ../../codes/Users_Manual/modulation_1.cs}}
-```
-
-```python
-{{#include ../../codes/Users_Manual/modulation_1.py}}
-```

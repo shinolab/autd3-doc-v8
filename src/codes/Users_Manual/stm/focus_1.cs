@@ -1,4 +1,4 @@
 using AUTD3Sharp;
 using AUTD3Sharp.STM;
 
-var stm = FocusSTM.FromSamplingConfig(SamplingConfiguration.FromFrequency(1));
+var stm = FocusSTM.FromReadsFPGAState(SamplingConfig.FromFrequency(1 * Hz));

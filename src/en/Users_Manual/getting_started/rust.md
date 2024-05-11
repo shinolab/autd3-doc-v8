@@ -41,22 +41,22 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             })).await?;
 
     // Check firmware version
-    // This code assumes that the version is v6.1.0
-    autd.firmware_infos().await?.iter().for_each(|firm_info| {
+    // This code assumes that the version is v7.0.x
+    autd.firmware_version().await?.iter().for_each(|firm_info| {
         println!("{}", firm_info);
     });
 
     // Enable silencer
     // Note that this is enabled by default, so it is not actually necessary
-    // To disable, send ConfigureSilencer::disable()
-    autd.send(ConfigureSilencer::default()).await?;
+    // To disable, send Silencer::disable()
+    autd.send(Silencer::default()).await?;
 
     // A focus at 150mm directly above the center of the device
-    let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * MILLIMETER);
+    let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * mm);
     let g = Focus::new(center);
 
     // 150Hz sine wave modulation
-    let m = Sine::new(150.);
+    let m = Sine::new(150. * Hz);
 
     // Send data
     autd.send((m, g)).await?;

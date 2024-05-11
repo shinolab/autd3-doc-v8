@@ -1,3 +1,3 @@
-from pyautd3 import ConfigurePhaseFilter, Phase
+from pyautd3 import Phase, PhaseFilter
 
-autd.send(ConfigurePhaseFilter(lambda dev, tr: Phase(0)))
+autd.send(PhaseFilter(lambda dev: lambda tr: Phase(0)))

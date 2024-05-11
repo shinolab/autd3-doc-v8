@@ -1,1 +1,1 @@
-autd.Send(new ChangeGainSegment(Segment.S1))
+autd.Send(SwapSegment.Gain(Segment.S1))

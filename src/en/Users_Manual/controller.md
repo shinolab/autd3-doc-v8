@@ -19,7 +19,7 @@ As shown in the figure below, the fan side is shorted to switch to Auto, the cen
 <figcaption>Jumper switch to specify fan mode</figcaption>
 </figure>
 
-You can force the fan to start in Auto mode by `ConfigureForceFan`.
+You can force the fan to start in Auto mode by `ForceFan`.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/controller_fan.rs}}
@@ -40,7 +40,7 @@ You can force the fan to start in Auto mode by `ConfigureForceFan`.
 ## fpga_state
 
 Get the FPGA status.
-Before using this, you need to configure reads FPGA info flag by `ConfigureReadsFPGAState`.
+Before using this, you need to configure reads FPGA info flag by `ReadsFPGAState`.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/controller_0.rs}}

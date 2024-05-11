@@ -17,7 +17,7 @@ As a rough outline,
 
 ## Silencer Config
 
-To configure the silencer, send `ConfigureSilencer` to the controller.
+To configure the silencer, send `Silencer` to the controller.
 
 The silencer is enabled by default.
 To disable the silencer, send `Silencer::disable`.

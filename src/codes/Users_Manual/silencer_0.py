@@ -1,4 +1,4 @@
-from pyautd3 import ConfigureSilencer
+from pyautd3 import Silencer
 
-config = ConfigureSilencer.default()
-config = ConfigureSilencer.disable()
+config = Silencer.default()
+config = Silencer.disable()

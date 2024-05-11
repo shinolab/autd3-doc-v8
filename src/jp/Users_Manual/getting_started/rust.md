@@ -43,22 +43,22 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             })).await?;
 
     // ファームウェアバージョンのチェック
-    // ここで, v6.1.0以外が表示される場合の動作は保証しない
-    autd.firmware_infos().await?.iter().for_each(|firm_info| {
+    // ここで, v7.0.x以外が表示される場合の動作は保証しない
+    autd.firmware_version().await?.iter().for_each(|firm_info| {
         println!("{}", firm_info);
     });
 
     // 静音化処理を有効化
     // なお, デフォルトで有効にされているので, 実際には必要ない
-    // 無効にしたい場合はConfigureSilencer::disable()を送信する
-    autd.send(ConfigureSilencer::default()).await?;
+    // 無効にしたい場合はSilencer::disable()を送信する
+    autd.send(Silencer::default()).await?;
 
     // デバイスの中心から直上150mmに焦点
-    let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * MILLIMETER);
+    let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * mm);
     let g = Focus::new(center);
 
     // 150Hzサイン波変調
-    let m = Sine::new(150.);
+    let m = Sine::new(150. * Hz);
 
     // データの送信
     autd.send((m, g)).await?;

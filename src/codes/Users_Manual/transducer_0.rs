@@ -14,9 +14,5 @@ let rotation = tr.rotation();
 let x_dir = tr.x_direction();
 let y_dir = tr.y_direction();
 let z_dir = tr.z_direction();
-
-let sound_speed = autd.geometry[0].sound_speed;
-let wavelen = tr.wavelength(sound_speed);
-let wavenum = tr.wavenumber(sound_speed);
 # Ok(())
 # }

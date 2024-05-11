@@ -2,7 +2,7 @@
 # extern crate tokio;
 # extern crate autd3_link_soem;
 use autd3::prelude::*;
-use autd3_link_soem::{SOEM, SyncMode, Status};
+use autd3_link_soem::{SOEM, SyncMode, TimerStrategy, Status};
 
 # #[allow(unused_variables)]
 # #[tokio::main]

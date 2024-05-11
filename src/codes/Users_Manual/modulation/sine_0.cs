@@ -1,3 +1,3 @@
 using AUTD3Sharp.Modulation;
 
-var m = new Sine(150);
+var m = new Sine(150 * Hz);

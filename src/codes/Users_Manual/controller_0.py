@@ -1,5 +1,5 @@
-from pyautd3 import ConfigureReadsFPGAState
+from pyautd3 import ReadsFPGAState
 
-autd.send(ConfigureReadsFPGAState(lambda _: True))
+autd.send(ReadsFPGAState(lambda _: True))
 
 info = autd.fpga_state

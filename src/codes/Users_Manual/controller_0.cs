@@ -1,3 +1,3 @@
-autd.Send(new ConfigureReadsFPGAState(_ => true));
+autd.Send(new ReadsFPGAState(_ => true));
 
 var info = autd.FPGAState;

@@ -1,1 +1,1 @@
-autd.send(autd3::ConfigureForceFan([](const auto&) { return true; }));
+autd.send(autd3::ForceFan([](const auto&) { return true; }));

@@ -22,7 +22,7 @@ Silencerは, 振動子の駆動信号の急激な変動を抑制し, 静音化�
 
 ## Silencerの設定
 
-Silencerの設定には`ConfigureSilencer`を送信する.
+Silencerの設定には`Silencer`を送信する.
 
 Silencerはデフォルトで適当な値に設定されている.
 Silencerを無効化する場合は, `disable`を送信する.

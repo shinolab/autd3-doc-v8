@@ -1,6 +1,6 @@
 # PhaseFilter
 
-`ConfigurePhaseFilter`により, 固定の位相オフセットを指定できる.
+`PhaseFilter`により, 固定の位相オフセットを指定できる.
 ここで指定した位相は, `Gain`, `GainSTM`, `FocusSTM`の位相データに加算される.
 
 ```rust,edition2021

@@ -1,3 +1,3 @@
-from pyautd3 import ChangeGainSegment, Segment
+from pyautd3 import Segment, SwapSegment
 
-autd.send(ChangeGainSegment(Segment.S1))
+autd.send(SwapSegment.gain(Segment.S1))

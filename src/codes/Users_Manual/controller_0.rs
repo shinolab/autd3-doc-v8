@@ -5,7 +5,7 @@
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 # let mut autd = Controller::builder().add_device(AUTD3::new(Vector3::zeros())).open(autd3::link::Nop::builder()).await?;
-autd.send(ConfigureReadsFPGAState::new(|_dev| true)).await?;
+autd.send(ReadsFPGAState::new(|_dev| true)).await?;
 
 let info = autd.fpga_state().await?;
 # Ok(())

@@ -1,1 +1,1 @@
-autd.Send(new ConfigurePhaseFilter((dev, tr) => new Phase(0)));
+autd.Send(new PhaseFilter((dev) => (tr) => new Phase(0)));

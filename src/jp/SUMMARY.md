@@ -25,7 +25,6 @@
     - [Group](./Users_Manual/gain/grouped.md)
     - [Holo](./Users_Manual/gain/holo.md)
     - [Cache](./Users_Manual/gain/cache.md)
-    - [Transform](./Users_Manual/gain/transform.md)
   - [Modulation](./Users_Manual/modulation.md)
     - [Static](./Users_Manual/modulation/static.md)
     - [Sine](./Users_Manual/modulation/sine.md)

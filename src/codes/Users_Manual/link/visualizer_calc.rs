@@ -13,7 +13,7 @@ let mut autd = Controller::builder()
     .add_device(AUTD3::new(Vector3::zeros()))
     .open(Visualizer::builder()).await?;
 
-let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * MILLIMETER);
+let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * mm);
 
 autd.send(Focus::new(center)).await?;
 

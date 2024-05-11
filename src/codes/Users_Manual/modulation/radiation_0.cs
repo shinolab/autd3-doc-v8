@@ -1,3 +1,3 @@
 using AUTD3Sharp.Modulation;
 
-var m = new Sine(150).WithRadiationPressure();
+var m = new Sine(150.0 * Hz).WithRadiationPressure();

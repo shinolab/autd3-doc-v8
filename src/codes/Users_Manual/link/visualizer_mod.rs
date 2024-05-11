@@ -13,7 +13,7 @@ let mut autd = Controller::builder()
     .add_device(AUTD3::new(Vector3::zeros()))
     .open(Visualizer::builder()).await?;
 
-let m = Sine::new(150.);
+let m = Sine::new(150. * Hz);
 autd.send(m).await?;
 
 autd.link.plot_modulation(

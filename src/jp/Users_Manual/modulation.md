@@ -53,26 +53,6 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 {{#include ../../codes/Users_Manual/modulation_0.py}}
 ```
 
-### 変調データサイズ
-
-変調データサイズは以下のように取得する.
-
-```rust,edition2021
-{{#include ../../codes/Users_Manual/modulation_1.rs}}
-```
-
-```cpp
-{{#include ../../codes/Users_Manual/modulation_1.cpp}}
-```
-
-```cs
-{{#include ../../codes/Users_Manual/modulation_1.cs}}
-```
-
-```python
-{{#include ../../codes/Users_Manual/modulation_1.py}}
-```
-
 ### LoopBehavior
 
 ループの挙動を`with_loop_behavior`で制御できる.

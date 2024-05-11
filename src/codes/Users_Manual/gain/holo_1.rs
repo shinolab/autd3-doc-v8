@@ -11,7 +11,7 @@ use autd3_gain_holo::{LinAlgBackend, NalgebraBackend, GSPAT, EmissionConstraint}
 # let x2 = 0.;
 # let y2 = 0.;
 # let z2 = 0.;
-let backend = NalgebraBackend::new()?;
+let backend = std::sync::Arc::new(NalgebraBackend::default());
 let g = GSPAT::new(backend)
       .with_constraint(EmissionConstraint::Uniform(EmitIntensity::MAX));
 # Ok(())
