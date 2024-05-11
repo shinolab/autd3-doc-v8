@@ -33,7 +33,7 @@ if __name__ == "__main__":
         autd.send(ConfigureSilencer.default())
 
         g = Focus(autd.geometry.center + np.array([0.0, 0.0, 150.0]))
-        m = Sine(150)
+        m = Sine(150.0)
         autd.send(m, g)
 
         _ = input()

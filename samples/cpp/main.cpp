@@ -46,7 +46,7 @@ int main() try {
   autd3::gain::Focus g(focus);
 
   // Amplitude Modulation of 150 Hz sine wave
-  autd3::modulation::Sine m(150);
+  autd3::modulation::Sine m(150.0);
 
   // send data
   autd.send(m, g);

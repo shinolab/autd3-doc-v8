@@ -32,7 +32,7 @@ foreach (var firm in firmList)
 autd.Send(ConfigureSilencer.Default());
 
 var g = new Focus(autd.Geometry.Center + new Vector3d(0, 0, 150));
-var m = new Sine(150);
+var m = new Sine(150.0);
 autd.Send(m, g);
 
 Console.ReadKey(true);

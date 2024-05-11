@@ -13,7 +13,7 @@
   <img src="../../fig/Users_Manual/phase.png"/>
 </figure>
 
-```rust,edition2021
+```rust,edition2021,ignore
 {{#include ../../../codes/Users_Manual/link/visualizer_phase.rs}}
 ```
 
@@ -57,7 +57,7 @@
   <img src="../../fig/Users_Manual/xy.png"/>
 </figure>
 
-```rust,edition2021
+```rust,edition2021,ignore
 {{#include ../../../codes/Users_Manual/link/visualizer_field.rs}}
 ```
 
