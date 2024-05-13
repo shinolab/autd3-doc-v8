@@ -101,27 +101,53 @@ def util_update_ver(args):
 
         with open("src/en/Users_Manual/release_notes.md", "r") as f:
             content = f.read().rstrip()
-            content += f"\n| {now} | {version} |\n"
         with open("src/en/Users_Manual/release_notes.md", "w") as f:
-            f.write(content)
+            lines = content.split("\n")
+            i = 0
+            for _ in range(4):
+                f.write(lines[i] + "\n")
+                i += 1
+            last_firm_ver = lines[i].split("|")[3].strip()
+            f.write(f"| {now}  | {version:16} | {last_firm_ver:16} |\n")
+            for line in lines[i:]:
+                f.write(line + "\n")
 
         with open("src/jp/Users_Manual/release_notes.md", "r") as f:
             content = f.read().rstrip()
-            content += f"\n| {now} | {version} |\n"
         with open("src/jp/Users_Manual/release_notes.md", "w") as f:
-            f.write(content)
+            lines = content.split("\n")
+            i = 0
+            for _ in range(4):
+                f.write(lines[i] + "\n")
+                i += 1
+            last_firm_ver = lines[i].split("|")[3].strip()
+            f.write(f"| {now}  | {version:16} | {last_firm_ver:16} |\n")
+            for line in lines[i:]:
+                f.write(line + "\n")
 
         with open("src/en/document_history.md", "r") as f:
             content = f.read().rstrip()
-            content += f"\n| {now} | Version {version} Initial release |\n"
         with open("src/en/document_history.md", "w") as f:
-            f.write(content)
+            lines = content.split("\n")
+            i = 0
+            for _ in range(4):
+                f.write(lines[i] + "\n")
+                i += 1
+            f.write(f"| {now} | Version {version} Initial release                |\n")
+            for line in lines[i:]:
+                f.write(line + "\n")
 
         with open("src/jp/document_history.md", "r", encoding="utf-8") as f:
             content = f.read().rstrip()
-            content += f"\n| {now} | Version {version} 初版 |\n"
         with open("src/jp/document_history.md", "w", encoding="utf-8") as f:
-            f.write(content)
+            lines = content.split("\n")
+            i = 0
+            for _ in range(4):
+                f.write(lines[i] + "\n")
+                i += 1
+            f.write(f"| {now} | Version {version} 初版                           |\n")
+            for line in lines[i:]:
+                f.write(line + "\n")
 
         with open("samples/cs/AUTD3Sharp-Sample.csproj", "r") as f:
             content = f.read()
