@@ -84,6 +84,7 @@ jobs:
           files: |
             src/codes/Users_Manual/*.rs
             src/codes/Users_Manual/**/*.rs
+            thirdparties/Cargo.toml
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
@@ -110,6 +111,7 @@ jobs:
           files: |
             src/codes/Users_Manual/*.rs
             src/codes/Users_Manual/**/*.rs
+            thirdparties/Cargo.toml
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
