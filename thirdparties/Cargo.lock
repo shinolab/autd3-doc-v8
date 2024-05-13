@@ -113,9 +113,9 @@ dependencies = [
 
 [[package]]
 name = "autd3"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1dbd69798ea32805c2b7dd85c3f56f56bf1b196959cb4514c17010f81f12c53f"
+checksum = "b04f69f1f8f977446a9f95d8c8a2e47f3ad5336b4074910bdc59ae1912cf2665"
 dependencies = [
  "autd3-driver",
  "autd3-firmware-emulator",
@@ -127,9 +127,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-derive"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5f9cad611403a871653eb612868b3c5e357a23b758d2f77872887bb80970e6a"
+checksum = "202673228eef203d4f9a6dbf1f844e27f75f527b1382321e6dc266a31b7542d1"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -138,9 +138,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-driver"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34e241aa2b23bfeeaf017c6f48099f2f1cb62ba69263cf01d713fdbb03a95fe4"
+checksum = "e75aba3a950e57a2f7e914660e89239338d2b2a45324017fc40581bf1a9eb42f"
 dependencies = [
  "autd3-derive",
  "bitfield-struct",
@@ -159,9 +159,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-firmware-emulator"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4b600474d063ba4456974c0834ba91274be541f1a9129d1d28277ec81f9d4c88"
+checksum = "a06fdb8f1013a0a074616c9941a85363e2b4aa41312d461a5b8c843a7e951295"
 dependencies = [
  "autd3-driver",
  "num-integer",
@@ -171,9 +171,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-gain-holo"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "73a7e034b9c77a103f27b652c92ee4b54c79007f5d8e7f454243668f82ac739f"
+checksum = "b9a569ce8675525b053106d82c3fad93ddea7802135531f9225ade33ff197f96"
 dependencies = [
  "autd3-driver",
  "nalgebra",
@@ -184,9 +184,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-simulator"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21bd0016bc49fba60443255229457f4b9b4e512592ddb2ad07a952520c55be36"
+checksum = "361687fdf4e3f8e1e54435e53b223866bc7b2fcb2e0626de8512ff8eccade66c"
 dependencies = [
  "autd3-driver",
  "autd3-protobuf",
@@ -196,9 +196,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-soem"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5375a0e5776397270706c3220956a95d54cd95a49c1b191424d3406488b4180b"
+checksum = "a75ec741b575baed225d9c651d17ce2d7044f740e060c70db24883f4a959abc5"
 dependencies = [
  "async-channel",
  "autd3-driver",
@@ -216,9 +216,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-link-twincat"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f70d5d7e0af585ef983e91567408151850aab186dd485811a9a1d9ed97a193e"
+checksum = "7c550432f608150d54e66c35dac5fd9c42e162b9bf68ae45fbabc6c250fec82b"
 dependencies = [
  "autd3-driver",
  "cc",
@@ -245,9 +245,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-modulation-audio-file"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1078d411871f34621a4f7959b6d3a8cf05c3e7be0f0349e38b0221a22d5533eb"
+checksum = "399fcc76ebe08a047fef095f6a4b2ab5e053d70a659e0d64465d6efd9a9b4496"
 dependencies = [
  "autd3-driver",
  "hound",
@@ -257,9 +257,9 @@ dependencies = [
 
 [[package]]
 name = "autd3-protobuf"
-version = "23.0.1"
+version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9c09264b19a1d432abc4c94ce2229b426a8a9dd5f63e5fa9b30a35aae02270be"
+checksum = "a071ca3fafa5705d5f4cc88e9890f724eebbfd03bbab9bfb1bf3760f865fb28c"
 dependencies = [
  "autd3-driver",
  "h2 0.4.0",

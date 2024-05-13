@@ -71,3 +71,4 @@
 | 2024/04/08 | Version 22.1.0 Initial release |
 | 2024/05/11 | Version 23.0.0 Initial release |
 | 2024/05/11 | Version 23.0.1 Initial release |
+| 2024/05/13 | Version 23.1.0 Initial release |
