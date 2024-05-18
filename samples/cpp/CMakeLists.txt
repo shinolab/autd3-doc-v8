@@ -19,7 +19,7 @@ if(WIN32)
 elseif(APPLE)
   FetchContent_Declare(
     autd3
-    URL https://github.com/shinolab/autd3-cpp/releases/download/v24.0.0/autd3-v24.0.0-macos-universal.tar.gz
+    URL https://github.com/shinolab/autd3-cpp/releases/download/v24.0.0/autd3-v24.0.0-macos-aarch64.tar.gz
   )
 else()
   FetchContent_Declare(
