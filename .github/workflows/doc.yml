@@ -97,7 +97,7 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
       - name: Test book jp
         run: |
-          python3 build.py test jp
+          python3 build.py test jp --init
         if: steps.changed-files.outputs.any_changed == 'true'
 
   check-en:
@@ -124,7 +124,7 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
       - name: Test book en
         run: |
-          python3 build.py test en
+          python3 build.py test en --init
         if: steps.changed-files.outputs.any_changed == 'true'
 
   build:

@@ -24,7 +24,6 @@ renderer = ["html"]
 mathjax-support = false
 default-theme = "navy"
 preferred-dark-theme = "navy"
-# git-repository-url = "http://localhost:8080"
 git-repository-url = "https://github.com/shinolab/autd3-doc"
 git-branch = "main"
 curly-quotes = true

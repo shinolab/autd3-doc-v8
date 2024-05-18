@@ -31,13 +31,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Open controller with SOEM link
         // The callback specified by with_err_handler is called when error occurs
         .open(SOEM::builder().with_err_handler(|slave, status| match status {
-                Status::Error(msg) => eprintln!("Error [{}]: {}", slave, msg),
-                Status::Lost(msg) => {
-                    eprintln!("Lost [{}]: {}", slave, msg);
+                Status::Error => eprintln!("Error [{}]: {}", slave, status),
+                Status::Lost => {
+                    eprintln!("Lost [{}]: {}", slave, status);
                     // You can also wait for the link to recover, without exitting the process
                     std::process::exit(-1);
                 }
-                Status::StateChanged(msg) => eprintln!("StateChanged [{}]: {}", slave, msg),
+                Status::StateChanged => eprintln!("StateChanged [{}]: {}", slave, status),
             })).await?;
 
     // Check firmware version

@@ -13,8 +13,8 @@ autd.group(|dev| match dev.idx() {
         1 => Some("null"),
         _ => None,
     })
-    .set("null", Null::new())?
-    .set("focus", Focus::new(Vector3::new(x, y, z)))?
+    .set("null", Null::new())
+    .set("focus", Focus::new(Vector3::new(x, y, z)))
     .send().await?;
 # Ok(())
 # }
