@@ -33,14 +33,14 @@ int main() try {
 
   // Silencer is used to quiet down the transducers' noise by passing the
   // phase/amplitude parameters through a low-pass filter.
-  autd.send(autd3::Silencer::default_());
+  autd.send(autd3::Silencer());
 
   // focus is 150.0 mm above array center
   const autd3::Vector3 focus = autd.geometry().center() + autd3::Vector3(0.0, 0.0, 150.0);
   autd3::gain::Focus g(focus);
 
   // Amplitude Modulation of 150 Hz sine wave
-  auto m = autd3::modulation::Sine::create(150 * autd3::Hz);
+  autd3::modulation::Sine m(150 * autd3::Hz);
 
   // send data
   autd.send(m, g);
