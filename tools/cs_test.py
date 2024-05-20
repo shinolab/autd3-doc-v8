@@ -15,6 +15,9 @@ def get_version() -> str:
 
 
 if __name__ == "__main__":
+    version = get_version()
+    print(f"Testing with AUTD3Sharp {version}")
+
     base_path = pathlib.Path(__file__).parent.parent / "src" / "codes"
 
     n_jobs = multiprocessing.cpu_count()
@@ -48,8 +51,8 @@ if __name__ == "__main__":
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AUTD3Sharp" Version="{get_version()}" />
-        <PackageReference Include="AUTD3Sharp.Derive" Version="{get_version()}" />
+        <PackageReference Include="AUTD3Sharp" Version="{version}" />
+        <PackageReference Include="AUTD3Sharp.Derive" Version="{version}" />
     </ItemGroup>
 
     </Project>"""
@@ -81,7 +84,6 @@ if __name__ == "__main__":
                         err = line.replace(test_file, src_file).split("[")[0]
                         break
                 error_files.append((cs_src, err))
-                break
         return error_files
 
     result = joblib.Parallel(n_jobs=n_jobs)(

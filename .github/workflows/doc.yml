@@ -17,6 +17,7 @@ jobs:
           files: |
             samples/cs/Program.cs
             samples/cs/AUTD3Sharp-Sample.csproj
+            tools/cs_test.py
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:

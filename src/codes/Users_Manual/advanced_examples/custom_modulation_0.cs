@@ -4,6 +4,8 @@
 ~using static AUTD3Sharp.Units;
 using AUTD3Sharp.Derive;
 
+var m = new Burst(4000);
+
 [Modulation]
 public partial class Burst
 {
