@@ -24,14 +24,14 @@ Then, make `CMakeLists.txt` and `main.cpp` files.
 Next, edit `CMakeLists.txt` as follows,
 
 ```ignore,filename=CMakeLists.txt
-{{#include ../../../../samples/cpp/CMakeLists.txt}}
+{{#include ../../../codes/Users_Manual/Tutorial/CMakeLists.txt}}
 ```
 
 And, edit `main.cpp` as follows.
 This is the source code for generating a focus with $\SI{150}{Hz}$ AM modulation. 
 
 ```cpp,filename=main.cpp
-{{#include ../../../../samples/cpp/main.cpp}}
+{{#include ../../../codes/Users_Manual/Tutorial/main.cpp}}
 ```
 
 Then, build with CMake.

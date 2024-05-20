@@ -1,6 +1,8 @@
+//~#include<autd3.hpp>
 #include "autd3/link/visualizer.hpp"
 
-auto autd = autd3::Controller::builder()
+//~int main() {
+auto autd = autd3::ControllerBuilder()
                 .add_device(autd3::AUTD3(autd3::Vector3::Zero()))
                 .open(autd3::link::Visualizer::builder());
 
@@ -10,4 +12,5 @@ autd.send(g);
 
 autd3::link::PlotConfig config;
 config.fname = "phase.png";
-autd.link().plot_phase(config, autd.geometry(), Segment::S0, 0);
+autd.link().plot_phase(config, autd.geometry(), autd3::Segment::S0, 0);
+//~return 0; }

@@ -24,7 +24,7 @@ cd autd3-sample
 次に, `CMakeLists.txt`を以下のようにする.
 
 ```ignore,filename=CMakeLists.txt
-{{#include ../../../../samples/cpp/CMakeLists.txt}}
+{{#include ../../../codes/Users_Manual/Tutorial/CMakeLists.txt}}
 ```
 
 > NOTE: 上記の例では, 依存ライブラリ (Eigen3) を自動的にダウンロードするようになっている.
@@ -33,7 +33,7 @@ cd autd3-sample
 また, `main.cpp`を以下のようにする. これは単一焦点に$\SI{150}{Hz}$のAM変調をかける場合のソースコードである.
 
 ```cpp,filename=main.cpp
-{{#include ../../../../samples/cpp/main.cpp}}
+{{#include ../../../codes/Users_Manual/Tutorial/main.cpp}}
 ```
 
 次に, CMakeでビルドする.

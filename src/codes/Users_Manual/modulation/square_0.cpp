@@ -1,3 +1,4 @@
-#include "autd3.hpp"
-
-const auto m = autd3::modulation::Square(150.0 * autd3::Hz);
+//~#include<autd3.hpp>
+//~int main() {
+autd3::modulation::Square m(150 * autd3::Hz);
+//~return 0; }

@@ -41,15 +41,16 @@ jobs:
         id: changed-files
         with:
           files: |
-            samples/cpp/main.cpp
-            samples/cpp/CMakeLists.txt
+            src/codes/Users_Manual/*.cs
+            src/codes/Users_Manual/**/*.cs
+            tools/cpp_test.py
       - name: build
         run: |
-          cd samples/cpp
-          mkdir build
-          cd build
-          cmake .. -DCMAKE_C_COMPILER=gcc-12 -DCMAKE_CXX_COMPILER=g++-12
-          cmake --build .
+          sudo apt-get update
+          sudo apt-get -y install libeigen3-dev
+          pip install joblib requests
+          cd tools
+          python3 cpp_test.py 
         if: steps.changed-files.outputs.any_changed == 'true'
 
   check-python:

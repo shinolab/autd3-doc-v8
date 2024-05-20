@@ -1,6 +1,8 @@
+//~#include<autd3.hpp>
 #include "autd3/link/visualizer.hpp"
 
-auto autd = autd3::Controller::builder()
+//~int main() {
+auto autd = autd3::ControllerBuilder()
                 .add_device(autd3::AUTD3(autd3::Vector3::Zero()))
                 .open(autd3::link::Visualizer::builder());
 
@@ -13,6 +15,6 @@ config.fname = "xy.png";
 autd.link().plot_field(config,
                        autd3::link::PlotRange(center.x() - 20, center.x() + 20,
                                               center.y() - 30, center.y() + 30,
-                                              center.z(), center.z(), 1)
-                           autd.geometry(),
-                       Segment::S0, 0);
+                                              center.z(), center.z(), 1),
+                       autd.geometry(), autd3::Segment::S0, 0);
+//~return 0; }

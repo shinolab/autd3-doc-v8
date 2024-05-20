@@ -1,3 +1,4 @@
-#include "autd3.hpp"
-
-const auto m = autd3::modulation::Static();
+//~#include<autd3.hpp>
+//~int main() {
+autd3::modulation::Static m;
+//~return 0; }
