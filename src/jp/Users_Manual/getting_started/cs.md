@@ -12,7 +12,7 @@ dotnet add package AUTD3Sharp
 これは単一焦点に$\SI{150}{Hz}$のAM変調をかける場合のソースコードである.
 
 ```csharp,filename=Program.cs
-{{#include ../../../../samples/cs/Program.cs}}
+{{#include ../../../codes/Users_Manual/Tutorial/Program.cs}}
 ```
 
 そして, これを実行する.

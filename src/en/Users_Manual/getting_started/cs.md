@@ -13,7 +13,7 @@ Next, make `Program.cs` file.
 This is the source code for generating a focus with $\SI{150}{Hz}$ AM modulation. 
 
 ```csharp,filename=Program.cs
-{{#include ../../../../samples/cs/Program.cs}}
+{{#include ../../../codes/Users_Manual/Tutorial/Program.cs}}
 ```
 
 Then, run the program.

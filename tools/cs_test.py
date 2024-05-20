@@ -66,7 +66,7 @@ if __name__ == "__main__":
                 f.write(content)
 
             r = subprocess.run(
-                "dotnet build",
+                ["dotnet", "build"],
                 cwd=test_dir,
                 capture_output=True,
                 text=True,

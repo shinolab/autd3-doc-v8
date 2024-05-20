@@ -15,17 +15,13 @@ jobs:
         id: changed-files
         with:
           files: |
-            samples/cs/Program.cs
-            samples/cs/AUTD3Sharp-Sample.csproj
+            src/codes/Users_Manual/*.cs
+            src/codes/Users_Manual/**/*.cs
             tools/cs_test.py
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-        if: steps.changed-files.outputs.any_changed == 'true'
-      - name: build
-        run: |
-          dotnet build samples/cs/AUTD3Sharp-Sample.csproj -c:Release
         if: steps.changed-files.outputs.any_changed == 'true'
       - name: test codes
         run: |
