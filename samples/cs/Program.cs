@@ -25,7 +25,7 @@ using var autd = new ControllerBuilder()
             };
         }));
 
-var firmList = autd.FirmwareVersionList();
+var firmList = autd.FirmwareVersion();
 foreach (var firm in firmList)
     Console.WriteLine(firm);
 
