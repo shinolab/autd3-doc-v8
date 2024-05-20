@@ -1,9 +1,9 @@
 ﻿using AUTD3Sharp;
 using AUTD3Sharp.Utils;
-using AUTD3Sharp.NativeMethods;
 using AUTD3Sharp.Link;
 using AUTD3Sharp.Gain;
 using AUTD3Sharp.Modulation;
+using static AUTD3Sharp.Units;
 
 using var autd = new ControllerBuilder()
         .AddDevice(new AUTD3(Vector3d.Zero))
@@ -25,14 +25,14 @@ using var autd = new ControllerBuilder()
             };
         }));
 
-var firmList = autd.FirmwareInfoList();
+var firmList = autd.FirmwareVersionList();
 foreach (var firm in firmList)
     Console.WriteLine(firm);
 
-autd.Send(ConfigureSilencer.Default());
+autd.Send(Silencer.Default());
 
 var g = new Focus(autd.Geometry.Center + new Vector3d(0, 0, 150));
-var m = new Sine(150.0);
+var m = new Sine(150u * Hz);
 autd.Send(m, g);
 
 Console.ReadKey(true);
