@@ -1,7 +1,9 @@
-using AUTD3Sharp;
-using AUTD3Sharp.Link;
-using AUTD3Sharp.NativeMethods;
-
+~using AUTD3Sharp;
+~using AUTD3Sharp.Link;
+~using AUTD3Sharp.Gain;
+~using AUTD3Sharp.Modulation;
+~using AUTD3Sharp.Utils;
+~var autd = new ControllerBuilder().AddDevice(new AUTD3(Vector3d.Zero)).Open(
 SOEM.Builder()
     .WithIfname("")
     .WithBufSize(32)
@@ -27,3 +29,4 @@ SOEM.Builder()
     .WithSendCycle(2)
     .WithTimerStrategy(TimerStrategy.BusyWait)
     .WithSyncMode(SyncMode.DC)
+~);

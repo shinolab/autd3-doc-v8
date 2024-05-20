@@ -1,5 +1,5 @@
-using AUTD3Sharp.Modulation;
-
-var m = new Fourier(new Sine(100.0 * Hz))
-        .AddComponent(new Sine(150.0 * Hz))
-        .AddComponentsFromIter(new[] { new Sine(200.0 * Hz) });
+~using AUTD3Sharp.Modulation;
+~using static AUTD3Sharp.Units;
+var m = new Fourier(new Sine(100u * Hz))
+        .AddComponent(new Sine(150u * Hz))
+        .AddComponentsFromIter(new[] { new Sine(200u * Hz) });

@@ -26,6 +26,12 @@ jobs:
         run: |
           dotnet build samples/cs/AUTD3Sharp-Sample.csproj -c:Release
         if: steps.changed-files.outputs.any_changed == 'true'
+      - name: test codes
+        run: |
+          pip install joblib requests
+          cd tools
+          python3 cs_test.py 
+        if: steps.changed-files.outputs.any_changed == 'true'
 
   check-cpp:
     name: doc-check-sample-cpp

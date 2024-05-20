@@ -1,6 +1,6 @@
-using AUTD3Sharp;
-using AUTD3Sharp.Modulation;
-
-var m = new Square(150.0 * Hz)
-        .WithLow(0x00)
-        .WithHigh(0xFF);
+~using AUTD3Sharp;
+~using AUTD3Sharp.Modulation;
+~using static AUTD3Sharp.Units;
+var m = new Square(150u * Hz)
+        .WithLow(new EmitIntensity(0x00))
+        .WithHigh(new EmitIntensity(0xFF));

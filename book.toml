@@ -49,3 +49,6 @@ destination = "book/en"
 [language-jp]
 src = "src/jp"
 destination = "book/jp"
+
+[output.html.code.hidelines]
+cs = "#"
