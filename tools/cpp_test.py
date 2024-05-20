@@ -89,7 +89,10 @@ target_link_libraries(main PRIVATE autd3::modulation::audio_file)
 
         with open(test_dir / "main.cpp", "w") as f:
             f.write("""int main() { return 0; }""")
-        subprocess.run(["cmake", ".."], cwd=build_dir).check_returncode()
+        subprocess.run(
+            ["cmake", "..", "-DCMAKE_C_COMPILER=gcc-12", "-DCMAKE_CXX_COMPILER=g++-12"],
+            cwd=build_dir,
+        ).check_returncode()
 
         for src in srcs[start:end]:
             with open(src, "r") as f:
