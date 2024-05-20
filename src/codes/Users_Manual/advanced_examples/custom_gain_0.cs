@@ -3,8 +3,7 @@
 ~using AUTD3Sharp.Gain;
 ~using static AUTD3Sharp.Units;
 using AUTD3Sharp.Derive;
-
-var g = new FocalPoint(Vector3d.Zero);
+~var g = new FocalPoint(Vector3d.Zero);
 
 [Gain]
 public partial class FocalPoint

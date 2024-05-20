@@ -4,5 +4,6 @@
 # use autd3_link_soem::SOEM;
 # #[allow(unused_variables)]
 # fn main() {
-let link = SOEM::builder().with_timeout(std::time::Duration::from_millis(20));
+# let link = 
+SOEM::builder().with_timeout(std::time::Duration::from_millis(20));
 # }

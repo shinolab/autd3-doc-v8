@@ -1,6 +1,6 @@
 //~#include<chrono>
 //~#include<autd3.hpp>
-#include "autd3/link/soem.hpp"
+//~#include "autd3/link/soem.hpp"
 //~int main() {
 //~auto autd =
 //~autd3::ControllerBuilder().add_device(autd3::AUTD3(autd3::Vector3::Zero())).open(
