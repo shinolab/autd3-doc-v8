@@ -51,4 +51,4 @@ src = "src/jp"
 destination = "book/jp"
 
 [output.html.code.hidelines]
-cs = "#"
+cs = "~"
