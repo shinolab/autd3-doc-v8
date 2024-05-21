@@ -1,5 +1,4 @@
-~from pyautd3 import EmitIntensity
-~from pyautd3.gain import Focus
+~from pyautd3 import EmitIntensity, Focus
 ~x = 0.0
 ~y = 0.0
 ~z = 0.0

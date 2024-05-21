@@ -67,12 +67,10 @@ jobs:
             src/codes/Users_Manual/*.py
             src/codes/Users_Manual/**/*.py
             tools/python_test.py
-      - name: install deps
-        run: |
-          python3 -m pip install --upgrade pyautd3
-        if: steps.changed-files.outputs.any_changed == 'true'
       - name: build
         run: |
+          python3 -m pip install --upgrade pyautd3
+          python3 -m pip install -U mypy ruff
           cd tools
           python3 python_test.py 
         if: steps.changed-files.outputs.any_changed == 'true'

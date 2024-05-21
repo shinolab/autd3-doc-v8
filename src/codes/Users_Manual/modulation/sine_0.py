@@ -1,3 +1,2 @@
-~from pyautd3 import Hz
-~from pyautd3.modulation import Sine
+~from pyautd3 import Hz, Sine
 m = Sine(150 * Hz)

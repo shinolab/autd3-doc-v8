@@ -1,4 +1,4 @@
-~from pyautd3.gain import Bessel
+~from pyautd3 import Bessel
 ~x = 0.0
 ~y = 0.0
 ~z = 0.0
