@@ -93,7 +93,7 @@ def util_update_ver(args):
     version = args.version
 
     with working_dir("."):
-        with open("samples/cpp/CMakeLists.txt", "r") as f:
+        with open("src/codes/Users_Manual/Tutorial/CMakeLists.txt", "r") as f:
             content = f.read()
             content = re.sub(
                 r"v(.*)/autd3-v(\d*\.\d*\.\d*)",
@@ -101,7 +101,7 @@ def util_update_ver(args):
                 content,
                 flags=re.MULTILINE,
             )
-        with open("samples/cpp/CMakeLists.txt", "w") as f:
+        with open("src/codes/Users_Manual/Tutorial/CMakeLists.txt", "w") as f:
             f.write(content)
 
         now = datetime.datetime.now().strftime("%Y/%m/%d")
@@ -155,17 +155,6 @@ def util_update_ver(args):
             f.write(f"| {now} | Version {version} 初版                           |\n")
             for line in lines[i:]:
                 f.write(line + "\n")
-
-        with open("samples/cs/AUTD3Sharp-Sample.csproj", "r") as f:
-            content = f.read()
-            content = re.sub(
-                r'"AUTD3Sharp" Version="(.*)"',
-                f'"AUTD3Sharp" Version="{version}"',
-                content,
-                flags=re.MULTILINE,
-            )
-        with open("samples/cs/AUTD3Sharp-Sample.csproj", "w") as f:
-            f.write(content)
 
         with open("book.toml", "r") as f:
             content = f.read()
