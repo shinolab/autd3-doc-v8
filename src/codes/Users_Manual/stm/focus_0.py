@@ -1,7 +1,7 @@
-import numpy as np
-from pyautd3 import Hz
-from pyautd3.stm import FocusSTM
-
+~import numpy as np
+~from pyautd3 import Controller, AUTD3, FocusSTM, Hz
+~from pyautd3.link.audit import Audit
+~autd: Controller[Audit] = Controller.builder().add_device(AUTD3([0.0, 0.0, 0.0])).open(Audit.builder())
 center = autd.geometry.center + np.array([0.0, 0.0, 150.0])
 point_num = 200
 radius = 30.0

@@ -55,26 +55,26 @@ jobs:
 
   check-python:
     name: doc-check-sample-python
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
     steps: 
       - uses: actions/checkout@v4
       - uses: tj-actions/changed-files@v44
         id: changed-files
         with:
           files: |
-            samples/python/main.py
+            src/codes/Users_Manual/*.py
+            src/codes/Users_Manual/**/*.py
+            tools/python_test.py
       - name: install deps
         run: |
           python3 -m pip install --upgrade pyautd3
         if: steps.changed-files.outputs.any_changed == 'true'
       - name: build
         run: |
-          cd samples/python
-          echo a | python3 main.py || true
+          cd tools
+          python3 python_test.py 
         if: steps.changed-files.outputs.any_changed == 'true'
 
   check-jp:

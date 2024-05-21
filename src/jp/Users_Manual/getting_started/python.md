@@ -10,7 +10,7 @@ pip install pyautd3
 これは単一焦点に$\SI{150}{Hz}$のAM変調をかける場合のソースコードである.
 
 ```python,filename=main.py
-{{#include ../../../../samples/python/main.py}}
+{{#include ../../../codes/Users_Manual/Tutorial/main.py}}
 ```
 
 そして, これを実行する.

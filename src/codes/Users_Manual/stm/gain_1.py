@@ -1,4 +1,2 @@
-from pyautd3 import Hz, SamplingConfig
-from pyautd3.stm import GainSTM
-
-stm = GainSTM.from_sampling_config(SamplingConfig.freq(1 * Hz))
+~from pyautd3 import Hz, SamplingConfig, GainSTM
+stm = GainSTM.from_sampling_config(SamplingConfig.Freq(1 * Hz))

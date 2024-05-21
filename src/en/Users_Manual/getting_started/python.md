@@ -10,7 +10,7 @@ Next, make `main.py` file as follows.
 This is the source code for generating a focus with $\SI{150}{Hz}$ AM modulation. 
 
 ```python,filename=main.py
-{{#include ../../../../samples/python/main.py}}
+{{#include ../../../codes/Users_Manual/Tutorial/main.py}}
 ```
 
 Then, run the program.

@@ -53,3 +53,4 @@ destination = "book/jp"
 [output.html.code.hidelines]
 cs = "~"
 cpp = "//~"
+python = "~"

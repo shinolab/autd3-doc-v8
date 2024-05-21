@@ -1,8 +1,7 @@
-import numpy as np
-from pyautd3 import AUTD3, Controller, Segment
-from pyautd3.gain import Focus
-from pyautd3.link.visualizer import PlotConfig, PlotRange, Visualizer
-
+~import numpy as np
+~from pyautd3 import AUTD3, Controller, Segment
+~from pyautd3.gain import Focus
+~from pyautd3.link.visualizer import PlotConfig, PlotRange, Visualizer
 autd: Controller[Visualizer] = (
     Controller.builder().add_device(AUTD3([0.0, 0.0, 0.0])).open(Visualizer.builder())
 )

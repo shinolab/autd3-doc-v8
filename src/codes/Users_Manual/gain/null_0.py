@@ -1,3 +1,2 @@
-from pyautd3.gain import Null
-
+~from pyautd3.gain import Null
 g = Null()

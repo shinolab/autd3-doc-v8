@@ -1,6 +1,6 @@
-import numpy as np
-from pyautd3 import AUTD3, Controller, Segment
-from pyautd3.gain import Focus
+~import numpy as np
+~from pyautd3 import AUTD3, Controller, Segment
+~from pyautd3.gain import Focus
 from pyautd3.link.visualizer import PlotConfig, Visualizer
 
 autd: Controller[Visualizer] = (

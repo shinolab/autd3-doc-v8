@@ -1,7 +1,9 @@
-from pyautd3.gain import Focus, Group, Null
-
+~from pyautd3.gain import Focus, Group, Null
+~x = 1.0
+~y = 0.0
+~z = 0.0
 g = (
     Group(lambda _, tr: "null" if tr.idx <= 100 else "focus")
-    .set_gain("null", Null())
-    .set_gain("focus", Focus([x, y, z]))
+    .set("null", Null())
+    .set("focus", Focus([x, y, z]))
 )
