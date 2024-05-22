@@ -23,8 +23,8 @@
 \1:{I}
 \trans:{^\mathsf{T}}
 \hermite:{^\dagger}
-\ufreq:{40\,\mathrm{kHz}}
-\clkf:{20.48\,\mathrm{MHz}}
+\ufreq:{\text{超音波周波数}}
+\clkf:{\ufreq\times 512}
 \sinc:{\mathrm{sinc}}
 \diag:{\mathrm{diag}}
 \diff:{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
