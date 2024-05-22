@@ -3,8 +3,8 @@ use autd3::prelude::*;
 
 # #[allow(unused_variables)]
 # fn main() {
-let g = Uniform::new(EmitIntensity::MAX).with_transform(|_dev| |_tr, d| Drive::new(
-    d.phase() + Phase::from(PI * rad),
-    EmitIntensity::new(d.intensity().value() / 2),
+let g = Uniform::new(EmitIntensity::MAX).with_transform2(|_dev| |_tr, d| Drive::new(
+    Phase::from((d.phase().radian() + PI) * rad),
+    d.intensity() / 2,
 ));
 # }
