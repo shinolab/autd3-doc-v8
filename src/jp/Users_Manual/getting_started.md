@@ -17,10 +17,10 @@ PCのイーサネットポートとAUTD3デバイスのEtherCAT In ([Concept](co
 ### ファームウェアアップデート
 
 ファームウェアが古い場合, 正常な動作は保証されない.
-本文章におけるファームウェアのバージョンはv6.1.0が想定される.
+本文章におけるファームウェアのバージョンはv7.0.0が想定される.
 
 ファームウェアのアップデートには[Vivado](https://www.xilinx.com/products/design-tools/vivado.html), 及び, [J-Link Software](https://www.segger.com/downloads/jlink/)をインストールしたWindows 10/11 64bit PCが必要である.
-なお, Vivado 2023.1, 及び, J-Link Software v7.82a (x64)での動作を確認している.
+なお, Vivado 2023.2, 及び, J-Link Software v7.94d (x64)での動作を確認している.
 
 > NOTE: ファームウェアのアップデートだけが目的であれば, "Vivado Lab Edition"の使用を強く推奨する. 
 > ML Edition はインストールに60 GB以上のディスク容量を要求する. Lab Edition は6 GB程度のディスク容量で済む. 
