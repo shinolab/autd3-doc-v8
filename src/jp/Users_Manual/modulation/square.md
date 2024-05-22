@@ -2,7 +2,7 @@
 
 矩形波状の`Modulation`.
 
-コンストラクタには周波数$f$を整数で指定する.
+コンストラクタには周波数$f$を指定する.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/modulation/square_0.rs}}
