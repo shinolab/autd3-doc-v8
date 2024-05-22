@@ -38,10 +38,12 @@ Autoモードの場合, `ForceFan`でファンを強制的に起動できる.
 {{#include ../../codes/Users_Manual/controller_fan.py}}
 ```
 
+`ForceFan`コンストラクタの引数は`Fn(&Device) -> bool`で, デバイス毎にファンを強制駆動するかどうかを指定する.
+
 ## fpga_state
 
 FPGAの状態を取得する.
-これを使用する前に, `ReadsFPGAState`を送信しておく必要がある.
+これを使用する前に, `ReadsFPGAState`で状態取得を有効化しておく必要がある.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/controller_0.rs}}
@@ -59,9 +61,18 @@ FPGAの状態を取得する.
 {{#include ../../codes/Users_Manual/controller_0.py}}
 ```
 
+`ReadsFPGAState`コンストラクタの引数は`Fn(&Device) -> bool`で, デバイス毎に状態取得を有効化するかどうかを指定する.
+
+有効化していないデバイスに対して`fpga_state`は`None`を返す.
+
 FPGAの状態としては, 現在以下の情報が取得できる.
 
-- ファン制御用の温度センサがアサートされているかどうか
+- `is_thermal_assert`: ファン制御用の温度センサがアサートされているかどうか
+- `current_mod_segment`: 現在のModulation Segment
+- `current_stm_segment`: 現在のFocusSTM/GainSTM Segment
+- `current_gain_segment`: 現在のGain Segment
+- `is_gain_mode`: 現在Gainが使用されているかどうか
+- `is_stm_mode`: 現在FocusSTM/GainSTMが使用されているかどうか
 
 ## send
 
@@ -90,10 +101,10 @@ FPGAの状態としては, 現在以下の情報が取得できる.
 {{#include ../../codes/Users_Manual/controller_1.py}}
 ```
 
-タイムアウトの値が0より大きい場合, 送信時に送信データがデバイスで処理されるか, 指定したタイムアウト時間が経過するまで待機する.
-送信データがデバイスで処理されたのが確認できた場合に`send`関数は`true`を返し, そうでない場合は`false`を返す.
+タイムアウトの値が0より大きい場合, 送信データがデバイスで処理されるか, 指定したタイムアウト時間が経過するまで待機する.
+送信データがデバイスで処理されたのが確認できなかった場合にエラーを返す.
 
-タイムアウトの値が0の場合, `send`関数はチェックを行わない.
+タイムアウトの値が0の場合, `send`関数は送信データがデバイスで処理されたかどうかのチェックを行わない.
 
 確実にデータを送信したい場合はこれを適当な値に設定しておくことをおすすめする.
 
