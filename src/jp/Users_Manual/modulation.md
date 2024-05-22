@@ -12,8 +12,9 @@ Modulationは音圧振幅に掛け合わされる.
 なお, 現在, `Modulation`には以下の制約がある.
 
 * バッファサイズは最大で32768
-* Modulationデータは内部で8-bit符号なし整数に変換され, 超音波PWM信号のDuty比と掛け合わされる
-* サンプリングレートは$\clkf/N$で, $N$は32-bit符号なし整数であり, $512$以上の値である必要がある
+  * 拡張モードを使用すると65536
+* Modulationデータは内部で8-bit符号なし整数に変換され, 振幅データと掛け合わされる
+* サンプリングレートは$\clkf/N$で, $N$は32-bit符号なし整数であり, $512$の倍数である必要がある
 
 SDKにはデフォルトでいくつかの種類のAMを生成するための`Modulation`が用意されている.
 
@@ -31,11 +32,9 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 
 ### Sampling設定
 
-`sampling_config`でサンプリング設定を取得できる.
 デフォルトのサンプリング周波数は$\SI{4}{kHz}$である.
 
-また, 一部の`Modulation`は`with_sampling_config`でサンプリングを設定できる.
-ただし, `Modulation`の制約上, 必ずしも指定した設定になるとは限らない.
+また, 一部の`Modulation`は`with_sampling_config`でサンプリング周波数を設定できる.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/modulation_0.rs}}
@@ -51,6 +50,24 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 
 ```python
 {{#include ../../codes/Users_Manual/modulation_0.py}}
+```
+
+サンプリングレート$\clkf/N$のNを直接指定する場合は以下のようにする.
+
+```rust,edition2021
+{{#include ../../codes/Users_Manual/modulation_1.rs}}
+```
+
+```cpp
+{{#include ../../codes/Users_Manual/modulation_1.cpp}}
+```
+
+```cs
+{{#include ../../codes/Users_Manual/modulation_1.cs}}
+```
+
+```python
+{{#include ../../codes/Users_Manual/modulation_1.py}}
 ```
 
 ### LoopBehavior
@@ -79,4 +96,4 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 無限ループの場合, どのインデックスデータから再生されるかは制御できない.
 有限回ループの場合, 0番目のデータから再生が始まり, 指定回数のループの後, 最終インデックスデータが出力され続ける.
 
-**この設定は, Segmentを切り替えたときにしか効果がない. 詳しくは[Segment](./segment.md)を参照.**
+**ループ設定は, Segmentを切り替えたときにしか効果がない. 詳しくは[Segment](./segment.md)を参照.**
