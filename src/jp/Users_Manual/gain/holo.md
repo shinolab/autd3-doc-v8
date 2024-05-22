@@ -45,6 +45,7 @@ SDKには以下の`Backend`が用意されている
 - Normalize: 振幅の最大値ですべての振動子の振幅を割り, 規格化する.
 - Uniform: すべての振動子の振幅を指定した値にする.
 - Clamp: 振幅を指定の範囲にクランプする.
+- Multiply: 規格化後, 所定の値を乗算する.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/holo_1.rs}}
