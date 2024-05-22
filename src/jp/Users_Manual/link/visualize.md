@@ -3,7 +3,7 @@
 `Visualizer`リンクは位相パターンや音場を可視化するための`Link`である.
 
 > NOTE:
-> 現在, このLinkはlinux-armv7/linux-aarch64用のC++/C#/Unity/Pythonライブラリには含まれていない. 
+> 現在, このLinkはlinux-armv7/linux-aarch64/windows-arm用のC++/C#/Unity/Pythonライブラリには含まれていない. 
 
 [[_TOC_]]
 
