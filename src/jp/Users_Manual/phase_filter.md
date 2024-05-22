@@ -18,3 +18,5 @@
 ```python
 {{#include ../../codes/Users_Manual/phase_filter.py}}
 ```
+
+`PhaseFilter`コンストラクタの引数は`Fn(&Device) -> Fn(&Transducer) -> Phase`である.
