@@ -2,7 +2,7 @@
 
 音圧をSin波状に変形するための`Modulation`.
 
-コンストラクタには周波数$f$を整数で指定する.
+コンストラクタには周波数$f$を指定する.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/modulation/sine_0.rs}}
@@ -27,7 +27,7 @@ $$
     \frac{amplitude}{2} \times \sin(2\pi ft) + offset
 $$
 となるようなAMをかける.
-ここで, $amplitude$と$offset$はそれぞれ, `with_intensity`と`with_offset`にて指定できる (デフォルトはそれぞれ`EmitIntensity::MAX`, `EmitIntensity::MAX/2`).
+ここで, $amplitude$と$offset$はそれぞれ, `with_intensity`と`with_offset`にて指定できる (デフォルトはそれぞれ`EmitIntensity`の最大値とその半分).
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/modulation/sine_1.rs}}
