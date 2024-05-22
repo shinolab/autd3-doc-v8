@@ -148,7 +148,7 @@ Fixed update rate modeを設定するには, 以下のようにする.
 
 Fixed completion steps modeを設定するには, 以下のようにする.
 なお, 引数はそれぞれ, 振幅/位相変化の完了までのステップ数に対応する.
-1ステップの時間間隔は$\SI{25}{us}$である.
+1ステップの時間間隔は超音波の周期に等しい.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.rs}}
@@ -167,13 +167,13 @@ Fixed completion steps modeを設定するには, 以下のようにする.
 ```
 
 デフォルト値は, 位相変化が$40$ステップ, 振幅変化が$10$ステップである.
-なお, Silencerの無効化は, 位相/振幅変化が$1$ステップと等価である.
+なお, Silencerの無効化は, 位相/振幅変化が$1$ステップで終わることと等価である.
 
 なお, このモードでは, `Modulation`や`FocusSTM`, `GainSTM`の位相/振幅がSilencerに指定した時間で完了できない場合にエラーが返される.
 すなわち, 以下の条件が満たされる必要がある.
-- Silencerの振幅変化完了ステップ $\times \SI{25}{us} \le$ `Modulation`のサンプリング周期
-- Silencerの振幅変化完了ステップ $\times \SI{25}{us} \le$ `FocusSTM`/`GainSTM`のサンプリング周期
-- Silencerの位相変化完了ステップ $\times \SI{25}{us} \le$ `FocusSTM`/`GainSTM`のサンプリング周期
+- Silencerの振幅変化完了ステップ $\times \text{超音波周期} \le$ `Modulation`のサンプリング周期
+- Silencerの振幅変化完了ステップ $\times \text{超音波周期} \le$ `FocusSTM`/`GainSTM`のサンプリング周期
+- Silencerの位相変化完了ステップ $\times \text{超音波周期} \le$ `FocusSTM`/`GainSTM`のサンプリング周期
 
 `strict_mode`を無効にすれば, この条件を満たさない場合でもエラーを返さないようになるが, 推奨はされない.
 
