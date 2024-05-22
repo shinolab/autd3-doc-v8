@@ -2,7 +2,10 @@
 
 Modulation, FocusSTM/GainSTMのサンプリング設定について説明する.
 
-サンプリング周波数は$\clkf/N$で, $N$は32-bit符号なし整数であり, $512$以上の整数として設定できる.
+サンプリング周波数は$\clkf/N$で, $N$は$512$以上の32-bit符号なし整数である.
+
+また, Silencerの設定によって指定できるサンプリング周波数の最大値が決まる.
+詳しくは[Silencer](./silencer.md#fixed-completion-steps-mode)を参照.
 
 ## サンプリング周波数の設定
 
