@@ -56,14 +56,11 @@ def doc_build(args):
 
 def doc_serve(args):
     with working_dir("."):
-        with set_env(
-            "MDBOOK_OUTPUT__HTML", '{"git_repository_url": "http://localhost:8080" }'
-        ):
-            command = ["mdbook", "serve", "--dest-dir", f"book/{args.target}"]
-            if args.open:
-                command.append("--open")
-            with set_env("MDBOOK_BOOK__src", f"src/{args.target}"):
-                subprocess.run(command).check_returncode()
+        command = ["mdbook", "serve", "--dest-dir", f"book/{args.target}"]
+        if args.open:
+            command.append("--open")
+        with set_env("MDBOOK_BOOK__src", f"src/{args.target}"):
+            subprocess.run(command).check_returncode()
 
 
 def doc_test(args):
@@ -73,20 +70,17 @@ def doc_test(args):
             subprocess.run(["cargo", "build"]).check_returncode()
 
     with working_dir("."):
-        with set_env(
-            "MDBOOK_OUTPUT__HTML", '{"git_repository_url": "http://localhost:8080" }'
-        ):
-            for t in args.target.split(","):
-                command = [
-                    "mdbook",
-                    "test",
-                    "--dest-dir",
-                    f"book/{t}",
-                    "-L",
-                    "./thirdparties/target/debug/deps",
-                ]
-                with set_env("MDBOOK_BOOK__src", f"src/{t}"):
-                    subprocess.run(command).check_returncode()
+        for t in args.target.split(","):
+            command = [
+                "mdbook",
+                "test",
+                "--dest-dir",
+                f"book/{t}",
+                "-L",
+                "./thirdparties/target/debug/deps",
+            ]
+            with set_env("MDBOOK_BOOK__src", f"src/{t}"):
+                subprocess.run(command).check_returncode()
 
 
 def util_update_ver(args):

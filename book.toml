@@ -27,8 +27,8 @@ preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/shinolab/autd3-doc"
 git-branch = "main"
 curly-quotes = true
-additional-js = ["./theme/codeblock_filename.js", "./theme/lightbox-plus-jquery.min.js"]
-additional-css = ["./theme/codeblock_filename.css", "./theme/lightbox.css", "open-in.css"]
+additional-js = ["theme/codeblock_filename.js", "theme/lightbox-plus-jquery.min.js"]
+additional-css = ["theme/codeblock_filename.css", "theme/lightbox.css", "open-in.css"]
 open-on-text = "Found a bug? [Edit this page on GitHub.]"
 
 [output.html.playground]
