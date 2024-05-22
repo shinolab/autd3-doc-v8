@@ -9,17 +9,9 @@ SDKには単一焦点のみをサポートする`FocusSTM`と, 任意の`Gain`�
 
 ## FocusSTM/GainSTMの共通API
 
-### frequency
-
-STMの周波数を取得する.
-
-### sampling_config
-
-サンプリング設定を取得する.
-
 ### LoopBehavior
 
-ループの挙動を, [Modulation](./modulation.md#loopbehavior)と同様に`WithLoopBehavior`で制御できる.
+ループの挙動を, [Modulation](./modulation.md#loopbehavior)と同様に`with_loop_behavior`で制御できる.
 有限回ループするか, 無限ループするかを指定できる.
 
 デフォルトは無限ループである.
