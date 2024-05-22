@@ -56,7 +56,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let g = Focus::new(center);
 
     // 150Hz sine wave modulation
-    let m = Sine::new(150. * Hz);
+    let m = Sine::new(150 * Hz);
 
     // Send data
     autd.send((m, g)).await?;

@@ -58,7 +58,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let g = Focus::new(center);
 
     // 150Hzサイン波変調
-    let m = Sine::new(150. * Hz);
+    let m = Sine::new(150 * Hz);
 
     // データの送信
     autd.send((m, g)).await?;
