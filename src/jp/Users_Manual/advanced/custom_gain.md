@@ -5,19 +5,19 @@
 ここでは, `Focus`と同じように単一焦点を生成する`FocalPoint`を実際に定義してみることにする.
 
 ```rust,edition2021
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_gain_0.rs}}
+{{#include ../../../codes/Users_Manual/advanced/custom_gain_0.rs}}
 ```
 
 ```cpp
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_gain_0.cpp}}
+{{#include ../../../codes/Users_Manual/advanced/custom_gain_0.cpp}}
 ```
 
 ```cs
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_gain_0.cs}}
+{{#include ../../../codes/Users_Manual/advanced/custom_gain_0.cs}}
 ```
 
 ```python
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_gain_0.py}}
+{{#include ../../../codes/Users_Manual/advanced/custom_gain_0.py}}
 ```
 
 `send`関数は`Gain`型を継承したクラスを引数に取ることができる.

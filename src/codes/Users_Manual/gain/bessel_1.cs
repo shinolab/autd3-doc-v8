@@ -13,4 +13,6 @@ var g = new Bessel(
             new Vector3d(x, y, z),
             new Vector3d(nx, ny, nz),
             theta * rad
-        ).WithIntensity(EmitIntensity.Max);
+        )
+        .WithIntensity(EmitIntensity.Max)
+        .WithPhaseOffset(new Phase(0x00));

@@ -6,5 +6,6 @@
 # let y = 0.;
 # let z = 0.;
 let g = autd3::gain::Focus::new(Vector3::new(x, y, z))
-            .with_intensity(EmitIntensity::MAX);
+            .with_intensity(EmitIntensity::MAX)
+            .with_phase_offset(Phase::new(0x00));
 # }

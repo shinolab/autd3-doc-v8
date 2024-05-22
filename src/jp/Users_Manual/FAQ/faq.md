@@ -77,12 +77,12 @@
 ## 振動子の位相/振幅データにアクセスするには?
 
 1. [`Transform`](../gain/transform.md)を利用する.
-1. 自分で所望の`Gain`を作成する. [Gainの自作](../advanced_examples/custom_gain.md)を参照.
+1. 自分で所望の`Gain`を作成する. [Gainの自作](../advanced/custom_gain.md)を参照.
 
 ## AM変調データにアクセスするには?
 
 1. [`Transform`](../modulation/transform.md)を利用する.
-1. 自分で所望の`Modulation`を作成する. [Modulationの自作](../advanced_examples/custom_modulation.md)を参照.
+1. 自分で所望の`Modulation`を作成する. [Modulationの自作](../advanced/custom_modulation.md)を参照.
 
 ## その他
 

@@ -6,19 +6,19 @@
 以下が, この`Burst`のサンプルである.
 
 ```rust,edition2021
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_modulation_0.rs}}
+{{#include ../../../codes/Users_Manual/advanced/custom_modulation_0.rs}}
 ```
 
 ```cpp
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_modulation_0.cpp}}
+{{#include ../../../codes/Users_Manual/advanced/custom_modulation_0.cpp}}
 ```
 
 ```cs
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_modulation_0.cs}}
+{{#include ../../../codes/Users_Manual/advanced/custom_modulation_0.cs}}
 ```
 
 ```python
-{{#include ../../../codes/Users_Manual/advanced_examples/custom_modulation_0.py}}
+{{#include ../../../codes/Users_Manual/advanced/custom_modulation_0.py}}
 ```
 
 `Modulation`も`Gain`と同じく, `send`内部で`calc`メソッドが呼ばれ, その返り値の変調データが使用される.

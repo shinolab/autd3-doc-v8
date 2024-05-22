@@ -23,19 +23,19 @@ The silencer is enabled by default.
 To disable the silencer, send `Silencer::disable`.
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_0.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_0.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_0.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_0.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.py}}
 ```
 
 To configure the silencer more finely, you need to choose from the following two modes.
@@ -118,19 +118,19 @@ Note that internally, Silencer is applied to,
 - for amplitude, amplitude parameter multiplied by `Modulation` data
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.py}}
 ```
 
 ### Fixed completion steps mode
@@ -143,19 +143,19 @@ To configure the fixed completion steps mode, do as follows.
 The arguments correspond to the number of steps until the completion of the amplitude/phase change, respectively, where one step correspond to $\SI{25}{us}$.
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.py}}
 ```
 
 The default values are $40$ steps for phase change and $10$ steps for amplitude change.
@@ -170,19 +170,19 @@ That is, the following conditions must be satisfied.
 If you set `strict_mode` to `false`, you can ignore these restrictions, but it's not recommended.
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.py}}
 ```
 
 

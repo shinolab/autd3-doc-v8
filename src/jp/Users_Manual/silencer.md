@@ -28,19 +28,19 @@ Silencerはデフォルトで適当な値に設定されている.
 Silencerを無効化する場合は, `disable`を送信する.
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_0.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_0.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_0.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_0.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_0.py}}
 ```
 
 より細く設定する場合は, 以下2つのモードから選択する必要がある.
@@ -125,19 +125,19 @@ Fixed update rate modeを設定するには, 以下のようにする.
 に対して適用される.
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_fixed_update_rate.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_update_rate.py}}
 ```
 
 ### Fixed completion steps mode
@@ -151,19 +151,19 @@ Fixed completion steps modeを設定するには, 以下のようにする.
 1ステップの時間間隔は超音波の周期に等しい.
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.py}}
 ```
 
 デフォルト値は, 位相変化が$40$ステップ, 振幅変化が$10$ステップである.
@@ -178,19 +178,19 @@ Fixed completion steps modeを設定するには, 以下のようにする.
 `strict_mode`を無効にすれば, この条件を満たさない場合でもエラーを返さないようになるが, 推奨はされない.
 
 ```rust,edition2021
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.rs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.rs}}
 ```
 
 ```cpp
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.cpp}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.cpp}}
 ```
 
 ```cs
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.cs}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.cs}}
 ```
 
 ```python
-{{#include ../../codes/Users_Manual/silencer_fixed_completion_steps_with_strict.py}}
+{{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps_with_strict.py}}
 ```
 
 [^suzuki2020]: Suzuki, Shun, et al. "Reducing amplitude fluctuation by gradual phase shift in midair ultrasound haptics." IEEE transactions on haptics 13.1 (2020): 87-93.

@@ -18,9 +18,9 @@
 {{#include ../../../codes/Users_Manual/gain/focus_0.py}}
 ```
 
-## 振幅の指定
+## 振幅/位相オフセットの指定
 
-`with_intensity`にて, 出力振幅を指定できる.
+`with_intensity`, `with_phase_offset`にて, 出力振幅と位相オフセットを指定できる.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/focus_1.rs}}

@@ -53,23 +53,7 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 {{#include ../../codes/Users_Manual/modulation_0.py}}
 ```
 
-サンプリングレート$\clkf/N$のNを直接指定する場合は以下のようにする.
-
-```rust,edition2021
-{{#include ../../codes/Users_Manual/modulation_1.rs}}
-```
-
-```cpp
-{{#include ../../codes/Users_Manual/modulation_1.cpp}}
-```
-
-```cs
-{{#include ../../codes/Users_Manual/modulation_1.cs}}
-```
-
-```python
-{{#include ../../codes/Users_Manual/modulation_1.py}}
-```
+サンプリング設定についての詳細は[サンプリング設定について](./sampling_config.md)を参照されたい.
 
 ### LoopBehavior
 

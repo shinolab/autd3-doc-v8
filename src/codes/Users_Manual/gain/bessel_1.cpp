@@ -11,5 +11,6 @@
 const auto g =
     autd3::gain::Bessel(autd3::Vector3(x, y, z), autd3::Vector3(nx, ny, nz),
                         theta * autd3::rad)
-        .with_intensity(std::numeric_limits<autd3::EmitIntensity>::max());
+        .with_intensity(std::numeric_limits<autd3::EmitIntensity>::max())
+        .with_phase_offset(autd3::Phase(0x00));
 //~return 0; }

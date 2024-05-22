@@ -41,6 +41,7 @@ level = 1
 [preprocessor.katex]
 after = ["links"]
 macros = "katex_macro.txt"
+fleqn = true
 
 [language-en]
 src = "src/en"
