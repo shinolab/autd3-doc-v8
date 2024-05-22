@@ -2,6 +2,7 @@
 
 | Date       | Description                                   |
 | :--------  | :-------------------------------------------- |
+| 2024/05/22 | Version 24.1.0 Initial release                |
 | 2024/05/18 | Version 24.0.0 Initial release                |
 | 2024/05/13 | Version 23.1.0 Initial release                |
 | 2024/05/11 | Version 23.0.1 Initial release                |

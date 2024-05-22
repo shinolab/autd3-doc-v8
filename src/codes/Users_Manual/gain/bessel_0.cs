@@ -1,5 +1,6 @@
 ~using AUTD3Sharp.Utils;
 ~using AUTD3Sharp.Gain;
+~using static AUTD3Sharp.Units;
 ~var x = 0.0;
 ~var y = 0.0;
 ~var z = 0.0;
@@ -10,5 +11,5 @@
 var g = new Bessel(
             new Vector3d(x, y, z),
             new Vector3d(nx, ny, nz),
-            theta
+            theta * rad
         );

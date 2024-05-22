@@ -70,3 +70,5 @@ if __name__ == "__main__":
         err = r.stdout
         print(err.replace("test-python", str(base_path)))
         exit(1)
+
+    print("All tests passed.")

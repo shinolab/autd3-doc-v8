@@ -12,6 +12,6 @@
 let g = autd3::gain::Bessel::new(
             Vector3::new(x, y, z), 
             Vector3::new(nx, ny, nz), 
-            theta,
+            theta * rad,
         );
 # }

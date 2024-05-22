@@ -10,6 +10,6 @@
 //~const auto theta = 0.0;
 const auto g =
     autd3::gain::Bessel(autd3::Vector3(x, y, z), autd3::Vector3(nx, ny, nz),
-                        theta)
+                        theta * autd3::rad)
         .with_intensity(std::numeric_limits<autd3::EmitIntensity>::max());
 //~return 0; }
