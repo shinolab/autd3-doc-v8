@@ -2,7 +2,7 @@
 authors = ["shun suzuki"]
 language = "en"
 multilingual = true
-title = "AUTD3 Developers Manual v24.1.0"
+title = "AUTD3 Developers Manual v25.0.0"
 
 src = "src"
 destination = "book"
@@ -26,7 +26,7 @@ default-theme = "navy"
 preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/shinolab/autd3-doc"
 git-branch = "main"
-curly-quotes = true
+smart-punctuation = true
 additional-js = ["theme/codeblock_filename.js", "theme/lightbox-plus-jquery.min.js"]
 additional-css = ["theme/codeblock_filename.css", "theme/lightbox.css", "open-in.css"]
 open-on-text = "Found a bug? [Edit this page on GitHub.]"

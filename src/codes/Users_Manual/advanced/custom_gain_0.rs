@@ -16,12 +16,13 @@ impl FocalPoint {
 }
 
 impl Gain for FocalPoint {
-    fn calc(&self, geometry: &Geometry, filter: GainFilter) -> Result<HashMap<usize, Vec<Drive>>, AUTDInternalError> {
-        Ok(Self::transform(geometry, filter, |dev| {
+    fn calc(&self, _geometry: &Geometry) -> GainCalcResult {
+        let position = self.position;
+        Ok(Self::transform(move |dev| {
             let wavenumber = dev.wavenumber();
             move |tr| {
                 Drive::new(
-                    Phase::from((self.position - tr.position()).norm() * wavenumber * rad),
+                    Phase::from((position - tr.position()).norm() * wavenumber * rad),
                     EmitIntensity::MAX,
                 )
             }

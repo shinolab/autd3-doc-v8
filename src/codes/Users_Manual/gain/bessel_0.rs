@@ -9,7 +9,7 @@
 # let ny = 0.;
 # let nz = 0.;
 # let theta = 0.;
-let g = autd3::gain::Bessel2::new(
+let g = autd3::gain::Bessel::new(
             Vector3::new(x, y, z), 
             Vector3::new(nx, ny, nz), 
             theta * rad,

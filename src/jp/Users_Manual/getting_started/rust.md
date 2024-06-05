@@ -24,12 +24,12 @@ use autd3_link_soem::{SOEM, Status};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // AUTDを操作するControllerの作成
-    let mut autd = Controller::builder()
-        // 接続しているデバイス情報の登録
-        // AUTD3::newの引数は位置
-        // 位置は自分の設定した座標系におけるこのデバイスの位置を指定する
-        // ここでは, デバイスは原点に置かれるする
-        .add_device(AUTD3::new(Vector3::zeros()))
+
+    // 接続しているデバイス情報の登録
+    // AUTD3::newの引数は位置
+    // 位置は自分の設定した座標系におけるこのデバイスの位置を指定する
+    // ここでは, デバイスは原点に置かれるする
+    let mut autd = Controller::builder([AUTD3::new(Vector3::zeros())])
         // SOEMリンクを使用してControllerをopenする
         // with_err_handlerで指定したコールバックはエラーが発生したときに呼ばれる 
         .open(SOEM::builder().with_err_handler(|slave, status| match status {

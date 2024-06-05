@@ -7,8 +7,7 @@ use autd3_link_twincat::RemoteTwinCAT;
 # #[allow(unused_variables)]
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
-# let autd = Controller::builder()
-#     .add_device(AUTD3::new(Vector3::zeros()))
+# let autd = Controller::builder([AUTD3::new(Vector3::zeros())])
 #      .open(
 RemoteTwinCAT::builder("172.16.99.111.1.1")
             .with_server_ip("172.16.99.104")

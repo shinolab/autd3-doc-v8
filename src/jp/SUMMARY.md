@@ -47,7 +47,6 @@
   - [上級者向け設定](./Users_Manual/advanced/advanced.md)
     - [Gainの自作](./Users_Manual/advanced/custom_gain.md)
     - [Modulationの自作](./Users_Manual/advanced/custom_modulation.md)
-    - [PhaseFilter](./Users_Manual/advanced/phase_filter.md)
     - [PulseWidthEncoder](./Users_Manual/advanced/pulse_width_encoder.md)
     - [DebugSettings](./Users_Manual/advanced/debug_settings.md)
     - [超音波周波数の設定](./Users_Manual/advanced/ultrasound_freq.md)
