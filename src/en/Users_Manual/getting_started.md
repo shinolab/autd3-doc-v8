@@ -24,6 +24,11 @@ To update the firmware, you need a Windows 10/11 64bit PC with [Vivado](https://
 
 First, connect the AUTD3 device and the PC with [XILINX Platform Cable](https://www.xilinx.com/products/boards-and-kits/hw-usb-ii-g.html) and [J-Link Plus](https://www.segger.com/products/debug-probes/j-link/models/j-link-plus/) with [J-Link 9-Pin Cortex-M Adapter](https://www.segger-pocjapan.com/j-link-9-pin-cortex-m-adapter), and turn on the power of the AUTD3.
 
+<figure>
+    <img src="../fig/Users_Manual/cable.jpg"/>
+    <figcaption>Cable connection for firmware update</figcaption>
+</figure>
+
 Then, run `autd_firmware_writer.ps1` in [autd3-firmware](https://github.com/shinolab/autd3-firmware) on powershell.
 
 ## Language-specific tutorials

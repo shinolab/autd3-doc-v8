@@ -28,6 +28,12 @@ PCのイーサネットポートとAUTD3デバイスのEtherCAT In ([Concept](co
 まず, AUTD3デバイスとPCを[XILINX Platform Cable](https://www.xilinx.com/products/boards-and-kits/hw-usb-ii-g.html), 及び, [J-Link 9-Pin Cortex-M Adapter](https://www.segger-pocjapan.com/j-link-9-pin-cortex-m-adapter)付きの[J-Link Plus](https://www.segger.com/products/debug-probes/j-link/models/j-link-plus/)で接続し, AUTD3の電源を入れる.
 次に, [autd3-firmware](https://github.com/shinolab/autd3-firmware)内の`autd_firmware_writer.ps1`をpowershellから実行し, 指示に従えばよい. updateには数分の時間を要する.
 
+<figure>
+    <img src="../fig/Users_Manual/cable.jpg"/>
+    <figcaption>ファームウェアアップデート用ケーブル接続先</figcaption>
+</figure>
+
+
 ## 各言語ごとのサンプルプログラム
 
 - [Rust](./getting_started/rust.md)
