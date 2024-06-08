@@ -43,8 +43,8 @@ jobs:
         id: changed-files
         with:
           files: |
-            src/codes/Users_Manual/*.cs
-            src/codes/Users_Manual/**/*.cs
+            src/codes/Users_Manual/*.cpp
+            src/codes/Users_Manual/**/*.cpp
             tools/cpp_test.py
       - name: build
         run: |
