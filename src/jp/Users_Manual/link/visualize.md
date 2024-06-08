@@ -105,7 +105,7 @@
 `with_gpu`の引数にはGPUのIDを指定する. `-1`を指定すると, 適当なGPUが自動的に選択される.
 
 ```rust,edition2021,ignore
-{{#include ../../../codes/Users_Manual/link/visualizer_gpu.rs}}
+{{#include ../../../codes/Users_Manual/link/visualizer_gpu.rs-excl}}
 ```
 
 - Rustでは`gpu` featureを有効化する必要がある.

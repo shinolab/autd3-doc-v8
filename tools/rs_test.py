@@ -54,7 +54,7 @@ edition = "2021"
 autd3 = {{ version = "{autd3_version}" }}
 autd3-gain-holo = {{ version = "{autd3_version}" }}
 autd3-link-simulator = {{ version = "{autd3_version}" }}
-autd3-link-visualizer = {{ version = "{autd3_link_vis_version}", features = ["python", "gpu"] }}
+autd3-link-visualizer = {{ version = "{autd3_link_vis_version}", features = ["python"] }}
 autd3-link-soem = {{ version = "{autd3_version}", features = ["remote"] }}
 autd3-link-twincat = {{ version = "{autd3_version}", features = ["remote"] }}
 autd3-modulation-audio-file = {{ version = "{autd3_version}" }}

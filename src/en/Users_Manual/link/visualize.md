@@ -103,7 +103,7 @@ The argument of `with_gpu` is GPU id. If you specify `-1`, the most suitable GPU
 
 
 ```rust,edition2021,ignore
-{{#include ../../../codes/Users_Manual/link/visualizer_gpu.rs}}
+{{#include ../../../codes/Users_Manual/link/visualizer_gpu.rs-excl}}
 ```
 
 - In rust library, you need to enable `gpu` feature.
