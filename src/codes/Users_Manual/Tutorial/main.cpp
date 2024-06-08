@@ -42,7 +42,7 @@ int main() try {
   autd3::modulation::Sine m(150 * autd3::Hz);
 
   // send data
-  autd.send(m, g);
+  autd.send((m, g));
 
   std::cout << "press enter to finish..." << std::endl;
   std::cin.ignore();
