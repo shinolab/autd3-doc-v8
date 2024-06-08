@@ -1,9 +1,9 @@
-# FocusSTM
+# FociSTM
 
-- The maximum number of sampling points is $65536$.
+- The maximum number of sampling points is $8192$.
 - The sampling frequency is $\clkf/N$.
 
-THe following is an example of using `FocusSTM` to focus on a point $\SI{150}{mm}$ directly above the center of the array with a radius of $\SI{30}{mm}$ centered on the center of the array.
+THe following is an example of using `FociSTM` to focus on a point $\SI{150}{mm}$ directly above the center of the array with a radius of $\SI{30}{mm}$ centered on the center of the array.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/stm/focus_0.rs}}
@@ -21,7 +21,7 @@ THe following is an example of using `FocusSTM` to focus on a point $\SI{150}{mm
 {{#include ../../../codes/Users_Manual/stm/focus_0.py}}
 ```
 
-`FocusSTM`'s constructor takes the STM frequency as an argument.
+`FociSTM`'s constructor takes the STM frequency as an argument.
 Note that the specified frequency and the actual frequency may differ due to constraints on the number of sampling points and the sampling period.
 For example, the above example runs 200 points at $\SI{1}{Hz}$, so the sampling frequency should be $\SI{200}{Hz}=\clkf/102400$.
 However, if `point_num=199`, the sampling frequency must be $\SI{199}{Hz}$, but there is no integer $N$ that satisfies $\SI{199}{Hz}=\clkf/N$.
