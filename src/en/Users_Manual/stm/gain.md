@@ -1,6 +1,6 @@
 # GainSTM
 
-`GainSTM` can handle arbitrary `Gain`s, unlike `FocusSTM`.
+`GainSTM` can handle arbitrary `Gain`s, unlike `FociSTM`.
 However, the number of `Gain`s that can be used is
 - 2048 in Legacy mode
 - 1024 in Advanced/AdvancedPhase mode
@@ -70,6 +70,6 @@ This mode can be switched with `with_mode`.
 
 The default is `PhaseDutyFull` mode, which sends all information.
 
-[^fn_gain_seq]: About 75 times of `FocusSTM`
+[^fn_gain_seq]: About 75 times of `FociSTM<1>`
 
 [^phase_half]: Legacy mode only

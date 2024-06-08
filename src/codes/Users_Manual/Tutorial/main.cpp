@@ -6,11 +6,10 @@
 int main() try {
   // create and open controller
   auto autd =
-      autd3::ControllerBuilder()
-          // The argument is the position.
-          // The position is the origin of the device in the global
-          // coordinate system you set.
-          .add_device(autd3::AUTD3(autd3::Vector3::Zero()))
+      // The argument is the position.
+      // The position is the origin of the device in the global
+      // coordinate system you set.
+      autd3::ControllerBuilder({autd3::AUTD3(autd3::Vector3::Zero())})
           .open(autd3::link::SOEM::builder().with_err_handler([](const uint16_t slave, const autd3::link::Status status, const std::string& msg) {
             switch (status) {
               case autd3::link::Status::Error:
@@ -36,7 +35,7 @@ int main() try {
   autd.send(autd3::Silencer());
 
   // focus is 150.0 mm above array center
-  const autd3::Vector3 focus = autd.geometry().center() + autd3::Vector3(0.0, 0.0, 150.0);
+  const autd3::Vector3 focus = autd.geometry().center() + autd3::Vector3(0, 0, 150);
   autd3::gain::Focus g(focus);
 
   // Amplitude Modulation of 150 Hz sine wave

@@ -1,13 +1,13 @@
 # Spatio-Temporal Modulation
 
 SDK provides a function to switch `Gain` periodically (Spatio-Temporal Modulation, STM).
-The SDK provides `FocusSTM` that supports only a single focus and `GainSTM` that support arbitrary `Gain`.
-`FocusSTM` and `GainSTM` use the timer on the AUTD3 hardware, so the time accuracy is high, but there are many restrictions.
+The SDK provides `FociSTM` that supports 8 foci at maximum and `GainSTM` that support arbitrary `Gain`.
+`FociSTM` and `GainSTM` use the timer on the AUTD3 hardware, so the time accuracy is high, but there are many restrictions.
 
-- [FocusSTM](./stm/focus.md)
+- [FociSTM](./stm/focus.md)
 - [GainSTM](./stm/gain.md)
 
-## FocusSTM/GainSTM common API
+## FociSTM/GainSTM common API
 
 ### frequency
 

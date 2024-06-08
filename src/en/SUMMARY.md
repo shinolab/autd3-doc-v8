@@ -37,7 +37,7 @@
     - [Radiation](./Users_Manual/modulation/radiation.md)
     - [Transform](./Users_Manual/modulation/transform.md)
   - [Spatio-Temporal Modulation](./Users_Manual/stm.md)
-    - [FocusSTM](./Users_Manual/stm/focus.md)
+    - [FociSTM](./Users_Manual/stm/focus.md)
     - [GainSTM](./Users_Manual/stm/gain.md)
   - [Silencer](./Users_Manual/silencer.md)
   - [Controller](./Users_Manual/controller.md)

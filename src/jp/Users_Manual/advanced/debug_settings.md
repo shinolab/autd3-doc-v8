@@ -28,6 +28,6 @@
 - `ModIdx(u16)`: Modulationのインデックスが指定した値のときにHighになる
 - `StmSegment`: STMのセグメント
 - `StmIdx(u16)`: STMのインデックスが指定した値のときにHighになる
-- `IsStmMode`: FocusSTM/GainSTMが使用されているかどうか
+- `IsStmMode`: FociSTM/GainSTMが使用されているかどうか
 - `PwmOut(&Transducer)`: 指定した振動子のPWM出力
 - `Direct(bool)`: 指定した値を出力する

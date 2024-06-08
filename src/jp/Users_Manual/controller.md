@@ -69,10 +69,10 @@ FPGAの状態としては, 現在以下の情報が取得できる.
 
 - `is_thermal_assert`: ファン制御用の温度センサがアサートされているかどうか
 - `current_mod_segment`: 現在のModulation Segment
-- `current_stm_segment`: 現在のFocusSTM/GainSTM Segment
+- `current_stm_segment`: 現在のFociSTM/GainSTM Segment
 - `current_gain_segment`: 現在のGain Segment
 - `is_gain_mode`: 現在Gainが使用されているかどうか
-- `is_stm_mode`: 現在FocusSTM/GainSTMが使用されているかどうか
+- `is_stm_mode`: 現在FociSTM/GainSTMが使用されているかどうか
 
 ## send
 

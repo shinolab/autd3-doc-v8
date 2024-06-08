@@ -1,13 +1,12 @@
 //~#include "autd3.hpp"
 //~#include <vector>
 //~#include <limits>
-class BurstModulation final : public autd3::Modulation<BurstModulation> {
+class BurstModulation final
+    : public autd3::derive::Modulation<BurstModulation> {
  public:
-  std::vector<autd3::EmitIntensity> calc(
-      const autd3::Geometry&) const override {
-    std::vector buffer(_buf_size,
-                       std::numeric_limits<autd3::EmitIntensity>::min());
-    buffer[_buf_size - 1] = std::numeric_limits<autd3::EmitIntensity>::max();
+  std::vector<uint8_t> calc(const autd3::Geometry&) const override {
+    std::vector buffer(_buf_size, std::numeric_limits<uint8_t>::min());
+    buffer[_buf_size - 1] = std::numeric_limits<uint8_t>::max();
     return buffer;
   }
 

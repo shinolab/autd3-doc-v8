@@ -161,11 +161,11 @@ The arguments correspond to the number of steps until the completion of the ampl
 The default values are $40$ steps for phase change and $10$ steps for amplitude change.
 Note that disabling Silencer is equivalent to phase/amplitude change in $1$ step.
 
-In this mode, an error is returned if the phase/amplitude change of `Modulation`, `FocusSTM`, or `GainSTM` cannot be completed in the time specified by Silencer.
+In this mode, an error is returned if the phase/amplitude change of `Modulation`, `FociSTM`, or `GainSTM` cannot be completed in the time specified by Silencer.
 That is, the following conditions must be satisfied.
 - Silencer's amplitude change completion steps $\times \SI{25}{us} \le$ sampling period of `Modulation` 
-- Silencer's amplitude change completion steps $\times \SI{25}{us} \le$ sampling period of `FocusSTM`/`GainSTM`
-- Silencer's phase change completion steps $\times \SI{25}{us} \le$ sampling period of `FocusSTM`/`GainSTM`
+- Silencer's amplitude change completion steps $\times \SI{25}{us} \le$ sampling period of `FociSTM`/`GainSTM`
+- Silencer's phase change completion steps $\times \SI{25}{us} \le$ sampling period of `FociSTM`/`GainSTM`
 
 If you set `strict_mode` to `false`, you can ignore these restrictions, but it's not recommended.
 

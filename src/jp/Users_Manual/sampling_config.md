@@ -1,6 +1,6 @@
 # サンプリング設定について
 
-Modulation, FocusSTM/GainSTMのサンプリング設定について説明する.
+Modulation, FociSTM/GainSTMのサンプリング設定について説明する.
 
 サンプリング周波数は$\clkf/N$で, $N$は$512$以上の32-bit符号なし整数である.
 

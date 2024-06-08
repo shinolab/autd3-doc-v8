@@ -71,4 +71,4 @@
 
 デフォルトは振幅/位相データを送る`PhaseDutyFull`モードである.
 
-[^fn_gain_seq]: `FocusSTM`のおよそ75倍のレイテンシ
+[^fn_gain_seq]: `FociSTM<1>`のおよそ75倍のレイテンシ

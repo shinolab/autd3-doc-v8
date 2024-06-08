@@ -1,6 +1,6 @@
 # Segment
 
-`Modulation`, `Gain`, `FocusSTM`, `GainSTM`のデータ領域にはそれぞれ, `Segment`が2つ用意されている.
+`Modulation`, `Gain`, `FociSTM`, `GainSTM`のデータ領域にはそれぞれ, `Segment`が2つ用意されている.
 
 特に指定しない限りは, `Segment::S0`が使用される.
 
@@ -46,7 +46,7 @@
 {{#include ../../codes/Users_Manual/segment/segment_change.py}}
 ```
 
-## Modulation/GainSTM/FocusSTM
+## Modulation/GainSTM/FociSTM
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/segment/segment_transition.rs}}

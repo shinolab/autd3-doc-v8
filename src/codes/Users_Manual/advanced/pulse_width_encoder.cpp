@@ -3,7 +3,8 @@
 //~#include<vector>
 //~int main() {
 //~auto autd =
-//~autd3::ControllerBuilder().add_device(autd3::AUTD3(autd3::Vector3::Zero())).open(autd3::link::Nop::builder());
-std::vector<uint16_t> table(65536);
-autd.send(autd3::PulseWidthEncoder(table));
+//~autd3::ControllerBuilder({autd3::AUTD3(autd3::Vector3::Zero())}).open(autd3::link::Nop::builder());
+autd.send(autd3::PulseWidthEncoder([](const auto& dev) {
+  return [](const auto i) { return 0; };
+}));
 //~return 0; }
