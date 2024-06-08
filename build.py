@@ -63,26 +63,6 @@ def doc_serve(args):
             subprocess.run(command).check_returncode()
 
 
-def doc_test(args):
-    if hasattr(args, "init") and args.init:
-        with working_dir("thirdparties"):
-            subprocess.run(["cargo", "clean"]).check_returncode()
-            subprocess.run(["cargo", "build"]).check_returncode()
-
-    with working_dir("."):
-        for t in args.target.split(","):
-            command = [
-                "mdbook",
-                "test",
-                "--dest-dir",
-                f"book/{t}",
-                "-L",
-                "./thirdparties/target/debug/deps",
-            ]
-            with set_env("MDBOOK_BOOK__src", f"src/{t}"):
-                subprocess.run(command).check_returncode()
-
-
 def util_update_ver(args):
     version = args.version
 
@@ -197,14 +177,6 @@ if __name__ == "__main__":
             "--open", help="open browser after build", action="store_true"
         )
         parser_doc_serve.set_defaults(handler=doc_serve)
-
-        # doc test
-        parser_doc_test = subparsers.add_parser("test", help="see `test -h`")
-        parser_doc_test.add_argument("target", help="test target [jp|en]")
-        parser_doc_test.add_argument(
-            "--init", help="initialize deps", action="store_true", default=False
-        )
-        parser_doc_test.set_defaults(handler=doc_test)
 
         # util
         parser_util = subparsers.add_parser("util", help="see `util -h`")

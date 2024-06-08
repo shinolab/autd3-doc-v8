@@ -1,5 +1,3 @@
-# extern crate autd3_modulation_audio_file;
-# extern crate autd3;
 # use autd3::prelude::*;
 use autd3_modulation_audio_file::RawPCM;
 

@@ -1,5 +1,3 @@
-# extern crate autd3;
-# extern crate tokio;
 # use autd3::prelude::*;
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {

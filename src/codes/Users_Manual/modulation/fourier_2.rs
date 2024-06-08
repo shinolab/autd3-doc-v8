@@ -1,4 +1,3 @@
-# extern crate autd3;
 # use autd3::prelude::*;
 # use autd3::modulation::Fourier;
 # #[allow(unused_variables)]

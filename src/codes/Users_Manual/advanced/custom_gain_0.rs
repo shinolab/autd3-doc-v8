@@ -1,8 +1,6 @@
-# extern crate autd3;
-# extern crate autd3_driver;
 use std::collections::HashMap;
 use autd3::prelude::*;
-use autd3_driver::derive::*;
+use autd3::derive::*;
 
 #[derive(Gain)]
 pub struct FocalPoint {
@@ -31,4 +29,3 @@ impl Gain for FocalPoint {
 }
 # fn main() { 
 # }
-#

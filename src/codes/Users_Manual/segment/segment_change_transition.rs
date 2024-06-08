@@ -1,5 +1,3 @@
-# extern crate autd3;
-# extern crate tokio;
 # use autd3::prelude::*;
 # #[allow(unused_variables)]
 # #[tokio::main]

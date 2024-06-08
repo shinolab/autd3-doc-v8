@@ -15,63 +15,7 @@ cargo add tokio --features full
 これは単一焦点に$\SI{150}{Hz}$のAM変調をかける場合のソースコードである.
 
 ```rust,should_panic,filename=main.rs,edition2021
-# extern crate autd3;
-# extern crate tokio;
-# extern crate autd3_link_soem;
-use autd3::prelude::*;
-use autd3_link_soem::{SOEM, Status};
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // AUTDを操作するControllerの作成
-
-    // 接続しているデバイス情報の登録
-    // AUTD3::newの引数は位置
-    // 位置は自分の設定した座標系におけるこのデバイスの位置を指定する
-    // ここでは, デバイスは原点に置かれるする
-    let mut autd = Controller::builder([AUTD3::new(Vector3::zeros())])
-        // SOEMリンクを使用してControllerをopenする
-        // with_err_handlerで指定したコールバックはエラーが発生したときに呼ばれる 
-        .open(SOEM::builder().with_err_handler(|slave, status| match status {
-                Status::Error => eprintln!("Error [{}]: {}", slave, status),
-                Status::Lost => {
-                    eprintln!("Lost [{}]: {}", slave, status);
-                    // exitせずに, 接続が回復するまで待つこともできる
-                    std::process::exit(-1);
-                }
-                Status::StateChanged => eprintln!("StateChanged [{}]: {}", slave, status),
-            })).await?;
-
-    // ファームウェアバージョンのチェック
-    // ここで, v7.0.x以外が表示される場合の動作は保証しない
-    autd.firmware_version().await?.iter().for_each(|firm_info| {
-        println!("{}", firm_info);
-    });
-
-    // 静音化処理を有効化
-    // なお, デフォルトで有効にされているので, 実際には必要ない
-    // 無効にしたい場合はSilencer::disable()を送信する
-    autd.send(Silencer::default()).await?;
-
-    // デバイスの中心から直上150mmに焦点
-    let center = autd.geometry.center() + Vector3::new(0., 0., 150.0 * mm);
-    let g = Focus::new(center);
-
-    // 150Hzサイン波変調
-    let m = Sine::new(150 * Hz);
-
-    // データの送信
-    autd.send((m, g)).await?;
-
-    println!("press enter to quit...");
-    let mut _s = String::new();
-    std::io::stdin().read_line(&mut _s)?;
-
-    // コントローラーを閉じる
-    autd.close().await?;
-
-    Ok(())
-}
+{{#include ../../../codes/Users_Manual/Tutorial/main.rs}}
 ```
 
 そして, これを実行する.

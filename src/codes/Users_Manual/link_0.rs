@@ -1,5 +1,3 @@
-# extern crate autd3;
-# extern crate autd3_link_soem;
 # use autd3::prelude::*;
 # use autd3_link_soem::SOEM;
 # #[allow(unused_variables)]

@@ -77,8 +77,8 @@ jobs:
           python3 python_test.py 
         if: steps.changed-files.outputs.any_changed == 'true'
 
-  check-jp:
-    name: doc-check-jp
+  check-rust:
+    name: doc-check-sample-rust
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -88,7 +88,6 @@ jobs:
           files: |
             src/codes/Users_Manual/*.rs
             src/codes/Users_Manual/**/*.rs
-            thirdparties/Cargo.toml
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
@@ -99,41 +98,18 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         if: steps.changed-files.outputs.any_changed == 'true'
-      - name: Test book jp
+      - name: build
         run: |
-          python3 build.py test jp --init
-        if: steps.changed-files.outputs.any_changed == 'true'
-
-  check-en:
-    name: doc-check-en
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: tj-actions/changed-files@v44
-        id: changed-files
-        with:
-          files: |
-            src/codes/Users_Manual/*.rs
-            src/codes/Users_Manual/**/*.rs
-            thirdparties/Cargo.toml
-      - name: Setup Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
-        with:
-          toolchain: 'stable'
-        if: steps.changed-files.outputs.any_changed == 'true'
-      - name: Setup mdbook
-        uses: ./.github/actions/setup-mdbook
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-        if: steps.changed-files.outputs.any_changed == 'true'
-      - name: Test book en
-        run: |
-          python3 build.py test en --init
+          sudo apt-get update
+          sudo apt-get -y install build-essential cmake git ninja-build
+          pip install joblib requests
+          cd tools
+          python3 rs_test.py 
         if: steps.changed-files.outputs.any_changed == 'true'
 
   build:
     name: build-doc
-    needs: [check-cs, check-cpp, check-python, check-jp, check-en]
+    needs: [check-cs, check-cpp, check-python, check-rust]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

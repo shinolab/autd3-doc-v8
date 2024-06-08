@@ -1,5 +1,3 @@
-# extern crate autd3;
-# extern crate autd3_gain_holo;
 # use autd3::prelude::*;
 use autd3_gain_holo::{LinAlgBackend, NalgebraBackend, GSPAT, Pa};
 # #[allow(unused_variables)]

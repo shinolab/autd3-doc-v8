@@ -1,6 +1,3 @@
-# extern crate autd3;
-# extern crate tokio;
-# extern crate autd3_link_twincat;
 # use autd3::prelude::*;
 use autd3_link_twincat::TwinCAT;
 
