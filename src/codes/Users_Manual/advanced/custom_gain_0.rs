@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use autd3::prelude::*;
 use autd3::derive::*;
 
@@ -27,5 +26,6 @@ impl Gain for FocalPoint {
         }))
     }
 }
+# #[allow(unused_variables)]
 # fn main() { 
 # }

@@ -131,7 +131,7 @@
 この機能を使用する場合は, Pythonとmatplotlib, 及び, numpyをインストールしておく必要がある.
 
 ```rust,edition2021,ignore
-{{#include ../../../codes/Users_Manual/link/visualizer_matplotlib.rs}}
+{{#include ../../../codes/Users_Manual/link/visualizer_matplotlib.rs-excl}}
 ```
 
 - Rust版では`python`featureを有効にする必要がある

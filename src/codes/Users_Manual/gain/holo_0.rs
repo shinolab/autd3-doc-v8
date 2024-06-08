@@ -1,7 +1,7 @@
 # use autd3::prelude::*;
-use autd3_gain_holo::{LinAlgBackend, NalgebraBackend, GSPAT, Pa};
+use autd3_gain_holo::{NalgebraBackend, GSPAT, Pa};
 # #[allow(unused_variables)]
-# fn main() -> Result<(), Box<dyn std::error::Error>> {
+# fn main() {
 # let x1 = 0.;
 # let y1 = 0.;
 # let z1 = 0.;
@@ -16,5 +16,4 @@ let g = GSPAT::new(
           (Vector3::new(x2, y2, z2), 5e3 * Pa),
       ],
   );
-# Ok(())
 # }

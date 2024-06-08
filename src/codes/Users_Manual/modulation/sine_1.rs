@@ -1,6 +1,6 @@
 # use autd3::prelude::*;
 # #[allow(unused_variables)]
-# fn main()  {
+# fn main() {
 let m = autd3::modulation::Sine::new(150 * Hz)
             .with_intensity(u8::MAX)
             .with_offset(u8::MAX / 2);

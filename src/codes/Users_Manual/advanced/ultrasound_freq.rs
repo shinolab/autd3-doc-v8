@@ -1,6 +1,9 @@
 # use autd3::prelude::*;
 # #[allow(unused_variables)]
-# fn main() {
+# #[tokio::main]
+# async fn main() -> Result<(), Box<dyn std::error::Error>> {
+# let _ = 
 Controller::builder([AUTD3::new(Vector3::zeros())]).with_ultrasound_freq(41 * kHz)
-# .open(autd3::link::Nop::builder());
+# .open(autd3::link::Nop::builder()).await?;
+# Ok(())
 # }

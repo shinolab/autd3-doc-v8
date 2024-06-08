@@ -1,6 +1,5 @@
 # use autd3::prelude::*;
 # use autd3_link_visualizer::Visualizer;
-# use std::path::Path;
 # #[allow(unused_variables)]
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {

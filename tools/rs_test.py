@@ -23,7 +23,7 @@ if __name__ == "__main__":
     base_path = pathlib.Path(__file__).parent.parent / "src" / "codes"
 
     # n_jobs = multiprocessing.cpu_count()
-    n_jobs = 4
+    n_jobs = 1
     srcs = list(glob(str(base_path / "**/*.rs"), recursive=True))
     N = len(srcs)
     block = N // n_jobs
@@ -54,7 +54,7 @@ edition = "2021"
 autd3 = {{ version = "{autd3_version}" }}
 autd3-gain-holo = {{ version = "{autd3_version}" }}
 autd3-link-simulator = {{ version = "{autd3_version}" }}
-autd3-link-visualizer = {{ version = "{autd3_link_vis_version}", features = ["python"] }}
+autd3-link-visualizer = {{ version = "{autd3_link_vis_version}" }}
 autd3-link-soem = {{ version = "{autd3_version}", features = ["remote"] }}
 autd3-link-twincat = {{ version = "{autd3_version}", features = ["remote"] }}
 autd3-modulation-audio-file = {{ version = "{autd3_version}" }}
@@ -70,7 +70,9 @@ tokio = {{ version = "{tokio_version}", features = ["full"] }}
                 f.write(content)
 
             try:
-                subprocess.run(["cargo", "build"], cwd=test_dir).check_returncode()
+                subprocess.run(
+                    ["cargo", "rustc", "--", "-D", "warnings"], cwd=test_dir
+                ).check_returncode()
             except subprocess.CalledProcessError:
                 error_files.append(src)
 

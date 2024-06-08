@@ -1,6 +1,6 @@
 # use autd3::prelude::*;
 # #[allow(unused_variables)]
-# fn main()  {
+# fn main() {
 # let x = 0.;
 # let y = 0.;
 # let z = 0.;
