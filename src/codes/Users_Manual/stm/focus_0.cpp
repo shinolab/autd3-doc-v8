@@ -16,6 +16,6 @@ auto stm = autd3::FociSTM<1>::from_freq(
                          static_cast<float>(points_num);
       autd3::Vector3 p =
           center + radius * autd3::Vector3(std::cos(theta), std::sin(theta), 0);
-      return std::array{p};
+      return p;
     }));
 //~return 0; }
