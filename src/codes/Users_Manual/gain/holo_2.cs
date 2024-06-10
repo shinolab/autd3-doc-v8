@@ -1,3 +1,12 @@
 ~using AUTD3Sharp.Gain.Holo;
+~using AUTD3Sharp.Utils;
+~using static AUTD3Sharp.Units;
 var backend = new NalgebraBackend();
-var g = new GSPAT<NalgebraBackend>(backend).WithRepeat(100);
+~var x1 = 0.0f;
+~var y1 = 0.0f;
+~var z1 = 0.0f;
+~var x2 = 0.0f;
+~var y2 = 0.0f;
+~var z2 = 0.0f;
+~var foci = new[] { (new Vector3(x1, y1, z1), 5e3f * Pa), (new Vector3(x1, y1, z1), 5e3f * Pa) };
+var g = new GSPAT<NalgebraBackend>(backend, foci).WithRepeat(100);

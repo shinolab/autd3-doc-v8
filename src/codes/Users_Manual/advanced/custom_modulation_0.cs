@@ -16,10 +16,10 @@ public partial class Burst
         _config = SamplingConfig.Freq(4000u * Hz);
     }
 
-    private EmitIntensity[] Calc(Geometry _)
+    private byte[] Calc(Geometry _)
     {
-        var buf = Enumerable.Repeat<EmitIntensity>(EmitIntensity.Min, _length).ToArray();
-        buf[0] = EmitIntensity.Max;
+        var buf = Enumerable.Repeat<byte>(0x00, _length).ToArray();
+        buf[0] = 0xFF;
         return buf;
     }
 }

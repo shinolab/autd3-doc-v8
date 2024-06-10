@@ -2,7 +2,7 @@
 ~using AUTD3Sharp.Modulation;
 ~using static AUTD3Sharp.Units;
 ~var s =
-SamplingConfig.FreqNearest(4000.0 * Hz)
+SamplingConfig.FreqNearest(4000.0f * Hz)
 ~;
 // or
 ~var s2 =

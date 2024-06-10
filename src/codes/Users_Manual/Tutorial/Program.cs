@@ -5,8 +5,7 @@ using AUTD3Sharp.Gain;
 using AUTD3Sharp.Modulation;
 using static AUTD3Sharp.Units;
 
-using var autd = new ControllerBuilder()
-        .AddDevice(new AUTD3(Vector3d.Zero))
+using var autd = Controller.Builder([new AUTD3(Vector3.Zero)])
         .Open(SOEM.Builder().WithErrHandler((slave, status, msg) =>
         {
             switch (status)
@@ -31,9 +30,9 @@ foreach (var firm in firmList)
 
 autd.Send(Silencer.Default());
 
-var g = new Focus(autd.Geometry.Center + new Vector3d(0, 0, 150));
+var g = new Focus(autd.Geometry.Center + new Vector3(0, 0, 150));
 var m = new Sine(150u * Hz);
-autd.Send(m, g);
+autd.Send((m, g));
 
 Console.ReadKey(true);
 

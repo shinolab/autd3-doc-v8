@@ -3,10 +3,10 @@
 ~using AUTD3Sharp.Gain;
 ~using AUTD3Sharp.Modulation;
 ~using AUTD3Sharp.Utils;
-~using var autd = new ControllerBuilder().AddDevice(new AUTD3(Vector3d.Zero)).Open(Nop.Builder());
-~var x = 0.0;
-~var y = 0.0;
-~var z = 0.0;
+~using var autd = Controller.Builder([new AUTD3(Vector3.Zero)]).Open(Nop.Builder());
+~var x = 0.0f;
+~var y = 0.0f;
+~var z = 0.0f;
 autd.Group(dev =>
     {
         return dev.Idx switch
@@ -17,5 +17,5 @@ autd.Group(dev =>
         };
     })
     .Set("null", new Null())
-    .Set("focus", new Focus(new Vector3d(x, y, z)))
+    .Set("focus", new Focus(new Vector3(x, y, z)))
     .Send();

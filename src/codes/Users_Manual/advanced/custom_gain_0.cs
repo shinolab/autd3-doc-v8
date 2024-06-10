@@ -3,21 +3,21 @@
 ~using AUTD3Sharp.Gain;
 ~using static AUTD3Sharp.Units;
 using AUTD3Sharp.Derive;
-~var g = new FocalPoint(Vector3d.Zero);
+~var g = new FocalPoint(Vector3.Zero);
 
 [Gain]
 public partial class FocalPoint
 {
-    private readonly Vector3d _point;
+    private readonly Vector3 _point;
 
-    public FocalPoint(Vector3d point)
+    public FocalPoint(Vector3 point)
     {
         _point = point;
     }
 
-    private Dictionary<int, Drive[]> Calc(Geometry geometry)
+    private Func<Device, Func<Transducer, Drive>> Calc(Geometry geometry)
     {
-        return Transform(geometry, dev => tr =>
+        return Transform(dev => tr =>
         {
             var tp = tr.Position;
             var dist = (tp - _point).L2Norm;

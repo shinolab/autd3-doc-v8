@@ -1,6 +1,5 @@
 ~using AUTD3Sharp;
 ~using AUTD3Sharp.Link;
 ~using AUTD3Sharp.Utils;
-~using var autd = new ControllerBuilder().AddDevice(new AUTD3(Vector3d.Zero)).Open(Nop.Builder());
-var table = new ushort[65536];
-autd.Send(new PulseWidthEncoder(table));
+~using var autd = Controller.Builder([new AUTD3(Vector3.Zero)]).Open(Nop.Builder());
+autd.Send(new PulseWidthEncoder(_dev => i => 0x00));

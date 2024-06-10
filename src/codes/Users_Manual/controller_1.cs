@@ -3,7 +3,8 @@
 ~using AUTD3Sharp.Gain;
 ~using AUTD3Sharp.Modulation;
 ~using AUTD3Sharp.Utils;
-~using var autd = new ControllerBuilder().AddDevice(new AUTD3(Vector3d.Zero)).Open(Nop.Builder());
+~using AUTD3Sharp.Driver.Datagram;
+~using var autd = Controller.Builder([new AUTD3(Vector3.Zero)]).Open(Nop.Builder());
 ~var m = new Static();
 ~var g = new Null();
-autd.Send((m, g), TimeSpan.FromMilliseconds(20));
+autd.Send((m, g).WithTimeout(TimeSpan.FromMilliseconds(20)));
