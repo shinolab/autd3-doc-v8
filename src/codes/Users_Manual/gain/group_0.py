@@ -3,7 +3,7 @@
 ~y = 0.0
 ~z = 0.0
 g = (
-    Group(lambda _, tr: "null" if tr.idx <= 100 else "focus")
+    Group(lambda _: lambda tr: "null" if tr.idx <= 100 else "focus")
     .set("null", Null())
     .set("focus", Focus([x, y, z]))
 )

@@ -2,7 +2,7 @@
 ~from pyautd3.link.visualizer import PlotConfig, Visualizer
 ~from pyautd3.modulation import Sine
 autd: Controller[Visualizer] = (
-    Controller.builder().add_device(AUTD3([0.0, 0.0, 0.0])).open(Visualizer.builder())
+    Controller.builder([AUTD3([0.0, 0.0, 0.0])]).open(Visualizer.builder())
 )
 
 m = Sine(150 * Hz)

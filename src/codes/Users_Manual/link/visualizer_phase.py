@@ -4,7 +4,7 @@
 from pyautd3.link.visualizer import PlotConfig, Visualizer
 
 autd: Controller[Visualizer] = (
-    Controller.builder().add_device(AUTD3([0.0, 0.0, 0.0])).open(Visualizer.builder())
+    Controller.builder([AUTD3([0.0, 0.0, 0.0])]).open(Visualizer.builder())
 )
 
 center = autd.geometry.center + np.array([0, 0, 150])

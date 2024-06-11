@@ -18,12 +18,8 @@ def err_handler(slave: int, status: Status, msg: str) -> None:
 
 
 if __name__ == "__main__":
-    with (
-        Controller.builder()
-        .add_device(AUTD3([0.0, 0.0, 0.0]))
-        .open(
-            SOEM.builder().with_err_handler(err_handler),
-        )
+    with Controller.builder([AUTD3([0.0, 0.0, 0.0])]).open(
+        SOEM.builder().with_err_handler(err_handler),
     ) as autd:
         firmware_version = autd.firmware_version()
         print("\n".join([f"[{i}]: {firm}" for i, firm in enumerate(firmware_version)]))
@@ -32,7 +28,7 @@ if __name__ == "__main__":
 
         g = Focus(autd.geometry.center + np.array([0.0, 0.0, 150.0]))
         m = Sine(150 * Hz)
-        autd.send(m, g)
+        autd.send((m, g))
 
         _ = input()
 
