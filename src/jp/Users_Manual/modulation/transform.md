@@ -18,4 +18,4 @@
 {{#include ../../../codes/Users_Manual/modulation/transform_0.py}}
 ```
 
-`with_transform`の引数は`Fn(usize, EmitIntensity) -> EmitIntensity`であり, 第1引数はインデックス, 第2引数は変調データである.
+`with_transform`の引数は`Fn(usize, u8) -> u8`であり, 第1引数はインデックス, 第2引数は変調データである.

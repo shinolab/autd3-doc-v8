@@ -1,2 +1,2 @@
-~from pyautd3 import EmitIntensity, Static
-m = Static.with_intensity(EmitIntensity(0xFF))
+~from pyautd3 import Static
+m = Static.with_intensity(0xFF)

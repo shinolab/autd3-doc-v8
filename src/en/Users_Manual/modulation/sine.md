@@ -26,7 +26,7 @@ Specify the frequency $f$ as an integer in the constructor.
 $$
     \frac{amplitude}{2} \times \sin(2\pi ft) + offset
 $$
-Here, $amplitude$ and $offset$ can be specified by `with_intensity` and `with_offset`, respectively (default is `EmitIntensity::MAX` and `EmitIntensity::MAX/2`, respectively).
+Here, $amplitude$ and $offset$ can be specified by `with_intensity` and `with_offset`, respectively (default is `0xFF` and `0x7F`, respectively).
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/modulation/sine_1.rs}}

@@ -18,4 +18,4 @@
 {{#include ../../../codes/Users_Manual/modulation/transform_0.py}}
 ```
 
-`with_transform` takes `Fn(usize, EmitIntensity) -> EmitIntensity` as an argument, where the first argument is the index and the second argument is the original modulation data.
+`with_transform` takes `Fn(usize, u8) -> u8` as an argument, where the first argument is the index and the second argument is the original modulation data.
