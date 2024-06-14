@@ -168,6 +168,12 @@ SDKにおけるAPIでは, すべてグローバル座標を用いるため, 接�
 - `translate`: 平行移動
 - `rotate`: 回転
 - `affine`: アフィン変換 (平行移動/回転)
+- `rotation`: デバイスの回転. 回転はクオータニオンで表される.
+- `x_direction`: デバイスのx方向ベクトル
+- `y_direction`: デバイスのy方向ベクトル
+- `z_direction`: デバイスの軸方向ベクトル (振動子が向く方向)
+- `wavelength`: デバイスが放出する超音波の波長
+- `wavenumber`: デバイスが放出する超音波の波数
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/device_0.rs}}
@@ -214,12 +220,6 @@ SDKにおけるAPIでは, すべてグローバル座標を用いるため, 接�
 
 - `idx`: 振動子の(ローカル)インデックス
 - `position`: 振動子の位置
-- `rotation`: 振動子の回転. 回転はクオータニオンで表される.
-- `x_direction`: 振動子のx方向ベクトル
-- `y_direction`: 振動子のy方向ベクトル
-- `z_direction`: 振動子のz方向ベクトル
-- `wavelength`: 振動子の波長. 引数に音速を渡す必要がある.
-- `wavenumber`: 振動子の波数. 引数に音速を渡す必要がある.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/transducer_0.rs}}
