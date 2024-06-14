@@ -84,7 +84,7 @@ $$
 \theta = \angle \sum_i \mathrm{e}^{2\pi\mathrm{j}\frac{f}{c}\|x_i-x_\text{t}\| + \mathrm{j}\phi_i}
 $$
 ここで, $\phi_i$は各焦点の位相オフセットである.
-振幅に関しては, $\displaystyle \left\|\sum_i\mathrm{e}^{2\pi\frac{f}{c}\|x_i-x_\text{t}\| + \phi_i}\right\|$ **ではなく**, ソフトウェアからの指定値を使用する.
+振幅に関しては, $\displaystyle \left\|\sum_i\mathrm{e}^{2\pi\mathrm{j}\frac{f}{c}\|x_i-x_\text{t}\| + \mathrm{j}\phi_i}\right\|$ **ではなく**, ソフトウェアからの指定値を使用する.
 
 各焦点の位相オフセット$\phi_i$, 及び, 出力は以下のように指定する.
 
