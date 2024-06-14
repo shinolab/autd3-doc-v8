@@ -53,3 +53,46 @@
 ```
 
 サンプリング設定についての詳細は[サンプリング設定について](./../sampling_config.md)を参照されたい.
+
+## 多焦点
+
+`FociSTM`では最大8焦点を同時に出すことができる.
+
+以下は2焦点の例である.
+
+```rust,edition2021
+{{#include ../../../codes/Users_Manual/stm/foci_0.rs}}
+```
+
+```cpp
+{{#include ../../../codes/Users_Manual/stm/foci_0.cpp}}
+```
+
+```cs
+{{#include ../../../codes/Users_Manual/stm/foci_0.cs}}
+```
+
+```python
+{{#include ../../../codes/Users_Manual/stm/foci_0.py}}
+```
+
+`FociSTM`の多焦点音場は単純な単焦点音場の重ね合わせである.
+
+
+各焦点の位相オフセット, 及び, 出力は以下のように指定できる.
+
+```rust,edition2021
+{{#include ../../../codes/Users_Manual/stm/foci_1.rs}}
+```
+
+```cpp
+{{#include ../../../codes/Users_Manual/stm/foci_1.cpp}}
+```
+
+```cs
+{{#include ../../../codes/Users_Manual/stm/foci_1.cs}}
+```
+
+```python
+{{#include ../../../codes/Users_Manual/stm/foci_1.py}}
+```
