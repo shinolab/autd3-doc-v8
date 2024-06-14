@@ -18,5 +18,5 @@
 {{#include ../../../codes/Users_Manual/modulation/wav_0.py}}
 ```
 
-> NOTE: `Wav`では, wavファイルデータをModulationのサンプリング周波数でリサンプリングするので注意されたい.
+> NOTE: AUTD3のサンプリング周波数に関する制約により, 出力できない可能性があるので注意されたい.
 > Modulationのサンプリング周波数の設定と制約は[Modulation](../modulation.md)を参照されたい.
