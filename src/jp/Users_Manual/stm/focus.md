@@ -76,10 +76,17 @@
 {{#include ../../../codes/Users_Manual/stm/foci_0.py}}
 ```
 
+### 多焦点音場の位相/振幅について
+
 `FociSTM`の多焦点音場は単純な単焦点音場の重ね合わせである.
+すなわち, 振動子の位置$x_\text{t}$, 各焦点位置$x_i$, 超音波周波数$f$, 音速$c$に対して, 以下の計算により位相$\theta$を求めている.
+$$
+\theta = \angle \sum_i \mathrm{e}^{2\pi\frac{f}{c}\|x_i-x_\text{t}\| + \phi_i}
+$$
+ここで, $\phi_i$は各焦点の位相オフセットである.
+振幅に関しては, $\displaystyle \left\|\sum_i\mathrm{e}^{2\pi\frac{f}{c}\|x_i-x_\text{t}\| + \phi_i}\right\|$ **ではなく**, ソフトウェアからの指定値を使用する.
 
-
-各焦点の位相オフセット, 及び, 出力は以下のように指定できる.
+各焦点の位相オフセット$\phi_i$, 及び, 出力は以下のように指定する.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/stm/foci_1.rs}}
