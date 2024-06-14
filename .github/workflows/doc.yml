@@ -20,6 +20,7 @@ jobs:
             src/codes/Users_Manual/*.cs
             src/codes/Users_Manual/**/*.cs
             tools/cs_test.py
+            book.toml
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
@@ -46,6 +47,7 @@ jobs:
             src/codes/Users_Manual/*.cpp
             src/codes/Users_Manual/**/*.cpp
             tools/cpp_test.py
+            book.toml
       - name: build
         run: |
           sudo apt-get update
@@ -69,6 +71,7 @@ jobs:
             src/codes/Users_Manual/*.py
             src/codes/Users_Manual/**/*.py
             tools/python_test.py
+            book.toml
       - name: build
         run: |
           python3 -m pip install --upgrade pyautd3
@@ -89,6 +92,7 @@ jobs:
             src/codes/Users_Manual/*.rs
             src/codes/Users_Manual/**/*.rs
             tools/rs_test.py
+            book.toml
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
         with:

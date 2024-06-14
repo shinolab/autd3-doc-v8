@@ -141,17 +141,6 @@ def util_update_ver(args):
         with open("book.toml", "w") as f:
             f.write(content)
 
-        with open("thirdparties/Cargo.toml", "r") as f:
-            content = f.read()
-            content = re.sub(
-                r'^autd3(.*)version = "(.*?)"',
-                f'autd3\\1version = "{version}"',
-                content,
-                flags=re.MULTILINE,
-            )
-        with open("thirdparties/Cargo.toml", "w") as f:
-            f.write(content)
-
 
 def command_help(args):
     print(parser.parse_args([args.command, "--help"]))
