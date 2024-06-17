@@ -31,6 +31,7 @@
     - [Static](./Users_Manual/modulation/static.md)
     - [Sine](./Users_Manual/modulation/sine.md)
       - [Fourier](./Users_Manual/modulation/fourier.md)
+      - [Mixer](./Users_Manual/modulation/mixer.md)
     - [Square](./Users_Manual/modulation/square.md)
     - [Wav](./Users_Manual/modulation/wav.md)
     - [Csv](./Users_Manual/modulation/csv.md)

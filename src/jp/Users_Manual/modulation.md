@@ -21,6 +21,7 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 * [Static](./modulation/static.md)
 * [Sine](./modulation/sine.md)
   * [Fourier](./modulation/fourier.md)
+  * [Mixer](./modulation/mixer.md)
 * [Square](./modulation/square.md)
 * [Wav](./modulation/wav.md)
 * [Csv](./modulation/csv.md)
