@@ -3,19 +3,19 @@
 `Custom`は指定された符号なし8bitデータ列を出力する`Modulation`である.
 
 ```rust,edition2021
-{{#include ../../../codes/Users_Manual/modulation/rawpcm_0.rs}}
+{{#include ../../../codes/Users_Manual/modulation/custom.rs}}
 ```
 
 ```cpp
-{{#include ../../../codes/Users_Manual/modulation/rawpcm_0.cpp}}
+{{#include ../../../codes/Users_Manual/modulation/custom.cpp}}
 ```
 
 ```cs
-{{#include ../../../codes/Users_Manual/modulation/rawpcm_0.cs}}
+{{#include ../../../codes/Users_Manual/modulation/custom.cs}}
 ```
 
 ```python
-{{#include ../../../codes/Users_Manual/modulation/rawpcm_0.py}}
+{{#include ../../../codes/Users_Manual/modulation/custom.py}}
 ```
 
 コンストラクタの第2引数で, このデータのサンプリング設定を指定する必要がある.
