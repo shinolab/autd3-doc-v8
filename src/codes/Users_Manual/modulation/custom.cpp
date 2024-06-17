@@ -1,4 +1,6 @@
 //~#include<autd3.hpp>
+#include<autd3/modulation/custom.hpp>
+
 //~#include<vector>
 //~int main() {
 const std::vector buf = {0xFF, 0x00};
