@@ -33,6 +33,7 @@
       - [Fourier](./Users_Manual/modulation/fourier.md)
     - [Square](./Users_Manual/modulation/square.md)
     - [Wav](./Users_Manual/modulation/wav.md)
+    - [Csv](./Users_Manual/modulation/csv.md)
     - [RawPCM](./Users_Manual/modulation/rawpcm.md)
     - [Cache](./Users_Manual/modulation/cache.md)
     - [Radiation](./Users_Manual/modulation/radiation.md)
