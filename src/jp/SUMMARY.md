@@ -36,6 +36,7 @@
     - [Wav](./Users_Manual/modulation/wav.md)
     - [Csv](./Users_Manual/modulation/csv.md)
     - [RawPCM](./Users_Manual/modulation/rawpcm.md)
+    - [Custom](./Users_Manual/modulation/custom.md)
     - [Cache](./Users_Manual/modulation/cache.md)
     - [Radiation](./Users_Manual/modulation/radiation.md)
     - [Transform](./Users_Manual/modulation/transform.md)

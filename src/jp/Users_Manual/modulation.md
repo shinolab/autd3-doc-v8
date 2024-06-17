@@ -26,6 +26,7 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 * [Wav](./modulation/wav.md)
 * [Csv](./modulation/csv.md)
 * [RawPCM](./modulation/rawpcm.md)
+* [Custom](./modulation/custom.md)
 * [Cache](./modulation/cache.md)
 * [RadiationPressure](./modulation/radiation.md)
 * [Transform](./modulation/transform.md)
