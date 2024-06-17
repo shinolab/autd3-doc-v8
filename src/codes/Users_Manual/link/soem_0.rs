@@ -1,5 +1,5 @@
 use autd3::prelude::*;
-use autd3_link_soem::{SOEM, SyncMode, TimerStrategy, Status};
+use autd3_link_soem::{SOEM, TimerStrategy, Status};
 
 # #[allow(unused_variables)]
 # #[tokio::main]
@@ -23,7 +23,7 @@ SOEM::builder()
     .with_send_cycle(2)
     .with_timer_strategy(TimerStrategy::BusyWait)
     .with_sync_tolerance(std::time::Duration::from_micros(1))
-    .with_sync_timeout(std::time::Duration::from_seconds(10))
+    .with_sync_timeout(std::time::Duration::from_secs(10))
 # ).await?;
 # Ok(())
 # }
