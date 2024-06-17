@@ -9,9 +9,6 @@ SOEMを使用するのはやむを得ない理由があるか, 開発時のみ�
 Windowsの場合は, [npcap](https://nmap.org/npcap/)を**WinPcap API compatible mode**でインストールしておくこと.
 Linux/macOSの場合は, 特に準備は必要ない.
 
-> NOTE: `SOEM`を使用する場合, `Controller`をopenしてから10-20秒ほどはEtherCATスレーブ同士の同期が完了していない可能性があるので注意されたい. (この時間は個体差や同期信号/送信サイクルによって変化する.)
-> この期間, デバイス間の超音波の同期は保証されない.
-
 [[_TOC_]]
 
 ## SOEMリンクのAPI
@@ -46,7 +43,8 @@ SOEMリンクで指定できるオプションは以下の通りである.
     - `BusyWait`    : ビジーウェイトを用いる. 高解像度だが, CPU負荷が高い.
     - `NativeTimer` : OSのタイマー機能を用いる
         - WindowsではTimerQueueTimer, linuxではPOSIXタイマー, macOSではGrand Central Dispatch Timer
-- `sync_mode`: 同期モード. 詳細は[Beckhoffの説明](https://infosys.beckhoff.com/english.php?content=../content/1033/ethercatsystem/2469122443.html&id=)を参照されたい.
+- `sync_tolerance`: 同期許容レベル. 初期化時, 各デバイスのシステム時間差がこの値以下になるまで待機する. 以下のタイムアウト時間が経過しても同期が完了しない場合はエラーとなる. デフォルトは\SI{1}{us}であり, 変えることは推奨されない.
+- `sync_timeout`: 同期タイムアウト. 上記のシステム時間差測定のタイムアウト時間. デフォルトは\SI{10}{s}.
 
 # RemoteSOEM
 

@@ -22,7 +22,8 @@ SOEM::builder()
     .with_sync0_cycle(2)
     .with_send_cycle(2)
     .with_timer_strategy(TimerStrategy::BusyWait)
-    .with_sync_mode(SyncMode::DC)
+    .with_sync_tolerance(std::time::Duration::from_micros(1))
+    .with_sync_timeout(std::time::Duration::from_seconds(10))
 # ).await?;
 # Ok(())
 # }

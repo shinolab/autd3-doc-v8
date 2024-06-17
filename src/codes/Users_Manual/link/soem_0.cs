@@ -29,5 +29,6 @@ SOEM.Builder()
     .WithSync0Cycle(2)
     .WithSendCycle(2)
     .WithTimerStrategy(TimerStrategy.BusyWait)
-    .WithSyncMode(SyncMode.DC)
+    .WithSyncTolerance(TimeSpan.FromMicroseconds(1))
+    .WithSyncTimeout(TimeSpan.FromSeconds(10))
 ~);

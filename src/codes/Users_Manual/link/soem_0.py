@@ -1,6 +1,6 @@
 ~import os
 ~from datetime import timedelta
-from pyautd3.link.soem import SOEM, Status, SyncMode, TimerStrategy
+from pyautd3.link.soem import SOEM, Status, TimerStrategy
 
 
 def err_handler(slave: int, status: Status, msg: str) -> None:
@@ -25,4 +25,5 @@ SOEM.builder()\
     .with_sync0_cycle(2)\
     .with_send_cycle(2)\
     .with_timer_strategy(TimerStrategy.BusyWait)\
-    .with_sync_mode(SyncMode.DC)
+    .with_sync_tolerance(timedelta(microseconds=1))\
+    .with_sync_timeout(timedelta(seconds=10))
