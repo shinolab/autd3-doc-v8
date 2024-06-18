@@ -4,15 +4,15 @@
 
 ## 依存プログラムのインストール
 
-本チュートリアルではSOEMを利用する.
-Windowsを使用する場合, [Npcap](https://npcap.com/)を「WinPcap API-compatible Mode」でインストールしておくこと.
+本チュートリアルでは[SOEM](https://github.com/OpenEtherCATsociety/SOEM)を利用する.
+Windowsを使用する場合, [Npcap](https://npcap.com/)を「**WinPcap API-compatible Mode**」でインストールしておくこと.
 
 ## デバイスのセットアップ
 
 まず, デバイスをセットアップする.
 ここでは一台のAUTD3のみを使うこととする.
 PCのイーサネットポートとAUTD3デバイスのEtherCAT In ([Concept](concept.md)参照) をイーサネットケーブルで接続する.
-次に, $\SI{24}{V}$電源を接続する.
+次に, $\SI{24}{V}$直流電源を接続する.
 
 ### ファームウェアアップデート
 
@@ -20,7 +20,7 @@ PCのイーサネットポートとAUTD3デバイスのEtherCAT In ([Concept](co
 本文章におけるファームウェアのバージョンはv8.0.1が想定される.
 
 ファームウェアのアップデートには[Vivado](https://www.xilinx.com/products/design-tools/vivado.html), 及び, [J-Link Software](https://www.segger.com/downloads/jlink/)をインストールしたWindows 10/11 64bit PCが必要である.
-なお, Vivado 2023.2, 及び, J-Link Software v7.94d (x64)での動作を確認している.
+なお, Vivado 2024.1, 及び, J-Link Software v7.94d (x64)での動作を確認している.
 
 > NOTE: ファームウェアのアップデートだけが目的であれば, "Vivado Lab Edition"の使用を強く推奨する. 
 > ML Edition はインストールに60 GB以上のディスク容量を要求する. Lab Edition は6 GB程度のディスク容量で済む. 
@@ -32,7 +32,6 @@ PCのイーサネットポートとAUTD3デバイスのEtherCAT In ([Concept](co
     <img src="../fig/Users_Manual/cable.jpg"/>
     <figcaption>ファームウェアアップデート用ケーブル接続先</figcaption>
 </figure>
-
 
 ## 各言語ごとのサンプルプログラム
 
