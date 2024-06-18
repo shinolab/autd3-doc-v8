@@ -4,6 +4,9 @@
 
 コンストラクタには周波数$f$を指定する.
 
+デフォルトのサンプリング周波数分周比$N=5120$である.
+(超音波周波数が$\SI{40}{kHz}$の場合, サンプリング周波数は$\SI{4}{kHz}$.)
+
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/modulation/sine_0.rs}}
 ```
