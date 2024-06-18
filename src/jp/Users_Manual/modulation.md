@@ -35,10 +35,7 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 
 ### Sampling設定
 
-デフォルトはサンプリング周波数分周比$N=5120$である.
-(超音波周波数を$\SI{40}{kHz}$とすると, サンプリング周波数は$\SI{4}{kHz}$.)
-
-また, 一部の`Modulation`は`with_sampling_config`でサンプリング周波数を設定できる.
+一部の`Modulation`は`with_sampling_config`でサンプリング周波数を設定できる.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/modulation_0.rs}}
