@@ -1,4 +1,6 @@
 //~#include<autd3.hpp>
+#include <autd3/gain/custom.hpp>
+
 //~int main() {
 const auto g = autd3::gain::Custom([](const auto& dev) {
   return [](const auto& tr) {
