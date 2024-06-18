@@ -28,7 +28,7 @@
 
 ### Segmentの切り替え
 
-`Segment`を切り替えたいだけの場合は, `SwapSegment::gain`を使用する.
+`Segment`を切り替えたいだけの場合は, `SwapSegment::Gain`を使用する.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/segment/segment_change.rs}}
@@ -79,7 +79,7 @@
 
 ### Segmentの切り替え
 
-`Segment`を切り替えたいだけの場合は, `SwapSegment::modulation,focus_stm,gain_stm`を使用する.
+`Segment`を切り替えたいだけの場合は, `SwapSegment::Modulation,FocusSTM,GainSTM`を使用する.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/segment/segment_change_transition.rs}}
