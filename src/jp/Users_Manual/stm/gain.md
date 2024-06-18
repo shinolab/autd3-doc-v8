@@ -69,6 +69,6 @@
 {{#include ../../../codes/Users_Manual/stm/gain_2.py}}
 ```
 
-デフォルトは振幅/位相データを送る`PhaseDutyFull`モードである.
+デフォルトは振幅/位相データを送る`PhaseIntensityFull`モードである.
 
 [^fn_gain_seq]: `FociSTM<1>`のおよそ75倍のレイテンシ
