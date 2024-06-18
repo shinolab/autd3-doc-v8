@@ -4,7 +4,7 @@
 多焦点を生成するアルゴリズムが幾つか提案されており, SDKには以下のアルゴリズムが実装されている.
 
 * `SDP` - Semidefinite programming, 井上らの論文[^inoue2015]に基づく
-* `LSS` - Linear Synthesis Scheme 単一焦点解の重ね合わせ
+* `Naive` - 単一焦点解の重ね合わせ
 * `GS` - Gershberg-Saxon, Marzoらの論文[^marzo2019]に基づく
 * `GSPAT` - Gershberg-Saxon for Phased Arrays of Transducers, Plasenciaらの論文[^plasencia2020]に基づく
 * `LM` - Levenberg-Marquardt, LM法はLevenberg[^levenberg1944]とMarquardt[^marquardt1963]で提案された非線形最小二乗問題の最適化法, 実装はMadsenのテキスト[^madsen2004]に基づく.
@@ -41,7 +41,6 @@ SDKには以下の`Backend`が用意されている
 各アルゴリズムの計算結果の振幅は最終的に振動子が出力できる範囲に制限する必要がある.
 これは`with_constraint`で制御でき, 以下の4つのいずれかを指定する必要がある.
 
-- DontCare: 何もケアしない.
 - Normalize: 振幅の最大値ですべての振動子の振幅を割り, 規格化する.
 - Uniform: すべての振動子の振幅を指定した値にする.
 - Clamp: 振幅を指定の範囲にクランプする.
