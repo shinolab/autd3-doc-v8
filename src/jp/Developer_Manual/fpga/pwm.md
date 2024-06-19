@@ -8,8 +8,8 @@
 | Name        | In/Out | Width | Description                                        | 
 | ----------- | ------ | ----- | -------------------------------------------------- | 
 | CLK         | In     | 1     | 20.48MHzクロック                                   | 
-| TIME_CNT    | In     | 9     | 40kHz周期カウンタ                                  | 
-| UPDATE      | In     | 1     | 40kHz周期トリガ                                    | 
+| TIME_CNT    | In     | 9     | 超音波周期カウンタ                                 | 
+| UPDATE      | In     | 1     | 超音波周期トリガ                                   | 
 | DIN_VALID   | In     | 1     | パルス幅/位相データ有効フラグ                      | 
 | PULSE_WIDTH | In     | 9     | パルス幅                                           | 
 | PHASE       | In     | 8     | 位相                                               | 

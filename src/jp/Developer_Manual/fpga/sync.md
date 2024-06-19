@@ -2,7 +2,7 @@
 
 | Name                          | In/Out | Width | Description                                        | 
 | ----------------------------- | ------ | ----- | -------------------------------------------------- | 
-| CLK                           | In     | 1     | 20.48MHzクロック                                   | 
+| CLK                           | In     | 1     | メインクロック                                   | 
 | SETTINGS                      | In     | -     |                                                    | 
 | ├─ UPDATE                     | In     | 1     | 同期フラグ                                         | 
 | └─ ECAT_SYNC_TIME             | In     | 64    | 同期EtherCAT時刻                                   | 
@@ -22,7 +22,7 @@ Synchronizerはすべてのデバイスで同期した時刻`SYS_TIME`を生成�
 - EtherCATスレーブは一定の周期でSync0信号 (`ECAT_SYNC`) をアサートできる. この信号の発火はシステム時刻を参照しているので, すべてのデバイスで同期している.
 - Sync0信号が発火する周期は$\SI{500}{us}$の整数倍である.
 
-なお, `SYS_TIME`はEtherCATのシステム時刻に同期しているが, その単位は$1/\clkf \sim \SI{6.1}{ns}$となっている.
+なお, `SYS_TIME`はEtherCATのシステム時刻に同期しているが, その単位は$1/\text{メインクロック周波数}$となっている.
 
 まず, `SYS_TIME`の初回の時刻同期はCPUファームウェアと協調して, 以下の手順で行われる.
 1. CPU: 次のSync0信号が発火するシステム時刻`ECAT_SYNC_TIME`を読み出し, FPGA内のBRAMに書き込む.
@@ -30,8 +30,9 @@ Synchronizerはすべてのデバイスで同期した時刻`SYS_TIME`を生成�
 1. CPU: `UPDATE`フラグをFPGA内のBRAMに書き込む.
 1. FPGA: 以下の計算により, 時刻単位を変換しておく.
     $$\begin{align}
-        \frac{\text{ECAT\_SYNC\_TIME}}{\SI{500}{us}} \times 10240 ( = \clkf \times \SI{500}{us}).
+        \frac{\text{ECAT\_SYNC\_TIME}}{\SI{500}{us}} \times (\text{メインクロック周波数} \times \SI{500}{us})
     \end{align}$$
+    - なお, $\text{メインクロック周波数} \times \SI{500}{us}$はソフトウェア側であらかじめ計算しておく.
 1. FPGA: `UPDATE`フラグがアサートされている, かつ, `ECAT_SYNC`がアサートされたタイミングで, 単位変換済みの`ECAT_SYNC_TIME`を`SYS_TIME`にセットする.
 
 以上により, FPGA内部の`SYS_TIME`の時刻がEtherCATのシステム時刻に同期する.
@@ -41,27 +42,26 @@ Synchronizerはすべてのデバイスで同期した時刻`SYS_TIME`を生成�
 > というのも, EtherCATスレーブのシステム時刻とSync0信号は同期しているが, それ以外の動作が同期している保証はないためである.
 > つまり, `UPDATE`フラグがアサートされるタイミングはすべてのデバイスで異なる可能性がある.
 
-あとは, `SYS_TIME`を$\clkf$のクロックでカウントアップすればいい.
+あとは, `SYS_TIME`をメインクロックでカウントアップすればいい.
 しかし, 実際にはFPGAのクロックを生成する水晶振動子には個体差があるため, `SYS_TIME`は徐々にずれていってしまう.
 定期的に上記と同様のことを行って補正してもいいが, それは大変なので, Sync0信号が周期的かつ同期的に発火するという性質を用いた別の補正方法を採用した.
 
 まずは, Sync0信号が$\SI{500}{us}$の間隔で発火する場合を考えよう.
-この場合, Sync0信号が発火した際, `SYS_TIME`は前回Sync0信号が発火したときの値に$\clkf \times \SI{500}{us}=10240$を足した値になっているはずである.
+この場合, Sync0信号が発火した際, `SYS_TIME`は前回Sync0信号が発火したときの値に$\text{メインクロック周波数} \times \SI{500}{us}$を足した値になっているはずである.
 したがって, Sync0信号が発火した際に, この本来あるべき値と実際の値を比較して補正できる.
 
-Sync0信号が$\SI{500}{us}\times N, N=2,3,...$の間隔で発火する場合は, $N$を推定する必要がある.
+Sync0信号が$\SI{500}{us}\times N, N=2,3,...$の間隔で発火する場合は, $N$を推定する必要がある[^1].
 これは, Sync0信号の発火タイミングから推定できる.
-Sync0信号の発火タイミングで, カウンタ$n$を$n=10240/2=5120$で初期化した後, これを$\clkf$でカウントアップする.
+Sync0信号の発火タイミングで, カウンタ$n$を$n=\text{メインクロック周波数} \times \SI{500}{us}/2$で初期化した後, これをメインクロックでカウントアップする.
 そして, 次にSync0信号の発火タイミングで$N$を
 $$\begin{align}
-  N = \left\lfloor \frac{n}{10240} \right\rfloor
+  N = \left\lfloor \frac{n}{\text{メインクロック周波数} \times \SI{500}{us}} \right\rfloor
 \end{align}$$
 で推定する.
 この推定が正しくなる条件を求めてみる.
-FPGAのクロックが$\clkf \times (1 \pm \delta), (\delta \ge 0)$であるとすると,
+FPGAの実際のクロック周波数が$\text{メインクロック周波数} \times (1 \pm \delta), (\delta \ge 0)$であるとすると,
 $$\begin{align}
-  \left\lfloor \frac{n}{10240} \right\rfloor & = \left\lfloor \frac{5120 +\SI{500}{us}\times N \times \clkf \times (1 \pm \delta)}{10240} \right\rfloor \\
-                                             & = \left\lfloor N + \frac{1}{2} \pm N\delta \right\rfloor
+  \left\lfloor \frac{n}{\text{メインクロック周波数} \times \SI{500}{us}} \right\rfloor = \left\lfloor N + \frac{1}{2} \pm N\delta \right\rfloor
 \end{align}$$
 となる.
 これが正しく$N$になるためには,
@@ -74,7 +74,7 @@ $$\begin{align}
 \end{align}$$
 を満たせば良い (十分条件. なお, $\delta=0$の場合は常に満たされる.).
 AUTD3デバイスで使用している水晶振動子 (SG-8002CE-25.6M-PCB-L2, EPSON) の周波数は$\SI{25.6}{MHz}$, トレランスは$\pm\SI{50}{ppm}$である.
-これから生成されるクロックを, FPGA内蔵のMixed-Mode Clock Manager (MMCM) で周波数を$0.8$倍にしたものを使用している.
+これから生成されるクロックを, FPGA内蔵のMixed-Mode Clock Manager (MMCM) で変換したものをメインクロックとして使用している.
 トレランスは不変と仮定すると[^torelance], $\delta$の最大値は $\delta = \SI{50}{ppm}$となる.
 このときの条件は,
 $$\begin{align}
@@ -91,5 +91,7 @@ $$\begin{align}
 > 特によく使われる$N=1$--$4$あたりの周波数はヒトの聴覚が比較的敏感な周波数でもあるので, このノイズは避けたいところではある.
 > 古いバージョンでは補正タイミングを疑似乱数を用いてバラすことでこれを回避していた.
 > しかし実際にはこのノイズはほぼ聞こえないので, 現在はこのような処理は行っていない.
+
+[^1]: ソフトウェアなら指定すればいいだけの話だが, TwinCATを使用する場合, この$N$を取得する方法がなかった.
 
 [^torelance]: これが正しいかは確かめてはいない. また, MMCMの精度やジッター等は無視しているが, 後に明らかになるように, かなり余裕があるので問題ないだろう.
