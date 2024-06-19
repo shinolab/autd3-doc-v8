@@ -6,4 +6,4 @@
 - [Modulationの自作](./custom_modulation.md)
 - [PulseWidthEncoder](./pulse_width_encoder.md)
 - [DebugSettings](./debug_settings.md)
- 
+- [超音波周波数の設定](./ultrasound_freq.md)
