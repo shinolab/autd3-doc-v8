@@ -2,6 +2,11 @@
 
 `DebugSettings`により, GPIOピンの出力を設定することができる.
 
+<figure>
+    <img src="../../fig/Users_Manual/gpio_pin.jpg"/>
+    <figcaption>GPIOピン</figcaption>
+</figure>
+
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/advanced/debug_setting.rs}}
 ```
