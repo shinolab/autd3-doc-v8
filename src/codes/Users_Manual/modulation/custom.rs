@@ -3,6 +3,6 @@
 # #[allow(unused_variables)]
 # fn main() -> Result<(), Box<dyn std::error::Error>> {
 let buf = vec![0xFF, 0x00];
-let m = Custom::new(buf, SamplingConfig::Freq(4000 * Hz));
+let m = Custom::new(buf, 4000 * Hz);
 # Ok(())
 # }

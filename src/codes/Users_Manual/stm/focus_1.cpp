@@ -7,6 +7,5 @@
 //~    std::array{autd3::Vector3(0, 0, 0)},
 //~    std::array{autd3::Vector3(0, 0, 0)},
 //~};
-auto stm = autd3::FociSTM<1>::from_sampling_config(
-    autd3::SamplingConfig::Freq(1 * autd3::Hz), foci);
+auto stm = autd3::FociSTM<1>::from_sampling_config(1 * autd3::Hz, foci);
 //~return 0; }

@@ -13,10 +13,10 @@ public partial class Burst
     public Burst(int length)
     {
         _length = length;
-        _config = SamplingConfig.Freq(4000u * Hz);
+        _config = 4000u * Hz;
     }
 
-    private byte[] Calc(Geometry _)
+    private byte[] Calc()
     {
         var buf = Enumerable.Repeat<byte>(0x00, _length).ToArray();
         buf[0] = 0xFF;

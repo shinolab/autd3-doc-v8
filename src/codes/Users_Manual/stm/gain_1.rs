@@ -2,6 +2,6 @@
 # #[allow(unused_variables)]
 # fn main() -> Result<(), Box<dyn std::error::Error>> {
 let stm =
-    GainSTM::from_sampling_config(SamplingConfig::Freq(1 * Hz), [Null::new(), Null::new()]);
+    GainSTM::from_sampling_config(1 * Hz, [Null::new(), Null::new()]);
 # Ok(())
 # }

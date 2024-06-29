@@ -4,4 +4,4 @@
 ~using AUTD3Sharp.Gain;
 ~using static AUTD3Sharp.Units;
 ~using var autd = Controller.Builder([new AUTD3(Vector3.Zero)]).Open(Nop.Builder());
-var stm = GainSTM.FromSamplingConfig(SamplingConfig.Freq(1u * Hz), [new Null(), new Null()]);
+var stm = GainSTM.FromSamplingConfig(1u * Hz, [new Null(), new Null()]);

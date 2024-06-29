@@ -1,24 +1,11 @@
 # 超音波周波数の設定
 
-超音波周波数を以下のように設定できる.
+超音波周波数を変更する場合は, 環境変数`AUTD3_ULTRASOUND_FREQ`にHz単位の周波数を整数で設定すれば良い.
 
-```rust,edition2021
-{{#include ../../../codes/Users_Manual/advanced/ultrasound_freq.rs}}
-```
+> NOTE: Rust版の場合は, `dynamic_freq` featureを有効にする必要がある.
 
-```cpp
-{{#include ../../../codes/Users_Manual/advanced/ultrasound_freq.cpp}}
-```
-
-```cs
-{{#include ../../../codes/Users_Manual/advanced/ultrasound_freq.cs}}
-```
-
-```python
-{{#include ../../../codes/Users_Manual/advanced/ultrasound_freq.py}}
-```
-
-同期などの制約で, 超音波周波数$f$は以下の条件を満たす必要がある.
+なお, 同期などの制約で, 超音波周波数$f$は以下の条件を満たす必要がある.
+この条件を満たさない周波数を設定した場合, エラーが発生する.
 
 - $$
  \exist k \in \mathbb{N} \text{ s.t. }f \times 512 = k \times 2000

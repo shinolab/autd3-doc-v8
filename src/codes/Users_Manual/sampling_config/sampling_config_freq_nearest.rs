@@ -6,6 +6,10 @@ SamplingConfig::FreqNearest(4000.0 * Hz)
 # ;
 // or
 # let s = 
+SamplingConfig::PeriodNearest(std::time::Duration::from_micros(250))
+# ;
+// or
+# let s = 
 SamplingConfig::DivisionRaw(5120)
 # ;
 # Ok(())

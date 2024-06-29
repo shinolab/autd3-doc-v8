@@ -1,5 +1,5 @@
 import numpy as np
-from pyautd3 import EmitIntensity, Geometry, Hz, SamplingConfig
+from pyautd3 import EmitIntensity, Hz, SamplingConfig
 from pyautd3.modulation import Modulation
 
 
@@ -10,7 +10,7 @@ class Burst(Modulation):
         super().__init__(SamplingConfig.Freq(4000 * Hz))
         self._length = length
 
-    def calc(self, _: Geometry):
+    def calc(self):
         buf = np.array([EmitIntensity.minimum()] * self._length)
         buf[0] = EmitIntensity.maximum()
         return buf
