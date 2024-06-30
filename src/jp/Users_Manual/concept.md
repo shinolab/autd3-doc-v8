@@ -21,7 +21,7 @@ SDKを構成する主なコンポーネントは以下の通りである.
 信号が生成されるまでの流れは以下の図の通りである.
 
 <figure>
-  <a href="../../fig/Users_Manual/concept.svg" data-lightbox="image"><img src="../../fig/Users_Manual/concept.svg"/></a>
+  <a href="../fig/Users_Manual/concept.svg" data-lightbox="image"><img src="../fig/Users_Manual/concept.svg"/></a>
   <figcaption>信号が生成されるまでの概念図</figcaption>
 </figure>
 
