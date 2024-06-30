@@ -21,7 +21,7 @@ python main.py
 
 ## Linux使用時の注意
 
-Linuxでは, SOEMを使用するのに管理者権限が必要な場合がある.
+Linuxでは, SOEMを使用するのに管理者権限が必要になる.
 その場合は, 
 ```shell
 sudo setcap cap_net_raw,cap_net_admin=eip <your python path>
@@ -33,7 +33,7 @@ python main.py
 
 ## macOS使用時の注意
 
-macOSでは, SOEMを使用するのに管理者権限が必要な場合がある.
+macOSでは, SOEMを使用するのに管理者権限が必要になる.
 その場合は, 
 ```shell
 sudo chmod +r /dev/bpf*
