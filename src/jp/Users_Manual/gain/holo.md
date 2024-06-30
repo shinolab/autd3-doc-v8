@@ -17,6 +17,8 @@ SDKには以下の`Backend`が用意されている
 * `CUDABackend` - CUDAを使用, GPUで実行
 * `ArrayFireBackend` - [ArrayFire](https://arrayfire.com/)を使用 (Rust版のみ使用可能)
 
+> NOTE: `CUDABackend`や`ArrayFireBackend`は高速化を目的としているが, ほとんどの場合, `NalgebraBackend`で十分である. 使用時は, 必ずベンチマークを取ること.
+
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/holo_0.rs}}
 ```
@@ -33,8 +35,8 @@ SDKには以下の`Backend`が用意されている
 {{#include ../../../codes/Users_Manual/gain/holo_0.py}}
 ```
 
-各アルゴリズムのコンストラクタの第1引数は`backend`である.
-また, 第2引数で各焦点の位置とその焦点の目標音圧を指定する.
+各アルゴリズムのコンストラクタの第1引数は`backend`である. (`Greedy`のみBackendの指定はない.)
+また, 第2引数で各焦点の位置とその焦点の目標音圧のペアのイテレータを指定する.
 
 ## 振幅制約
 

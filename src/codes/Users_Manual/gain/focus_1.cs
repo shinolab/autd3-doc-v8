@@ -5,5 +5,5 @@
 ~var y = 0.0f;
 ~var z = 0.0f;
 var g = new Focus(new Vector3(x, y, z))
-            .WithIntensity(EmitIntensity.Max)
-            .WithPhaseOffset(new Phase(0x00));
+            .WithIntensity(0xFF)
+            .WithPhaseOffset(0x00);

@@ -5,5 +5,5 @@
 ~var ny = 0.0f;
 ~var nz = 1.0f;
 var g = new Plane(new Vector3(nx, ny, nz))
-                .WithIntensity(EmitIntensity.Max)
-                .WithPhaseOffset(new Phase(0x00));
+                .WithIntensity(0xFF)
+                .WithPhaseOffset(0x00);

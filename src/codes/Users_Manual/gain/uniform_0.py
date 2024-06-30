@@ -1,2 +1,2 @@
-~from pyautd3 import EmitIntensity, Uniform
-g = Uniform(EmitIntensity.maximum())
+~from pyautd3 import Uniform
+g = Uniform(0xFF)

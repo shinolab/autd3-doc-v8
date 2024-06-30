@@ -1,6 +1,6 @@
 # Focus
 
-`Focus`は最も単純な`Gain`であり, 単一焦点を生成する.
+`Focus`は単一焦点を生成する.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/focus_0.rs}}
@@ -20,7 +20,7 @@
 
 ## 振幅/位相オフセットの指定
 
-`with_intensity`, `with_phase_offset`にて, 出力振幅と位相オフセットを指定できる.
+`with_intensity`, `with_phase_offset`にて, 出力振幅と位相オフセットを$\SI{8}{bit}$で指定できる.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/focus_1.rs}}

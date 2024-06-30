@@ -14,5 +14,5 @@ var g = new Bessel(
             new Vector3(nx, ny, nz),
             theta * rad
         )
-        .WithIntensity(EmitIntensity.Max)
-        .WithPhaseOffset(new Phase(0x00));
+        .WithIntensity(0xFF)
+        .WithPhaseOffset(0x00);

@@ -13,6 +13,6 @@ let g = autd3::gain::Bessel::new(
             Vector3::new(nx, ny, nz), 
             theta * rad
         )
-        .with_intensity(EmitIntensity::MAX)
-        .with_phase_offset(Phase::new(0x00));
+        .with_intensity(0xFF)
+        .with_phase_offset(0x00);
 # }

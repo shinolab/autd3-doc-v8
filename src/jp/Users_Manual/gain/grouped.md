@@ -2,7 +2,7 @@
 
 `Group`は振動子ごとに別々の`Gain`を使用するための`Gain`である.
 
-`Group`では, デバイスと振動子に対してキーを割り当て, その各キーに`Gain`を紐付けて使用する.
+`Group`では, 振動子に対してキーを割り当て, その各キーに`Gain`を紐付けて使用する.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/group_0.rs}}

@@ -1,4 +1,4 @@
-~from pyautd3 import EmitIntensity, Bessel, rad, Phase
+~from pyautd3 import Bessel, rad
 ~x = 0.0
 ~y = 0.0
 ~z = 0.0
@@ -7,5 +7,5 @@
 ~nz = 0.0
 ~theta = 0.0
 g = Bessel([x, y, z], [nx, ny, nz], theta * rad)\
-        .with_intensity(EmitIntensity.maximum())\
-        .with_phase_offset(Phase(0x00))
+        .with_intensity(0xFF)\
+        .with_phase_offset(0x00)

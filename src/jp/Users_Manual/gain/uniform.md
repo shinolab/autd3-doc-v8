@@ -39,5 +39,3 @@
 ```python
 {{#include ../../../codes/Users_Manual/gain/uniform_1.py}}
 ```
-
-デフォルトの位相は$0$である.

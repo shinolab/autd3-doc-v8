@@ -28,7 +28,7 @@
 
 ## 振幅/位相オフセットの指定
 
-`with_intensity`, `with_phase_offset`にて, 出力振幅と位相オフセットを指定できる.
+`with_intensity`, `with_phase_offset`にて, 出力振幅と位相オフセットを$\SI{8}{bit}$で指定できる.
 
 ```rust,edition2021
 {{#include ../../../codes/Users_Manual/gain/bessel_1.rs}}
