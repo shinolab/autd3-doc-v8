@@ -53,7 +53,7 @@ Simulator linkは[AUTDシミュレータ](../../Simulator/simulator.md)を使用
 
 ### `Geometry`の更新
 
-`Geometry`を更新しても, Simulator側の表示は自動的には更新されない.
+`Geometry`の位置情報を更新しても, Simulator側の表示は自動的には更新されない.
 `Geometry`を更新するには`update_geometry`関数を使用する.
 
 ```rust,should_panic,edition2021

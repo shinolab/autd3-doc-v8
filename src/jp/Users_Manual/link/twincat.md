@@ -65,12 +65,6 @@ TwinCAT XAE Shell上部メニューから「TwinCAT」→「Show Realtime Ethern
 「Incompatible devices」の中のドライバもインストール自体は可能で, インストールすると「Installed and ready to use devices (for demo use only)」と表示される.
 この場合, 使用できるが動作保証はない.
 
-### ライセンス
-
-また, 初回はライセンス関係のエラーが出るので, XAE Shellで「Solution Explorer」→「SYSTEM」→「License」を開き, 「7 Days Trial License ...」をクリックし, 画面に表示される文字を入力する.
-なお. ライセンスは7日間限定のトライアルライセンスだが, 切れたら再び同じ作業を行うことで再発行できる.
-ライセンスを発行し終わったら, TwinCAT XAE Shellを閉じて, 再び実行する.
-
 ### AUTD Serverの実行
 
 AUTD3とPCを接続し, AUTD3の電源が入った状態で, 「Run」ボタンを押す.
@@ -83,6 +77,12 @@ AUTD3とPCを接続し, AUTD3の電源が入った状態で, 「Run」ボタン�
 </figure>
 
 なお, AUTD ServerはPCの電源を切る, スリープモードに入る等でLinkが途切れるので, その都度実行し直すこと.
+
+#### ライセンス
+
+初回はライセンス関係のエラーが出るので, XAE Shellで「Solution Explorer」→「SYSTEM」→「License」を開き, 「7 Days Trial License ...」をクリックし, 画面に表示される文字を入力する.
+なお. ライセンスは7日間限定のトライアルライセンスだが, 切れたら再び同じ作業を行うことで再発行できる.
+ライセンスを発行し終わったら, TwinCAT XAE Shellを閉じて, 再び実行する.
 
 ## TwinCATリンクのAPI
 
@@ -123,17 +123,17 @@ AUTD3とPCを接続し, AUTD3の電源が入った状態で, 「Run」ボタン�
 # RemoteTwinCAT
 
 前述の通り, AUTD3とTwinCATを使う場合はWindows OSと特定のネットワークアダプタが必要になる.
-Windows以外のPCで開発したい場合は, RemoteTwinCAT linkを用いてLinux/macOSから遠隔でTwinCATを操作することができる.
+Windows以外のPCで開発したい場合は, `RemoteTwinCAT` linkを用いてLinux/macOSから遠隔でTwinCATを操作することができる.
 
 ## セットアップ
 
-RemoteTwinCATを使用する場合はPCを2台用意する必要がある.
-この時, 片方のPCは上記のTwinCAT linkが使えるである必要がある.
+`RemoteTwinCAT`を使用する場合はPCを2台用意する必要がある.
+この時, 片方のPCは上記の`TwinCAT` linkが使えるである必要がある.
 このPCをここでは"サーバ"と呼ぶ.
 一方, 開発側のPC, 即ちSDKを使用する側は特に制約はなく, サーバと同じLANに繋がっていれば良い, こちらをここでは"クライアント"と呼ぶ.
 
 まず, サーバとAUTDデバイスを接続する.
-この時使うLANのアダプタはTwinCAT linkと同じく, TwinCAT対応のアダプタである必要がある.
+この時使うLANのアダプタは`TwinCAT` linkと同じく, TwinCAT対応のアダプタである必要がある.
 また, サーバとクライアントを別のLANで繋ぐ.
 こちらのLANアダプタはTwinCAT対応である必要はない[^fn_remote_twin].
 そして, サーバとクライアント間のLANのIPを確認しておく.
@@ -147,13 +147,13 @@ RemoteTwinCATを使用する場合はPCを2台用意する必要がある.
 
 右側の画面に, 「Server AmsNetId」と「Client AmsNetId」が表示されるので, これをメモっておく.
 
-> NOTE: 「Server AmsNetId」の最初の4桁はServerのIPアドレスを意味しているわけではないので注意されたい.
+> NOTE: 「Server AmsNetId」の最初の4桁は必ずしもServerのIPアドレスを意味しているわけではないので注意されたい.
 
 ## RemoteTwinCATリンクのAPI
 
 ### コンストラクタ
 
-RemoteTwinCATリンクのコンストラクタには「Server AmsNetId」を指定する.
+`RemoteTwinCAT`のコンストラクタには「Server AmsNetId」を指定する.
 
 また, `with_server_ip`と`with_client_ams_net_id`でサーバーのIPアドレスとクライアントのNetIdを指定する.
 これらは省略することも可能だが, 基本的には指定することを推奨する.

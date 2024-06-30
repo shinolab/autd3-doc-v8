@@ -6,7 +6,7 @@ TwinCATとは異なり通常のWindows上で動作するためリアルタイム
 SOEMを使用するのはやむを得ない理由があるか, 開発時のみに限定するべきである.
 一方, SOEMはクロスプラットフォームで動作し, インストールも単純という利点がある.
 
-Windowsの場合は, [npcap](https://nmap.org/npcap/)を**WinPcap API compatible mode**でインストールしておくこと.
+Windowsの場合は, [npcap](https://nmap.org/npcap/)を「**WinPcap API compatible mode**」でインストールしておくこと.
 Linux/macOSの場合は, 特に準備は必要ない.
 
 [[_TOC_]]
