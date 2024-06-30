@@ -13,23 +13,22 @@ Modulationは音圧振幅に掛け合わされる.
 
 * バッファサイズは最大で32768
   * 拡張モードを使用すると65536
-* Modulationデータは内部で8-bit符号なし整数に変換され, 振幅データと掛け合わされる
-* サンプリングレートは$\clkf/N$で, $N$は32-bit符号なし整数であり, $512$の倍数である必要がある
+* サンプリングレートは$\clkf/N$である. ここで, $N$は$\SI{32}{bit}$符号なし整数であり, $512$の倍数である必要がある.
 
 SDKにはデフォルトでいくつかの種類のAMを生成するための`Modulation`が用意されている.
 
-* [Static](./modulation/static.md)
-* [Sine](./modulation/sine.md)
-  * [Fourier](./modulation/fourier.md)
-  * [Mixer](./modulation/mixer.md)
-* [Square](./modulation/square.md)
-* [Wav](./modulation/wav.md)
-* [Csv](./modulation/csv.md)
-* [RawPCM](./modulation/rawpcm.md)
-* [Custom](./modulation/custom.md)
-* [Cache](./modulation/cache.md)
-* [RadiationPressure](./modulation/radiation.md)
-* [Transform](./modulation/transform.md)
+* [Static](./modulation/static.md) - 変調なし
+* [Sine](./modulation/sine.md) - 正弦波
+  * [Fourier](./modulation/fourier.md) - 正弦波の重ね合わせ
+  * [Mixer](./modulation/mixer.md) - 正弦波の掛け合わせ
+* [Square](./modulation/square.md) - 矩形波
+* [Wav](./modulation/wav.md) - Wavファイルをもとにした変調
+* [Csv](./modulation/csv.md) - Csvファイルをもとにした変調
+* [RawPCM](./modulation/rawpcm.md) - RawPCMデータをもとにした変調
+* [Custom](./modulation/custom.md) - ユーザー定義の変調
+* [Cache](./modulation/cache.md) - 他の`Modulation`の計算結果をキャッシュする
+* [RadiationPressure](./modulation/radiation.md) - 放射圧に対して変調を適用する
+* [Transform](./modulation/transform.md) - 他の`Modulation`の計算結果に何らかの後処理を加える
 
 ## Modulationの共通API
 
