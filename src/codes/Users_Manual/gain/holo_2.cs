@@ -9,4 +9,4 @@ var backend = new NalgebraBackend();
 ~var y2 = 0.0f;
 ~var z2 = 0.0f;
 ~var foci = new[] { (new Vector3(x1, y1, z1), 5e3f * Pa), (new Vector3(x1, y1, z1), 5e3f * Pa) };
-var g = new GSPAT<NalgebraBackend>(backend, foci).WithRepeat(100);
+var g = new GSPAT(backend, foci).WithRepeat(100);

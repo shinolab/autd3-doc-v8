@@ -17,3 +17,5 @@
 ```python
 {{#include ../../../codes/Users_Manual/modulation/cache_0.py}}
 ```
+
+> NOTE: ほとんどの`Modulation`に対して, キャッシュするより都度計算し直したほうが速い. 使用時は必ずベンチマークを取ること.

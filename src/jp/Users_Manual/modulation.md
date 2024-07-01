@@ -34,7 +34,25 @@ SDKにはデフォルトでいくつかの種類のAMを生成するための`Mo
 
 ### Sampling設定
 
-一部の`Modulation`は`with_sampling_config`でサンプリング周波数を設定できる.
+`Modulation`のサンプリング設定は`sampling_config`で取得できる.
+
+```rust,edition2021
+{{#include ../../codes/Users_Manual/modulation_prop.rs}}
+```
+
+```cpp
+{{#include ../../codes/Users_Manual/modulation_prop.cpp}}
+```
+
+```cs
+{{#include ../../codes/Users_Manual/modulation_prop.cs}}
+```
+
+```python
+{{#include ../../codes/Users_Manual/modulation_prop.py}}
+```
+
+また, 一部の`Modulation`は`with_sampling_config`でサンプリング設定を変更できる.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/modulation_0.rs}}

@@ -4,7 +4,7 @@
 //~const auto x = 0.0;
 //~const auto y = 0.0;
 //~const auto z = 0.0;
-const auto g = autd3::gain::Group([](const auto& dev) {
+const auto g = autd3::Group([](const auto& dev) {
                  return [](const auto& tr) -> std::optional<const char*> {
                    if (tr.idx() <= 100) return "null";
                    return "focus";

@@ -9,6 +9,26 @@ SDKには単一焦点音場から8焦点音場までをサポートする`FociST
 
 ## FociSTM/GainSTMの共通API
 
+### 周波数/周期/サンプリング設定の取得
+
+`freq`, `period`, `sampling_config`でそれぞれ周波数, 周期, サンプリング設定を取得できる.
+
+```rust,edition2021
+{{#include ../../codes/Users_Manual/stm_prop.rs}}
+```
+
+```cpp
+{{#include ../../codes/Users_Manual/stm_prop.cpp}}
+```
+
+```cs
+{{#include ../../codes/Users_Manual/stm_prop.cs}}
+```
+
+```python
+{{#include ../../codes/Users_Manual/stm_prop.py}}
+```
+
 ### LoopBehavior
 
 ループの挙動を, [Modulation](./modulation.md#loopbehavior)と同様に`with_loop_behavior`で制御できる.

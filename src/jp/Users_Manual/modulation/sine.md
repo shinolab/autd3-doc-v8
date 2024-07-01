@@ -47,3 +47,25 @@ $$
 ```python
 {{#include ../../../codes/Users_Manual/modulation/sine_1.py}}
 ```
+
+## 周波数制約
+
+`Sine`はデフォルトだと周波数に厳格であり, サンプリング周波数によって出力不可能な周波数が指定された場合にはエラーを返す.
+
+その場合はサンプリング設定を変更するか, `from_freq_nearest`を使用することで, 出力可能な周波数の内で最も近い周波数で変調することができる.
+
+```rust,edition2021
+{{#include ../../../codes/Users_Manual/modulation/sine_2.rs}}
+```
+
+```cpp
+{{#include ../../../codes/Users_Manual/modulation/sine_2.cpp}}
+```
+
+```cs
+{{#include ../../../codes/Users_Manual/modulation/sine_2.cs}}
+```
+
+```python
+{{#include ../../../codes/Users_Manual/modulation/sine_2.py}}
+```

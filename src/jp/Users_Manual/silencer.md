@@ -147,8 +147,11 @@ Fixed update rate modeを設定するには, 以下のようにする.
 #### Fixed completion steps modeの設定
 
 Fixed completion steps modeを設定するには, 以下のようにする.
-なお, 引数はそれぞれ, 振幅/位相変化の完了までのステップ数に対応する.
+なお, `from_completion_steps`の引数はそれぞれ, 振幅/位相変化の完了までのステップ数に対応する.
 1ステップの時間間隔は超音波の周期に等しい.
+
+時間で指定する場合は, `from_completion_time`を使用する.
+`from_completion_time`を使用する場合, 引数は超音波周期の整数倍である必要がある.
 
 ```rust,edition2021
 {{#include ../../codes/Users_Manual/silencer/silencer_fixed_completion_steps.rs}}

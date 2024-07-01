@@ -62,3 +62,25 @@ Low/Highレベルの振幅はそれぞれ, `with_low`, `with_high`で指定で�
 ```python
 {{#include ../../../codes/Users_Manual/modulation/square_2.py}}
 ```
+
+## 周波数制約
+
+`Square`はデフォルトだと周波数に厳格であり, サンプリング周波数によって出力不可能な周波数が指定された場合にはエラーを返す.
+
+その場合はサンプリング設定を変更するか, `from_freq_nearest`を使用することで, 出力可能な周波数の内で最も近い周波数で変調することができる.
+
+```rust,edition2021
+{{#include ../../../codes/Users_Manual/modulation/square_3.rs}}
+```
+
+```cpp
+{{#include ../../../codes/Users_Manual/modulation/square_3.cpp}}
+```
+
+```cs
+{{#include ../../../codes/Users_Manual/modulation/square_3.cs}}
+```
+
+```python
+{{#include ../../../codes/Users_Manual/modulation/square_3.py}}
+```
