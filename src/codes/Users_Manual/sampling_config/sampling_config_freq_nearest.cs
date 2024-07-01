@@ -8,7 +8,3 @@ SamplingConfig.FreqNearest(4000.0f * Hz)
 ~var sp =
 SamplingConfig.PeriodNearest(TimeSpan.FromMicroseconds(250))
 ~;
-// or
-~var sd =
-SamplingConfig.DivisionRaw(5120)
-~;
