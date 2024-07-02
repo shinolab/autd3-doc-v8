@@ -52,7 +52,7 @@
     - [Gainの自作](./Users_Manual/advanced/custom_gain.md)
     - [Modulationの自作](./Users_Manual/advanced/custom_modulation.md)
     - [PulseWidthEncoder](./Users_Manual/advanced/pulse_width_encoder.md)
-    - [DebugSettings](./Users_Manual/advanced/debug_settings.md)
+    - [GPIO出力の設定](./Users_Manual/advanced/debug_settings.md)
     - [超音波周波数の設定](./Users_Manual/advanced/ultrasound_freq.md)
     - [ロギングの有効化](./Users_Manual/advanced/logging.md)
   - [シミュレータ](./Users_Manual/Simulator/simulator.md)

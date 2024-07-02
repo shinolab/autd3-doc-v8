@@ -1,6 +1,6 @@
 # DebugSettings
 
-`DebugSettings`により, GPIOピンの出力を設定することができる.
+`DebugSettings`により, GPIOピンの出力を各デバイス・ピン毎に設定できる.
 
 <figure>
     <img src="../../fig/Users_Manual/gpio_pin.jpg"/>
