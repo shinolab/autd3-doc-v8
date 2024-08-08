@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Modulation - AUTD3 Developers Manual v26.0.0</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/codeblock_filename.css">
+        <link rel="stylesheet" href="../theme/lightbox.css">
+        <link rel="stylesheet" href="../open-in.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../about_AUTD3.html"><strong aria-hidden="true">1.</strong> AUTD3について</a></li><li class="chapter-item expanded "><a href="../Users_Manual/users_manual.html"><strong aria-hidden="true">2.</strong> ユーザーズマニュアル</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/concept.html"><strong aria-hidden="true">2.1.</strong> コンセプト</a></li><li class="chapter-item "><a href="../Users_Manual/getting_started.html"><strong aria-hidden="true">2.2.</strong> チュートリアル</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/getting_started/rust.html"><strong aria-hidden="true">2.2.1.</strong> Rust</a></li><li class="chapter-item "><a href="../Users_Manual/getting_started/cpp.html"><strong aria-hidden="true">2.2.2.</strong> C++</a></li><li class="chapter-item "><a href="../Users_Manual/getting_started/cs.html"><strong aria-hidden="true">2.2.3.</strong> C#</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/getting_started/unity.html"><strong aria-hidden="true">2.2.3.1.</strong> Unity</a></li></ol></li><li class="chapter-item "><a href="../Users_Manual/getting_started/python.html"><strong aria-hidden="true">2.2.4.</strong> Python</a></li></ol></li><li class="chapter-item "><a href="../Users_Manual/versioning.html"><strong aria-hidden="true">2.3.</strong> バージョニング</a></li><li class="chapter-item "><a href="../Users_Manual/geometry.html"><strong aria-hidden="true">2.4.</strong> Geometry</a></li><li class="chapter-item "><a href="../Users_Manual/link.html"><strong aria-hidden="true">2.5.</strong> Link</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/link/twincat.html"><strong aria-hidden="true">2.5.1.</strong> TwinCAT</a></li><li class="chapter-item "><a href="../Users_Manual/link/soem.html"><strong aria-hidden="true">2.5.2.</strong> SOEM</a></li><li class="chapter-item "><a href="../Users_Manual/link/simulator.html"><strong aria-hidden="true">2.5.3.</strong> Simulator</a></li><li class="chapter-item "><a href="../Users_Manual/link/visualize.html"><strong aria-hidden="true">2.5.4.</strong> Visualizer</a></li></ol></li><li class="chapter-item "><a href="../Users_Manual/gain.html"><strong aria-hidden="true">2.6.</strong> Gain</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/gain/null.html"><strong aria-hidden="true">2.6.1.</strong> Null</a></li><li class="chapter-item "><a href="../Users_Manual/gain/focus.html"><strong aria-hidden="true">2.6.2.</strong> Focus</a></li><li class="chapter-item "><a href="../Users_Manual/gain/bessel.html"><strong aria-hidden="true">2.6.3.</strong> Bessel</a></li><li class="chapter-item "><a href="../Users_Manual/gain/plane.html"><strong aria-hidden="true">2.6.4.</strong> Plane</a></li><li class="chapter-item "><a href="../Users_Manual/gain/uniform.html"><strong aria-hidden="true">2.6.5.</strong> Uniform</a></li><li class="chapter-item "><a href="../Users_Manual/gain/custom.html"><strong aria-hidden="true">2.6.6.</strong> Custom</a></li><li class="chapter-item "><a href="../Users_Manual/gain/grouped.html"><strong aria-hidden="true">2.6.7.</strong> Group</a></li><li class="chapter-item "><a href="../Users_Manual/gain/holo.html"><strong aria-hidden="true">2.6.8.</strong> Holo</a></li><li class="chapter-item "><a href="../Users_Manual/gain/cache.html"><strong aria-hidden="true">2.6.9.</strong> Cache</a></li><li class="chapter-item "><a href="../Users_Manual/gain/transform.html"><strong aria-hidden="true">2.6.10.</strong> Transform</a></li></ol></li><li class="chapter-item expanded "><a href="../Users_Manual/modulation.html" class="active"><strong aria-hidden="true">2.7.</strong> Modulation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/modulation/static.html"><strong aria-hidden="true">2.7.1.</strong> Static</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/sine.html"><strong aria-hidden="true">2.7.2.</strong> Sine</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/modulation/fourier.html"><strong aria-hidden="true">2.7.2.1.</strong> Fourier</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/mixer.html"><strong aria-hidden="true">2.7.2.2.</strong> Mixer</a></li></ol></li><li class="chapter-item "><a href="../Users_Manual/modulation/square.html"><strong aria-hidden="true">2.7.3.</strong> Square</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/wav.html"><strong aria-hidden="true">2.7.4.</strong> Wav</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/csv.html"><strong aria-hidden="true">2.7.5.</strong> Csv</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/rawpcm.html"><strong aria-hidden="true">2.7.6.</strong> RawPCM</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/custom.html"><strong aria-hidden="true">2.7.7.</strong> Custom</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/cache.html"><strong aria-hidden="true">2.7.8.</strong> Cache</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/radiation.html"><strong aria-hidden="true">2.7.9.</strong> Radiation</a></li><li class="chapter-item "><a href="../Users_Manual/modulation/transform.html"><strong aria-hidden="true">2.7.10.</strong> Transform</a></li></ol></li><li class="chapter-item "><a href="../Users_Manual/stm.html"><strong aria-hidden="true">2.8.</strong> Spatio-Temporal Modulation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/stm/focus.html"><strong aria-hidden="true">2.8.1.</strong> FociSTM</a></li><li class="chapter-item "><a href="../Users_Manual/stm/gain.html"><strong aria-hidden="true">2.8.2.</strong> GainSTM</a></li></ol></li><li class="chapter-item "><a href="../Users_Manual/sampling_config.html"><strong aria-hidden="true">2.9.</strong> サンプリング設定について</a></li><li class="chapter-item "><a href="../Users_Manual/silencer.html"><strong aria-hidden="true">2.10.</strong> Silencer</a></li><li class="chapter-item "><a href="../Users_Manual/controller.html"><strong aria-hidden="true">2.11.</strong> Controller</a></li><li class="chapter-item "><a href="../Users_Manual/fan.html"><strong aria-hidden="true">2.12.</strong> ファン制御</a></li><li class="chapter-item "><a href="../Users_Manual/segment.html"><strong aria-hidden="true">2.13.</strong> Segment</a></li><li class="chapter-item "><a href="../Users_Manual/advanced/advanced.html"><strong aria-hidden="true">2.14.</strong> 上級者向け設定</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Users_Manual/advanced/custom_gain.html"><strong aria-hidden="true">2.14.1.</strong> Gainの自作</a></li><li class="chapter-item "><a href="../Users_Manual/advanced/custom_modulation.html"><strong aria-hidden="true">2.14.2.</strong> Modulationの自作</a></li><li class="chapter-item "><a href="../Users_Manual/advanced/pulse_width_encoder.html"><strong aria-hidden="true">2.14.3.</strong> PulseWidthEncoder</a></li><li class="chapter-item "><a href="../Users_Manual/advanced/debug_settings.html"><strong aria-hidden="true">2.14.4.</strong> GPIO出力の設定</a></li><li class="chapter-item "><a href="../Users_Manual/advanced/ultrasound_freq.html"><strong aria-hidden="true">2.14.5.</strong> 超音波周波数の設定</a></li><li class="chapter-item "><a href="../Users_Manual/advanced/logging.html"><strong aria-hidden="true">2.14.6.</strong> ロギングの有効化</a></li></ol></li><li class="chapter-item "><a href="../Users_Manual/Simulator/simulator.html"><strong aria-hidden="true">2.15.</strong> シミュレータ</a></li><li class="chapter-item "><a href="../Users_Manual/FAQ/faq.html"><strong aria-hidden="true">2.16.</strong> FAQ</a></li><li class="chapter-item "><a href="../Users_Manual/Citation/citation.html"><strong aria-hidden="true">2.17.</strong> 引用</a></li><li class="chapter-item "><a href="../Users_Manual/LICENSE.html"><strong aria-hidden="true">2.18.</strong> ライセンス</a></li><li class="chapter-item "><a href="../Users_Manual/release_notes.html"><strong aria-hidden="true">2.19.</strong> リリースノート</a></li></ol></li><li class="chapter-item expanded "><a href="../Developer_Manual/Developer_manual.html"><strong aria-hidden="true">3.</strong> デベロッパーズマニュアル</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Developer_Manual/fpga.html"><strong aria-hidden="true">3.1.</strong> FPGAファームウェア</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Developer_Manual/fpga/develop.html"><strong aria-hidden="true">3.1.1.</strong> 開発環境構築</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/overview.html"><strong aria-hidden="true">3.1.2.</strong> 概要</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/clk.html"><strong aria-hidden="true">3.1.3.</strong> Clocking</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/pwm.html"><strong aria-hidden="true">3.1.4.</strong> PWM</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/pulse_width_encoder.html"><strong aria-hidden="true">3.1.5.</strong> Pulse Witdth Encoder</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/silencer.html"><strong aria-hidden="true">3.1.6.</strong> Silencer</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/modulation.html"><strong aria-hidden="true">3.1.7.</strong> Modulation</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/stm.html"><strong aria-hidden="true">3.1.8.</strong> STM</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/sync.html"><strong aria-hidden="true">3.1.9.</strong> Synchronizer</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/time_cnt.html"><strong aria-hidden="true">3.1.10.</strong> Time Count Generator</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/controller.html"><strong aria-hidden="true">3.1.11.</strong> Controller</a></li><li class="chapter-item "><a href="../Developer_Manual/fpga/memory.html"><strong aria-hidden="true">3.1.12.</strong> Memory</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Developer_Manual/fpga/cpu_interface.html"><strong aria-hidden="true">3.1.12.1.</strong> CPUボードとのインターフェース</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Developer_Manual/cpu.html"><strong aria-hidden="true">3.2.</strong> CPUファームウェア</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Developer_Manual/cpu/develop.html"><strong aria-hidden="true">3.2.1.</strong> 開発環境構築</a></li></ol></li><li class="chapter-item "><a href="../Developer_Manual/software.html"><strong aria-hidden="true">3.3.</strong> ソフトウェア</a></li></ol></li><li class="chapter-item expanded "><a href="../Theory/theory.html"><strong aria-hidden="true">4.</strong> 理論と考察</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Theory/pwm.html"><strong aria-hidden="true">4.1.</strong> PWM</a></li><li class="chapter-item "><a href="../Theory/phasedarray.html"><strong aria-hidden="true">4.2.</strong> フェーズドアレイについて</a></li><li class="chapter-item "><a href="../Theory/linear.html"><strong aria-hidden="true">4.3.</strong> フェーズドアレイの線形性</a></li><li class="chapter-item "><a href="../Theory/resolution.html"><strong aria-hidden="true">4.4.</strong> 分解能に関する考察</a></li><li class="chapter-item "><a href="../Theory/holo/holo.html"><strong aria-hidden="true">4.5.</strong> 多焦点生成</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Theory/holo/partitioning.html"><strong aria-hidden="true">4.5.1.</strong> 空間分割スキーム</a></li><li class="chapter-item "><a href="../Theory/holo/fourier.html"><strong aria-hidden="true">4.5.2.</strong> 逆フーリエ変換</a></li><li class="chapter-item "><a href="../Theory/holo/sdp.html"><strong aria-hidden="true">4.5.3.</strong> 半正定値緩和法</a></li><li class="chapter-item "><a href="../Theory/holo/evp.html"><strong aria-hidden="true">4.5.4.</strong> 固有値問題と行列方程式</a></li><li class="chapter-item "><a href="../Theory/holo/back_prop.html"><strong aria-hidden="true">4.5.5.</strong> 逆伝搬法</a></li><li class="chapter-item "><a href="../Theory/holo/nlsp.html"><strong aria-hidden="true">4.5.6.</strong> 非線形最小二乗法</a></li><li class="chapter-item "><a href="../Theory/holo/apo.html"><strong aria-hidden="true">4.5.7.</strong> 音響パワー最適化法</a></li><li class="chapter-item "><a href="../Theory/holo/greedy.html"><strong aria-hidden="true">4.5.8.</strong> 貪欲法</a></li></ol></li><li class="chapter-item "><a href="../Theory/multi-freq.html"><strong aria-hidden="true">4.6.</strong> 複数周波数の応用</a></li><li class="chapter-item "><a href="../Theory/radiation_pressure.html"><strong aria-hidden="true">4.7.</strong> 音響放射圧</a></li></ol></li><li class="chapter-item expanded "><a href="../document_history.html"><strong aria-hidden="true">5.</strong> ドキュメント履歴</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AUTD3 Developers Manual v26.0.0</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/shinolab/autd3-doc-v8" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="modulation"><a class="header" href="#modulation">Modulation</a></h1>
+<p><code>Modulation</code>はAM変調を制御するための仕組みである.</p>
+<p>Modulationは音圧振幅に掛け合わされる.
+例えば, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">kHz</span></span></span></span></span></span>の<code>Sine</code>変調を印加した場合の音圧振幅は以下のようになり, 音圧振幅の正の部分 (或いは, 負の部分) の包絡線が<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">kHz</span></span></span></span></span></span>のsin波に従う.</p>
+<figure>
+  <img src="../fig/Users_Manual/sine_1k_mod.png"/>
+</figure>
+<p>なお, 現在, <code>Modulation</code>には以下の制約がある.</p>
+<ul>
+<li>バッファサイズは最大で32768
+<ul>
+<li>拡張モードを使用すると65536</li>
+</ul>
+</li>
+<li>サンプリングレートは<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord text"><span class="mord cjk_fallback">超音波周波数</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">512</span></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>である. ここで, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord">32</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">bit</span></span></span></span></span></span>符号なし整数であり, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">512</span></span></span></span>の倍数である必要がある.</li>
+</ul>
+<p>SDKにはデフォルトでいくつかの種類のAMを生成するための<code>Modulation</code>が用意されている.</p>
+<ul>
+<li><a href="./modulation/static.html">Static</a> - 変調なし</li>
+<li><a href="./modulation/sine.html">Sine</a> - 正弦波
+<ul>
+<li><a href="./modulation/fourier.html">Fourier</a> - 正弦波の重ね合わせ</li>
+<li><a href="./modulation/mixer.html">Mixer</a> - 正弦波の掛け合わせ</li>
+</ul>
+</li>
+<li><a href="./modulation/square.html">Square</a> - 矩形波</li>
+<li><a href="./modulation/wav.html">Wav</a> - Wavファイルをもとにした変調</li>
+<li><a href="./modulation/csv.html">Csv</a> - Csvファイルをもとにした変調</li>
+<li><a href="./modulation/rawpcm.html">RawPCM</a> - RawPCMデータをもとにした変調</li>
+<li><a href="./modulation/custom.html">Custom</a> - ユーザー定義の変調</li>
+<li><a href="./modulation/cache.html">Cache</a> - 他の<code>Modulation</code>の計算結果をキャッシュする</li>
+<li><a href="./modulation/radiation.html">RadiationPressure</a> - 放射圧に対して変調を適用する</li>
+<li><a href="./modulation/transform.html">Transform</a> - 他の<code>Modulation</code>の計算結果に何らかの後処理を加える</li>
+</ul>
+<h2 id="modulationの共通api"><a class="header" href="#modulationの共通api">Modulationの共通API</a></h2>
+<h3 id="sampling設定"><a class="header" href="#sampling設定">Sampling設定</a></h3>
+<p><code>Modulation</code>のサンプリング設定は<code>sampling_config</code>で取得できる.</p>
+<pre><code class="language-rust edition2021"><span class="boring">use autd3::prelude::*;
+</span><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+</span>let m = autd3::modulation::Sine::new(150 * Hz);
+let fs = m.sampling_config().freq(); // -&gt; 4kHz
+<span class="boring">Ok(())
+</span><span class="boring">}</span></code></pre>
+<pre><code class="language-cpp"><span class="boring">#include&lt;autd3.hpp&gt;
+</span><span class="boring">#include&lt;autd3/link/nop.hpp&gt;
+</span><span class="boring">int main() {
+</span>const auto m = autd3::modulation::Sine(150 * autd3::Hz);
+const auto fs = m.sampling_config().freq();  // -&gt; 4kHz
+<span class="boring">                                             return 0; }
+</span></code></pre>
+<pre><code class="language-cs"><span class="boring">using AUTD3Sharp;
+</span><span class="boring">using AUTD3Sharp.Modulation;
+</span><span class="boring">using static AUTD3Sharp.Units;
+</span>var m = new Sine(150u * Hz);
+var fs = m.SamplingConfig.Freq; // -&gt; 4kHz
+</code></pre>
+<pre><code class="language-python"><span class="boring">from pyautd3 import Hz
+</span><span class="boring">from pyautd3.modulation import Sine
+</span>m = Sine(150 * Hz)
+fs = m.sampling_config.freq # -&gt; 4kHz
+</code></pre>
+<p>また, 一部の<code>Modulation</code>は<code>with_sampling_config</code>でサンプリング設定を変更できる.</p>
+<pre><code class="language-rust edition2021"><span class="boring">use autd3::prelude::*;
+</span><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+</span>let m = autd3::modulation::Sine::new(150 * Hz)
+            .with_sampling_config(4000 * Hz);
+<span class="boring">Ok(())
+</span><span class="boring">}</span></code></pre>
+<pre><code class="language-cpp"><span class="boring">#include&lt;autd3.hpp&gt;
+</span><span class="boring">#include&lt;autd3/link/nop.hpp&gt;
+</span><span class="boring">int main() {
+</span>const auto m = autd3::modulation::Sine(150 * autd3::Hz)
+                   .with_sampling_config(4000 * autd3::Hz);
+<span class="boring">return 0; }
+</span></code></pre>
+<pre><code class="language-cs"><span class="boring">using AUTD3Sharp;
+</span><span class="boring">using AUTD3Sharp.Modulation;
+</span><span class="boring">using static AUTD3Sharp.Units;
+</span>var m = new Sine(150u * Hz).WithSamplingConfig(4000 * Hz);
+</code></pre>
+<pre><code class="language-python"><span class="boring">from pyautd3 import Hz
+</span><span class="boring">from pyautd3.modulation import Sine
+</span>m = Sine(150 * Hz).with_sampling_config(4000 * Hz)
+</code></pre>
+<p>サンプリング設定についての詳細は<a href="./sampling_config.html">サンプリング設定について</a>を参照されたい.</p>
+<h3 id="loopbehavior"><a class="header" href="#loopbehavior">LoopBehavior</a></h3>
+<p>ループの挙動を<code>with_loop_behavior</code>で制御できる.
+有限回ループするか, 無限ループするかを指定できる.</p>
+<p>デフォルトは無限ループである.</p>
+<pre><code class="language-rust edition2021"><span class="boring">use autd3::prelude::*;
+</span><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>let m = autd3::modulation::Sine::new(150. * Hz)
+            .with_loop_behavior(LoopBehavior::infinite()); // infinite loop
+let m = autd3::modulation::Sine::new(150. * Hz)
+            .with_loop_behavior(LoopBehavior::finite(10).unwrap()); // 10 times
+let m = autd3::modulation::Sine::new(150. * Hz)
+            .with_loop_behavior(LoopBehavior::once()); // equivalent to finite(1).unwrap()
+<span class="boring">} </span></code></pre>
+<pre><code class="language-cpp"><span class="boring">#include&lt;autd3.hpp&gt;
+</span><span class="boring">int main() {
+</span><span class="boring">{
+</span>const auto m =
+    autd3::modulation::Sine(150 * autd3::Hz)
+        .with_loop_behavior(autd3::LoopBehavior::Infinite);  // infinite loop
+<span class="boring">}
+</span><span class="boring">{
+</span>const auto m =
+    autd3::modulation::Sine(150 * autd3::Hz)
+        .with_loop_behavior(autd3::LoopBehavior::Finite(10));  // 10 times loop
+<span class="boring">}
+</span><span class="boring">{
+</span>const auto m = autd3::modulation::Sine(150 * autd3::Hz)
+                   .with_loop_behavior(
+                       autd3::LoopBehavior::Once);  // equivalent to finite(1)
+<span class="boring">                                                    }
+</span><span class="boring">                                                    return 0; }
+</span></code></pre>
+<pre><code class="language-cs"><span class="boring">using AUTD3Sharp;
+</span><span class="boring">using AUTD3Sharp.Modulation;
+</span><span class="boring">using static AUTD3Sharp.Units;
+</span><span class="boring">{
+</span>var m = new Sine(150u * Hz).WithLoopBehavior(LoopBehavior.Infinite); // infinite loop
+<span class="boring">}
+</span><span class="boring">{
+</span>var m = new Sine(150u * Hz).WithLoopBehavior(LoopBehavior.Finite(10u)); // 10 times
+<span class="boring">}
+</span><span class="boring">{
+</span>var m = new Sine(150u * Hz).WithLoopBehavior(LoopBehavior.Once); // equivalent to Finite(1u)
+<span class="boring">}
+</span></code></pre>
+<pre><code class="language-python"><span class="boring">from pyautd3 import LoopBehavior, Hz
+</span><span class="boring">from pyautd3.modulation import Sine
+</span>m = Sine(150 * Hz).with_loop_behavior(LoopBehavior.Infinite)  # infinite loop
+m = Sine(150 * Hz).with_loop_behavior(LoopBehavior.Finite(10))  # 10 times loop
+m = Sine(150 * Hz).with_loop_behavior(LoopBehavior.Once)  # equivalent to finite(1)
+</code></pre>
+<p>無限ループの場合, どのインデックスデータから再生されるかは制御できない.
+有限回ループの場合, 0番目のデータから再生が始まり, 指定回数のループの後, 最終インデックスデータが出力され続ける.</p>
+<p><strong>ループ設定は, Segmentを切り替えたときにしか効果がない. 詳しくは<a href="./segment.html">Segment</a>を参照.</strong></p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/shinolab/autd3-doc-v8/edit/main/src/jp/Users_Manual/modulation.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Users_Manual/gain/transform.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../Users_Manual/modulation/static.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Users_Manual/gain/transform.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../Users_Manual/modulation/static.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/codeblock_filename.js"></script>
+        <script src="../theme/lightbox-plus-jquery.min.js"></script>
+
+
+    </div>
+    </body>
+</html>
